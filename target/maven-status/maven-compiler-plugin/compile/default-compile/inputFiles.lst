@@ -19,3 +19,7 @@ H:\CDCNPM\SpringMVC\src\main\java\com\hutech\model\Blog.java
 H:\CDCNPM\SpringMVC\src\main\java\com\hutech\model\CategoryBlog.java
 H:\CDCNPM\SpringMVC\src\main\java\com\hutech\model\User.java
 H:\CDCNPM\SpringMVC\src\main\java\com\hutech\model\UserRole.java
+D:\Document\SpringMVC\src\main\java\com\hutech\configs\TilesConfig.java
+D:\Document\SpringMVC\src\main\java\com\hutech\configs\DispatcherServletInitializer.java
+D:\Document\SpringMVC\src\main\java\com\hutech\configs\WebApplicationContextConfig.java
+D:\Document\SpringMVC\src\main\java\com\hutech\controllers\HomeController.java
