@@ -6,6 +6,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
 @Generated(value="EclipseLink-2.7.9.v20210604-rNA", date="2022-03-10T13:10:27")
+
 @StaticMetamodel(ImgBlog.class)
 public class ImgBlog_ { 
 

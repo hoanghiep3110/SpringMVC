@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.hutech_SpringMVC_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.hutech.model.PmaNavigationhiding</class>
+    <class>com.hutech.model.UserRole</class>
+    <class>com.hutech.model.Class</class>
+    <class>com.hutech.model.PmaTableUiprefs</class>
+    <class>com.hutech.model.PmaDesignerSettings</class>
+    <class>com.hutech.model.Blog</class>
+    <class>com.hutech.model.PmaColumnInfo</class>
+    <class>com.hutech.model.PmaFavorite</class>
+    <class>com.hutech.model.OrderDetail</class>
+    <class>com.hutech.model.PmaRecent</class>
+    <class>com.hutech.model.Product</class>
+    <class>com.hutech.model.PmaBookmark</class>
+    <class>com.hutech.model.PmaUsers</class>
+    <class>com.hutech.model.PmaUserconfig</class>
+    <class>com.hutech.model.Typecar</class>
+    <class>com.hutech.model.ImgBlog</class>
+    <class>com.hutech.model.PmaExportTemplates</class>
+    <class>com.hutech.model.Rent</class>
+    <class>com.hutech.model.User</class>
+    <class>com.hutech.model.PmaRelation</class>
+    <class>com.hutech.model.PmaTracking</class>
+    <class>com.hutech.model.Discount</class>
+    <class>com.hutech.model.PmaCentralColumns</class>
+    <class>com.hutech.model.PmaHistory</class>
+    <class>com.hutech.model.PmaUsergroups</class>
+    <class>com.hutech.model.ImgProduct</class>
+    <class>com.hutech.model.PmaTableInfo</class>
+    <class>com.hutech.model.PmaSavedsearches</class>
+    <class>com.hutech.model.PmaPdfPages</class>
+    <class>com.hutech.model.PmaTableCoords</class>
+    <class>com.hutech.model.ImageContent</class>
+    <class>com.hutech.model.Contact</class>
+    <class>com.hutech.model.CategoryBlog</class>
+    <class>com.hutech.model.Brand</class>
+    <class>com.hutech.model.Order</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/DBBanXe?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+    </properties>
+  </persistence-unit>
+</persistence>
