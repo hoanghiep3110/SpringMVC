@@ -228,31 +228,11 @@
                 </ul>
               </li>
               <!-- ========== FULL WIDTH MEGAMENU END ==================-->
-              <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown"
-                  class="dropdown-toggle">Thuê xe<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown-item"><a href="index.html" class="nav-link"> xe máy điện</a></li>
-                  <li class="dropdown-item"><a href="index2.html" class="nav-link">xe tay ga</a></li>
-                  <li class="dropdown-item"><a href="index3.html" class="nav-link">xe số</a></li>
-                  <li class="dropdown-item"><a href="index4.html" class="nav-link">xe côn tay</a></li>
-                  <!-- <li class="dropdown-item dropdown-submenu"><a id="navbarDropdownMenuLink2" href="#"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                      class="nav-link dropdown-toggle">Dropdown link</a> -->
-                  <!-- <ul aria-labelledby="navbarDropdownMenuLink2" class="dropdown-menu">
-                      <li class="dropdown-item"><a href="#" class="nav-link">Action</a></li>
-                      <li class="dropdown-item"><a href="#" class="nav-link">Another action</a></li>
-                      <li class="dropdown-item"><a href="#" class="nav-link">Something else here</a></li>
-                    </ul> -->
-                </ul>
-              </li>
+             
               <!-- ========== Liên hệ dropdown ==================-->
               <li class="nav-item dropdown"><a href="contact.html" data-toggle="dropdown">Liên hệ<b
                     class="caret"></b></a>
-
-                <!-- ========== Thuê xe dropdown ==================-->
               </li>
-
-              <!-- ========== Contact dropdown end ==================-->
             </ul>
           </div>
           <div id="search" class="collapse clearfix">

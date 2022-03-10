@@ -7,6 +7,7 @@ package com.hutech.databases;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
@@ -19,29 +20,34 @@ public class JDBCConnection {
     private static String USER_NAME = "root";
     private static String PASSWORD = "";
 
-    public static void main(String args[]) {
-        try {
-            Connection conn = getConnection(DB_URL, USER_NAME, PASSWORD);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from blog");
-            while (rs.next()) {
-                System.out.println(rs.getInt(1) + "  " + rs.getString(2)+ "  " + rs.getString(3));
-            }
-            conn.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-    public static Connection getConnection(String dbURL, String userName,String password) {
-        Connection conn = null;
+    Connection conn;
+
+    public Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(dbURL, userName, password);
-            System.out.println("Connect successfully!");
+            conn = DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
         } catch (Exception ex) {
-            System.out.println("Connect failure!");
             ex.printStackTrace();
         }
         return conn;
+    }
+
+    public ResultSet LoadData(String sql) {
+        try {
+            Statement statement = conn.createStatement();
+            return statement.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void UpdateData(String sql) {
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
