@@ -30,16 +30,6 @@
                   cũ, chúng tôi đảm bảo cung cấp phương tiện di chuyển giá cả hợp lý. Với các chủ xe muốn bán lại chiếc xe
                   máy của mình, XemayDHCV sẽ tiến hành các thủ tục đổi tên nhanh gọn với mức giá cực kì cạnh tranh trên thị
                   trường.</p>
-                <!-- <hr> -->
-                <!-- <h4 class="h6">Join Our Monthly Newsletter</h4> -->
-                <!-- <form>
-                  <div class="input-group">
-                    <input type="text" class="form-control">
-                    <div class="input-group-append">
-                      <button type="button" class="btn btn-secondary"><i class="fa fa-send"></i></button>
-                    </div>
-                  </div>
-                </form> -->
                 <hr class="d-block d-lg-none">  
               </div>   
               <div class="col-lg-3">
