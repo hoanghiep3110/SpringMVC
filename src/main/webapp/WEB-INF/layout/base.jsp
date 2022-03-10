@@ -30,7 +30,7 @@
     <script src="<c:url value="/vendor/jquery/jquery.min.js"/>"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
     <script type="text/html" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
-    <link rel="shortcut icon" href="<c:url value="/img/tomos.png"/>">
+    <link rel="shortcut icon" href="<c:url value="/resource/img/tomos.png"/>">
     </head>
     <body>
         <!-- Header -->

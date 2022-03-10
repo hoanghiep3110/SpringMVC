@@ -25,10 +25,9 @@
               <div class="col-lg-3">
                 <h4 class="h4">Về chúng tôi</h4>
                 <br>
-                <p class="text-left">XemayDHCV là đơn vị thu mua,
-                  rao bán xe máy cũ uy tín tại thành phố Hồ Chí Minh. Với nhiều năm lăn lộn, va đập trong thị trường xe máy
+                <p class="text-left">XemayH2C là đơn vị thu mua, rao bán xe máy cũ uy tín tại thành phố Hồ Chí Minh. Với nhiều năm lăn lộn, va đập trong thị trường xe máy
                   cũ, chúng tôi đảm bảo cung cấp phương tiện di chuyển giá cả hợp lý. Với các chủ xe muốn bán lại chiếc xe
-                  máy của mình, XemayDHCV sẽ tiến hành các thủ tục đổi tên nhanh gọn với mức giá cực kì cạnh tranh trên thị
+                  máy của mình, XemayH2C sẽ tiến hành các thủ tục đổi tên nhanh gọn với mức giá cực kì cạnh tranh trên thị
                   trường.</p>
                 <!-- <hr> -->
                 <!-- <h4 class="h6">Join Our Monthly Newsletter</h4> -->
@@ -73,7 +72,7 @@
                 <p class="text-lowercase">Địa chỉ: 32 Hai bà Trưng, phường 12,<br>Quận 10,
                   TP. Hồ Chí Minh<br></p>
                 <hr>
-                <p class="text-lowercase"><strong>Email: </strong>contact@xemaydhcv.com<br>Website: http://xemaydhcv.com/
+                <p class="text-lowercase"><strong>Email: </strong>contact@xemayh2c.com<br>Website: http://xemayh2c.com/
                   <br>Thời gian làm việc: 8:00-21:00<br>
                 </p>
                 <hr class="d-block d-lg-none">
@@ -81,7 +80,7 @@
               <div class="col-lg-3">
                 <h4 class="h4">Facebook fanpage</h4>
                 <br>
-                <p class="text-uppercase">Fanpage XemayDHCV</p>
+                <p class="text-uppercase">Fanpage XemayH2C</p>
                 <a href="contact.html" class="btn btn-template-main">Go to contact page</a>
                 <hr class="d-block d-lg-none">
               </div>
@@ -91,7 +90,7 @@
             <div class="container">
               <div class="row">
                 <div class="text-center col-lg-12 text-center-md">
-                  <p>&copy; 2020 Copyright: XemayDHCV.com</p>
+                  <p>&copy; 2022 Copyright: XemayH2C.com</p>
                 </div>
               </div>
             </div>
