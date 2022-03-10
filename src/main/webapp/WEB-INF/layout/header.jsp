@@ -76,7 +76,7 @@
               <li class="nav-item dropdown "><a href="javascript: void(0)" data-toggle="dropdown">Trang chủ <b
                     class="caret"></b></a>
               </li>
-              <li class="nav-item dropdown"><a href="#" data-toggle="dropdown">Giới thiệu<b
+              <li class="nav-item dropdown"><a href="" data-toggle="dropdown">Giới thiệu<b
                 class="caret"></b></a>
                 <!-- <ul class="dropdown-menu megamenu">
                   <li>
