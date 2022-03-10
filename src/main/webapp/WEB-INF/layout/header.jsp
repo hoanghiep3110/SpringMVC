@@ -157,7 +157,7 @@
                 </ul>
               </li>
               <!-- ========== Liên hệ dropdown ==================-->
-              <li class="nav-item dropdown"><a href="/WEB-INF/jsp/contact.jsp" data-toggle="dropdown">Liên hệ<b
+              <li class="nav-item dropdown"><a href="../jsp/contact.jsp" data-toggle="dropdown">Liên hệ<b
                     class="caret"></b></a>
 
                 <!-- ========== Thuê xe dropdown ==================-->
