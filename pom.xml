@@ -32,8 +32,6 @@
             <version>1.2</version>
         </dependency>
         <dependency>
-<<<<<<< Updated upstream
-=======
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.16</version>
@@ -44,7 +42,6 @@
             <version>5.3.14</version>
         </dependency>
         <dependency>
->>>>>>> Stashed changes
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-extras</artifactId>
             <version>3.0.8</version>
