@@ -66,15 +66,15 @@
     <!-- Navbar Start-->
     <header class="nav-holder make-sticky">
       <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
-        <div class="container"><a href="#" class="navbar-brand home">
+        <div class="container"><a href=<c:url value="/"/> class="navbar-brand home">
                <img src="<c:url value="/img/logoDHCV.png"/>" class="d-none d-md-inline-block"/><span class="sr-only">Xemay DHCV</span></a>
           <button type="button" data-toggle="collapse" data-target="#navigation"
             class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i
               class="fa fa-align-justify"></i></button>
           <div id="navigation" class="navbar-collapse collapse">
             <ul class="nav navbar-nav ml-auto">
-              <li class="nav-item dropdown "><a href="javascript: void(0)" data-toggle="dropdown">Trang chủ <b
-                    class="caret"></b></a>
+               <li class="nav-item dropdown"><a href="<c:url value="/"/>">Trang chủ<b
+                class="caret"></b></a>
               </li>
               <li class="nav-item dropdown"><a href="" data-toggle="dropdown">Giới thiệu<b
                 class="caret"></b></a>
@@ -82,85 +82,19 @@
               <li class="nav-item dropdown"><a href="" data-toggle="dropdown">Tạp
                   chí xe<b class="caret"></b></a>
               <!-- ========== FULL WIDTH MEGAMENU ==================-->
-              <li class="nav-item dropdown menu-large"><a href="javascript: void(0)" data-toggle="dropdown"
-                  data-delay="200" class="dropdown-toggle">Cửa hàng<b class="caret"></b></a>
-                <ul class="dropdown-menu megamenu">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-6 col-lg-4">
-                        <h5>Hãng xe</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="index.html" class="nav-link">Honda</a></li>
-                          <li class="nav-item"><a href="index2.html" class="nav-link">Kawasaki</a></li>
-                          <li class="nav-item"><a href="index3.html" class="nav-link">Kymco</a></li>
-                          <li class="nav-item"><a href="index4.html" class="nav-link">Yamaha</a></li>
-                          <li class="nav-item"><a href="index5.html" class="nav-link">Suzuki</a></li>
-                          <li class="nav-item"><a href="index5.html" class="nav-link">SYM</a></li>
-                          <li class="nav-item"><a href="index5.html" class="nav-link">Piaggio</a></li>
-                        </ul>
-                        <h5>Loại xe</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="about.html" class="nav-link">Xe số</a></li>
-                          <li class="nav-item"><a href="team.html" class="nav-link">Xe tay ga</a></li>
-                          <li class="nav-item"><a href="team-member.html" class="nav-link">Xe côn tay</a></li>
-                          <li class="nav-item"><a href="services.html" class="nav-link">Xe máy điện</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-4">
-                        <h5>Khoảng giá</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="portfolio-2.html" class="nav-link">0 - 10 triệu</a></li>
-                          <li class="nav-item"><a href="portfolio-no-space-2.html" class="nav-link">10 triệu - 20 triệu
-                            </a></li>
-                          <li class="nav-item"><a href="portfolio-3.html" class="nav-link">20 triệu - 30 triệu</a></li>
-                          <li class="nav-item"><a href="portfolio-no-space-3.html" class="nav-link">30 triệu - 50 triệu
-                            </a></li>
-                          <li class="nav-item"><a href="portfolio-4.html" class="nav-link">trên 50 triệu</a></li>
-
-                        </ul>
-                        <h5>Dòng xe</h5>
-                        <ul class="list-unstyled mb-4">
-                          <li class="nav-item"><a href="customer-register.html" class="nav-link">Air Black</a>
-                          </li>
-                          <li class="nav-item"><a href="customer-orders.html" class="nav-link">Exciter</a></li>
-                          <li class="nav-item"><a href="customer-order.html" class="nav-link">Wave</a>
-                          </li>
-                          <li class="nav-item"><a href="customer-wishlist.html" class="nav-link">Winner</a></li>
-                          <li class="nav-item"><a href="customer-account.html" class="nav-link">Loại khác</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-4">
-                        <h5>Phân khối</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="packages.html" class="nav-link">110 cc</a></li>
-                          <li class="nav-item"><a href="packages.html" class="nav-link">150 cc</a></li>
-                          <li class="nav-item"><a href="packages.html" class="nav-link">175 cc</a></li>
-                        </ul>
-                        <h5>Phụ kiện</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="shop-category.html" class="nav-link">Mũ bảo hiểm
-                            </a></li>
-                          <li class="nav-item"><a href="shop-category-left.html" class="nav-link">Phụ kiện xe
-                            </a></li>
-                          <li class="nav-item"><a href="shop-category-full.html" class="nav-link">Bảo hiểm xe máy
-                            </a></li>
-                        </ul>
-                        <h5>Dịch vụ sau bán hàng</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="shop-basket.html" class="nav-link">Hướng dẫn sử dụng xe</a></li>
-                          <li class="nav-item"><a href="shop-checkout1.html" class="nav-link">Chính sách bảo hàng</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+              <li class="nav-item dropdown"><a href="<c:url value="/product"/>">Cửa hàng<b
+                class="caret"></b></a>
               </li>
               <!-- ========== Liên hệ dropdown ==================-->
+<<<<<<< HEAD
               <li class="nav-item dropdown"><a href="../jsp/contact.jsp" data-toggle="dropdown">Liên hệ<b
                     class="caret"></b></a>
 
                 <!-- ========== Thuê xe dropdown ==================-->
+=======
+               <li class="nav-item dropdown"><a href="<c:url value="/contact"/>">Liên hệ<b
+                class="caret"></b></a>
+>>>>>>> main
               </li>
 
               <!-- ========== Contact dropdown end ==================-->
