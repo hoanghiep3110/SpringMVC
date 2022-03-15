@@ -23,11 +23,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
     
     <definition name="product" extends="baseLayout">
          <put-attribute name="title" value="Sản phẩm" />
-          <put-attribute name="content" value="/WEB-INF/jsp/product.jsp"/>
+          <put-attribute name="content" value="/WEB-INF/jsp/product/index.jsp"/>
     </definition>
     <definition name="productdetail" extends="baseLayout">
          <put-attribute name="title" value="Chi tiết sản phẩm" />
-          <put-attribute name="content" value="/WEB-INF/jsp/productdetail.jsp"/>
+          <put-attribute name="content" value="/WEB-INF/jsp/product/detail.jsp"/>
     </definition>
     <definition name="contact" extends="baseLayout">
          <put-attribute name="title" value="Liên hệ" />
