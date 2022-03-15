@@ -76,25 +76,20 @@
                <li class="nav-item dropdown"><a href="<c:url value="/"/>">Trang chủ<b
                 class="caret"></b></a>
               </li>
-              <li class="nav-item dropdown"><a href="" data-toggle="dropdown">Giới thiệu<b
+              <li class="nav-item dropdown"><a href="<c:url value="/"/>">Giới thiệu<b
                 class="caret"></b></a>
               </li>
-              <li class="nav-item dropdown"><a href="" data-toggle="dropdown">Tạp
-                  chí xe<b class="caret"></b></a>
+              <li class="nav-item dropdown"><a href="<c:url value="/blog"/>">Tạp chí xe<b
+                class="caret"></b></a>
+              </li>
               <!-- ========== FULL WIDTH MEGAMENU ==================-->
               <li class="nav-item dropdown"><a href="<c:url value="/product"/>">Cửa hàng<b
                 class="caret"></b></a>
               </li>
               <!-- ========== Liên hệ dropdown ==================-->
-<<<<<<< HEAD
-              <li class="nav-item dropdown"><a href="../jsp/contact.jsp" data-toggle="dropdown">Liên hệ<b
-                    class="caret"></b></a>
-
-                <!-- ========== Thuê xe dropdown ==================-->
-=======
                <li class="nav-item dropdown"><a href="<c:url value="/contact"/>">Liên hệ<b
                 class="caret"></b></a>
->>>>>>> main
+
               </li>
 
               <!-- ========== Contact dropdown end ==================-->
