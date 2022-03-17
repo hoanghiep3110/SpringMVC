@@ -21,7 +21,7 @@ public class HomeController {
     }
     
     @RequestMapping("/about")
-    public String About() {
+    public String about() {
         return "about";
     }
     
@@ -32,7 +32,7 @@ public class HomeController {
     
     @RequestMapping("/product-detail")
     public String productdetail() { 
-        return "productdetail";
+        return "detail";
     }
     
     @RequestMapping("/login")
@@ -41,7 +41,12 @@ public class HomeController {
     }
     
     @RequestMapping("/contact")
-    public String Contact() { 
+    public String contact() { 
         return "contact";
+    }
+    
+    @RequestMapping("/blog")
+    public String blog() { 
+        return "blog";
     }
 }

@@ -77,7 +77,7 @@
                     </li>
                     <li class="nav-item dropdown"><a href="<c:url value="/about"/>">Giới thiệu<b class="caret"></b></a>
                     </li>
-                    <li class="nav-item dropdown"><a href="" data-toggle="dropdown">Tạp chí xe<b class="caret"></b></a>
+                    <li class="nav-item dropdown"><a href="<c:url value="/blog"/>">Tạp chí xe<b class="caret"></b></a>
                         <!-- ========== FULL WIDTH MEGAMENU ==================-->
                     <li class="nav-item dropdown"><a href="<c:url value="/product"/>">Cửa hàng<b class="caret"></b></a>
                     </li>
