@@ -3,15 +3,15 @@
     Created on : Mar 9, 2022, 12:09:59 PM
     Author     : ACER
 --%>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>
-            <tiles:insertAttribute name="title"/>
+            <decorator:title default="Trang chu" />
         </title>
         <link rel="stylesheet" href="<c:url value="/vendor/bootstrap/css/bootstrap.min.css"/>">
     
@@ -33,13 +33,14 @@
     <link rel="shortcut icon" href="<c:url value="/img/tomos.png"/>">
     </head>
     <body>
-        <!-- Header -->
-        <tiles:insertAttribute name="header"/>
-        <!-- Content -->
-        <tiles:insertAttribute name="content"/>
+        <!-- header -->
+        <%@ include file="/WEB-INF/layout/header.jsp"%>
         
-        <!-- Footer -->
-        <tiles:insertAttribute name="footer"/>
+        <!-- content -->
+        <decorator:body />
+        
+        <!-- footer -->
+        <%@ include file="/WEB-INF/layout/footer.jsp"%>
         
     <script src="<c:url value="/vendor/popper.js/umd/popper.min.js"/>"></script>
     <script src="<c:url value="/vendor/bootstrap/js/bootstrap.min.js"/>"></script>

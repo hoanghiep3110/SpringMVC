@@ -19,4 +19,29 @@ public class HomeController {
     public String index() { 
         return "index";
     }
+    
+    @RequestMapping("/about")
+    public String About() {
+        return "about";
+    }
+    
+    @RequestMapping("/product")
+    public String product() { 
+        return "product";
+    }
+    
+    @RequestMapping("/product-detail")
+    public String productdetail() { 
+        return "productdetail";
+    }
+    
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+    
+    @RequestMapping("/contact")
+    public String Contact() { 
+        return "contact";
+    }
 }
