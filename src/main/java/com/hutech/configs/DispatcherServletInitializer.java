@@ -4,6 +4,9 @@
  */
 package com.hutech.configs;
 
+import com.opensymphony.sitemesh.webapp.SiteMeshFilter;
+import javax.servlet.Filter;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -14,9 +17,7 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{
-            TilesConfig.class
-        };
+        return new Class[]{};
     }
 
     @Override
@@ -31,4 +32,10 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
         return new String[]{"/"};
     }
     
+    @Override
+    protected Filter[] getServletFilters() {
+        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+        characterEncodingFilter.setEncoding("UTF-8");
+        return new Filter[]{characterEncodingFilter, new SiteMeshFilter()};
+    }
 }

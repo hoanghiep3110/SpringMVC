@@ -5,12 +5,14 @@
 package com.hutech.model;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,7 +23,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  *
@@ -35,8 +36,8 @@ public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "IdOrder")
     private Integer idOrder;
     @Basic(optional = false)
@@ -58,11 +59,8 @@ public class Order implements Serializable {
     @NotNull
     @Column(name = "Status")
     private short status;
-    @Size(max = 100)
-    @Column(name = "MomoPaymentID")
-    private String momoPaymentID;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "order1")
-    private List<OrderDetail> orderDetailList;
+    private Collection<OrderDetail> orderDetailCollection;
     @JoinColumn(name = "IdDiscount", referencedColumnName = "IdDiscount")
     @ManyToOne
     private Discount idDiscount;
@@ -133,20 +131,12 @@ public class Order implements Serializable {
         this.status = status;
     }
 
-    public String getMomoPaymentID() {
-        return momoPaymentID;
+    public Collection<OrderDetail> getOrderDetailCollection() {
+        return orderDetailCollection;
     }
 
-    public void setMomoPaymentID(String momoPaymentID) {
-        this.momoPaymentID = momoPaymentID;
-    }
-
-    public List<OrderDetail> getOrderDetailList() {
-        return orderDetailList;
-    }
-
-    public void setOrderDetailList(List<OrderDetail> orderDetailList) {
-        this.orderDetailList = orderDetailList;
+    public void setOrderDetailCollection(Collection<OrderDetail> orderDetailCollection) {
+        this.orderDetailCollection = orderDetailCollection;
     }
 
     public Discount getIdDiscount() {

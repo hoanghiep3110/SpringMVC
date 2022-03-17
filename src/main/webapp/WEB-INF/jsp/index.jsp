@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <section style="background: url('img/photogrid.jpg') center center repeat; background-size: cover;"
          class="relative-positioned">
     <!-- Carousel Start-->
@@ -170,7 +171,8 @@
                                                             <h3><a href="#" class="color-white">Thông tin chi tiết</a></h3>
                                                         </div>
                                                         <div class="text">
-                                                           
+                                                            <p class="d-sm-none">Pellentesque habitant morbi tristique senectus et netus et
+                                                                malesuada</p>
                                                             <p class="buttons"><a href="portfolio-detail.html"
                                                                                   class="btn btn-template-outlined-white">View</a><a href="#"
                                                                                   class="btn btn-template-outlined-white">Mua ngay</a></p>
@@ -249,7 +251,6 @@
                                                             <h3><a href="#" class="color-white">Thông tin chi tiết</a></h3>
                                                         </div>
                                                         <div class="text">
-
                                                             <p class="buttons"><a href="portfolio-detail.html"
                                                                                   class="btn btn-template-outlined-white">View</a><a href="#"
                                                                                   class="btn btn-template-outlined-white">Mua ngay</a></p>

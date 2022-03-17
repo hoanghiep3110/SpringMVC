@@ -5,11 +5,13 @@
 package com.hutech.model;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
@@ -33,8 +35,8 @@ public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "IdProduct")
     private Integer idProduct;
     @Basic(optional = false)
@@ -63,11 +65,9 @@ public class Product implements Serializable {
     @ManyToOne(optional = false)
     private Typecar idType;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idProduct")
-    private List<ImgProduct> imgProductList;
+    private Collection<ImgProduct> imgProductCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
-    private List<OrderDetail> orderDetailList;
-    @OneToMany(mappedBy = "idProduct")
-    private List<Rent> rentList;
+    private Collection<OrderDetail> orderDetailCollection;
 
     public Product() {
     }
@@ -140,28 +140,20 @@ public class Product implements Serializable {
         this.idType = idType;
     }
 
-    public List<ImgProduct> getImgProductList() {
-        return imgProductList;
+    public Collection<ImgProduct> getImgProductCollection() {
+        return imgProductCollection;
     }
 
-    public void setImgProductList(List<ImgProduct> imgProductList) {
-        this.imgProductList = imgProductList;
+    public void setImgProductCollection(Collection<ImgProduct> imgProductCollection) {
+        this.imgProductCollection = imgProductCollection;
     }
 
-    public List<OrderDetail> getOrderDetailList() {
-        return orderDetailList;
+    public Collection<OrderDetail> getOrderDetailCollection() {
+        return orderDetailCollection;
     }
 
-    public void setOrderDetailList(List<OrderDetail> orderDetailList) {
-        this.orderDetailList = orderDetailList;
-    }
-
-    public List<Rent> getRentList() {
-        return rentList;
-    }
-
-    public void setRentList(List<Rent> rentList) {
-        this.rentList = rentList;
+    public void setOrderDetailCollection(Collection<OrderDetail> orderDetailCollection) {
+        this.orderDetailCollection = orderDetailCollection;
     }
 
     @Override

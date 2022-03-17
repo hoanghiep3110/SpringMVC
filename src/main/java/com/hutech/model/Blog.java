@@ -5,11 +5,13 @@
 package com.hutech.model;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
@@ -33,8 +35,8 @@ public class Blog implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "IdBlog")
     private Integer idBlog;
     @Basic(optional = false)
@@ -60,7 +62,7 @@ public class Blog implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateCreate;
     @OneToMany(mappedBy = "idBlog")
-    private List<ImgBlog> imgBlogList;
+    private Collection<ImgBlog> imgBlogCollection;
 
     public Blog() {
     }
@@ -125,12 +127,12 @@ public class Blog implements Serializable {
         this.dateCreate = dateCreate;
     }
 
-    public List<ImgBlog> getImgBlogList() {
-        return imgBlogList;
+    public Collection<ImgBlog> getImgBlogCollection() {
+        return imgBlogCollection;
     }
 
-    public void setImgBlogList(List<ImgBlog> imgBlogList) {
-        this.imgBlogList = imgBlogList;
+    public void setImgBlogCollection(Collection<ImgBlog> imgBlogCollection) {
+        this.imgBlogCollection = imgBlogCollection;
     }
 
     @Override

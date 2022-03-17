@@ -5,11 +5,13 @@
 package com.hutech.model;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -30,8 +32,8 @@ public class UserRole implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "IdRole")
     private Integer idRole;
     @Basic(optional = false)
@@ -40,7 +42,7 @@ public class UserRole implements Serializable {
     @Column(name = "RoleName")
     private String roleName;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idRole")
-    private List<User> userList;
+    private Collection<User> userCollection;
 
     public UserRole() {
     }
@@ -70,12 +72,12 @@ public class UserRole implements Serializable {
         this.roleName = roleName;
     }
 
-    public List<User> getUserList() {
-        return userList;
+    public Collection<User> getUserCollection() {
+        return userCollection;
     }
 
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
+    public void setUserCollection(Collection<User> userCollection) {
+        this.userCollection = userCollection;
     }
 
     @Override
