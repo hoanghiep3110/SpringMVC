@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-5">
               <ul class="breadcrumb d-flex justify-content-end">
-                <li class="breadcrumb-item"><a href="<c:url value="/"/>">Home</a></li>
+                <li class="breadcrumb-item"><a href="<c:url value="/"/>">TRANG CHU</a></li>
                 <li class="breadcrumb-item active">Portfolio - 3 columns</li>
               </ul>
             </div>

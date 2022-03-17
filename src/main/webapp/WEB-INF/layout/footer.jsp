@@ -11,9 +11,9 @@
             <div class="container">
               <div class="row">
                 <div class="col-lg-8 text-center p-3">
-                  <h3>bạn cần tìm một chiếc xe cho mình?</h3>
+                  <h3>Bạn cần tìm một chiếc xe cho mình?</h3>
                 </div>
-                <div class="col-lg-4 text-center p-3"> <a href="#" class="btn btn-template-outlined-white">Mua ngay</a></div>
+                <div class="col-lg-4 text-center p-3"> <a href="product.html" class="btn btn-template-outlined-white">Mua ngay</a></div>
               </div>
             </div>
           </div>
@@ -63,8 +63,8 @@
                 <p class="text-lowercase">Địa chỉ: 32 Hai bà Trưng, phường 12,<br>Quận 10,
                   TP. Hồ Chí Minh<br></p>
                 <hr>
-                <p class="text-lowercase"><strong>Email: </strong>contact@xemaydhcv.com<br>Website: http://xemaydhcv.com/
-                  <br>Thời gian làm việc: 8:00-21:00<br>
+                <p class="text-lowercase"><strong>Email: </strong>contact@xemaydhcv.com<br><strong>Website: </strong> http://xemaydhcv.com/
+                    <br><strong>Thoi gian: </strong> 8:00-21:00<br>
                 </p>
                 <hr class="d-block d-lg-none">
               </div>
@@ -81,7 +81,7 @@
             <div class="container">
               <div class="row">
                 <div class="text-center col-lg-12 text-center-md">
-                  <p>&copy; 2020 Copyright: XemayDHCV.com</p>
+                  <p>&copy; 2022 Copyright: XemayDHCV.com</p>
                 </div>
               </div>
             </div>

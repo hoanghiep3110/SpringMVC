@@ -67,27 +67,22 @@
     <header class="nav-holder make-sticky">
       <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
         <div class="container"><a href=<c:url value="/"/> class="navbar-brand home">
-               <img src="<c:url value="/img/logoDHCV.png"/>" class="d-none d-md-inline-block"/><span class="sr-only">Xemay DHCV</span></a>
+               <img src="<c:url value="/img/XEMAYH2C.png"/>" class="d-none d-md-inline-block"/><span class="sr-only">Xemay DHCV</span></a>
           <button type="button" data-toggle="collapse" data-target="#navigation"
             class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i
               class="fa fa-align-justify"></i></button>
           <div id="navigation" class="navbar-collapse collapse">
             <ul class="nav navbar-nav ml-auto">
-               <li class="nav-item dropdown"><a href="<c:url value="/"/>">Trang chủ<b
-                class="caret"></b></a>
+               <li class="nav-item dropdown"><a href="<c:url value="/"/>">Trang chủ<b class="caret"></b></a>
               </li>
-              <li class="nav-item dropdown"><a href="" data-toggle="dropdown">Giới thiệu<b
-                class="caret"></b></a>
+              <li class="nav-item dropdown"><a href="<c:url value="/about"/>">Giới thiệu<b class="caret"></b></a>
               </li>
-              <li class="nav-item dropdown"><a href="" data-toggle="dropdown">Tạp
-                  chí xe<b class="caret"></b></a>
+              <li class="nav-item dropdown"><a href="" data-toggle="dropdown">Tạp chí xe<b class="caret"></b></a>
               <!-- ========== FULL WIDTH MEGAMENU ==================-->
-              <li class="nav-item dropdown"><a href="<c:url value="/product"/>">Cửa hàng<b
-                class="caret"></b></a>
+              <li class="nav-item dropdown"><a href="<c:url value="/product"/>">Cửa hàng<b class="caret"></b></a>
               </li>
               <!-- ========== Liên hệ dropdown ==================-->
-               <li class="nav-item dropdown"><a href="<c:url value="/contact"/>">Liên hệ<b
-                class="caret"></b></a>
+               <li class="nav-item dropdown"><a href="<c:url value="/contact"/>">Liên hệ<b class="caret"></b></a>
               </li>
 
               <!-- ========== Contact dropdown end ==================-->

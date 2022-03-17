@@ -6,12 +6,13 @@ package com.hutech.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
@@ -20,8 +21,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -37,8 +36,8 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "IdUser")
     private Integer idUser;
     @Basic(optional = false)
@@ -73,9 +72,6 @@ public class User implements Serializable {
     @Size(min = 1, max = 12)
     @Column(name = "Phone")
     private String phone;
-    @Column(name = "DayCreate")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dayCreate;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 60)
@@ -249,14 +245,12 @@ public class User implements Serializable {
     @Column(name = "max_statement_time")
     private BigDecimal maxStatementTime;
     @OneToMany(mappedBy = "idUser")
-    private List<Rent> rentList;
-    @OneToMany(mappedBy = "idUser")
-    private List<Contact> contactList;
+    private Collection<Contact> contactCollection;
     @JoinColumn(name = "IdRole", referencedColumnName = "IdRole")
     @ManyToOne(optional = false)
     private UserRole idRole;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUser")
-    private List<Order> order1List;
+    private Collection<Order> order1Collection;
 
     public User() {
     }
@@ -343,14 +337,6 @@ public class User implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public Date getDayCreate() {
-        return dayCreate;
-    }
-
-    public void setDayCreate(Date dayCreate) {
-        this.dayCreate = dayCreate;
     }
 
     public String getHost() {
@@ -729,20 +715,12 @@ public class User implements Serializable {
         this.maxStatementTime = maxStatementTime;
     }
 
-    public List<Rent> getRentList() {
-        return rentList;
+    public Collection<Contact> getContactCollection() {
+        return contactCollection;
     }
 
-    public void setRentList(List<Rent> rentList) {
-        this.rentList = rentList;
-    }
-
-    public List<Contact> getContactList() {
-        return contactList;
-    }
-
-    public void setContactList(List<Contact> contactList) {
-        this.contactList = contactList;
+    public void setContactCollection(Collection<Contact> contactCollection) {
+        this.contactCollection = contactCollection;
     }
 
     public UserRole getIdRole() {
@@ -753,12 +731,12 @@ public class User implements Serializable {
         this.idRole = idRole;
     }
 
-    public List<Order> getOrder1List() {
-        return order1List;
+    public Collection<Order> getOrder1Collection() {
+        return order1Collection;
     }
 
-    public void setOrder1List(List<Order> order1List) {
-        this.order1List = order1List;
+    public void setOrder1Collection(Collection<Order> order1Collection) {
+        this.order1Collection = order1Collection;
     }
 
     @Override

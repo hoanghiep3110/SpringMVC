@@ -20,14 +20,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
          <put-attribute name="title" value="Trang chủ" />
           <put-attribute name="content" value="/WEB-INF/jsp/index.jsp"/>
     </definition>
-    
     <definition name="product" extends="baseLayout">
          <put-attribute name="title" value="Sản phẩm" />
-          <put-attribute name="content" value="/WEB-INF/jsp/product.jsp"/>
+          <put-attribute name="content" value="/WEB-INF/jsp/product/product.jsp"/>
     </definition>
     <definition name="productdetail" extends="baseLayout">
          <put-attribute name="title" value="Chi tiết sản phẩm" />
-          <put-attribute name="content" value="/WEB-INF/jsp/productdetail.jsp"/>
+          <put-attribute name="content" value="/WEB-INF/jsp/product/productdetail.jsp"/>
+    </definition>
+    <definition name="about" extends="baseLayout">
+         <put-attribute name="title" value="Giới thiệu" />
+          <put-attribute name="content" value="/WEB-INF/jsp/about.jsp"/>
+    </definition>
+    <definition name="login" extends="baseLayout">
+         <put-attribute name="title" value="Ðang nhap" />
+          <put-attribute name="content" value="/WEB-INF/jsp/customer/login.jsp"/>
     </definition>
     <definition name="contact" extends="baseLayout">
          <put-attribute name="title" value="Liên hệ" />

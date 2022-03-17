@@ -5,11 +5,13 @@
 package com.hutech.model;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -30,8 +32,8 @@ public class Brand implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "IdBrand")
     private Integer idBrand;
     @Basic(optional = false)
@@ -43,7 +45,7 @@ public class Brand implements Serializable {
     @Column(name = "ImgBrand")
     private String imgBrand;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idBrand")
-    private List<Product> productList;
+    private Collection<Product> productCollection;
 
     public Brand() {
     }
@@ -81,12 +83,12 @@ public class Brand implements Serializable {
         this.imgBrand = imgBrand;
     }
 
-    public List<Product> getProductList() {
-        return productList;
+    public Collection<Product> getProductCollection() {
+        return productCollection;
     }
 
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
+    public void setProductCollection(Collection<Product> productCollection) {
+        this.productCollection = productCollection;
     }
 
     @Override

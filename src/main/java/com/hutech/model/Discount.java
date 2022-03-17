@@ -5,10 +5,12 @@
 package com.hutech.model;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -29,8 +31,8 @@ public class Discount implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "IdDiscount")
     private Integer idDiscount;
     @Basic(optional = false)
@@ -47,7 +49,7 @@ public class Discount implements Serializable {
     @Column(name = "Status")
     private boolean status;
     @OneToMany(mappedBy = "idDiscount")
-    private List<Order> order1List;
+    private Collection<Order> order1Collection;
 
     public Discount() {
     }
@@ -95,12 +97,12 @@ public class Discount implements Serializable {
         this.status = status;
     }
 
-    public List<Order> getOrder1List() {
-        return order1List;
+    public Collection<Order> getOrder1Collection() {
+        return order1Collection;
     }
 
-    public void setOrder1List(List<Order> order1List) {
-        this.order1List = order1List;
+    public void setOrder1Collection(Collection<Order> order1Collection) {
+        this.order1Collection = order1Collection;
     }
 
     @Override

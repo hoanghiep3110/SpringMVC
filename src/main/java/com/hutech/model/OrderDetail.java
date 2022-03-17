@@ -85,11 +85,11 @@ public class OrderDetail implements Serializable {
         this.price = price;
     }
 
-    public Order getOrder1() {
+    public Order getOrder() {
         return order1;
     }
 
-    public void setOrder1(Order order1) {
+    public void setOrder(Order order1) {
         this.order1 = order1;
     }
 
