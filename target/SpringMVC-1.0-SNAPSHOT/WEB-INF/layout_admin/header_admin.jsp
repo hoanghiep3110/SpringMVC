@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
                 <div class="navbar-header">
-                    <a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="#" class="navbar-brand">
+                    <a id="toggle-btn" href="#" class="menu-btn"><i class="fa-solid fa-bars"></i></a><a href="#" class="navbar-brand">
                         <div class="brand-text d-none d-md-inline-block"><span></span><strong class="text-primary">Dashboard</strong></div>
                     </a>
                 </div>

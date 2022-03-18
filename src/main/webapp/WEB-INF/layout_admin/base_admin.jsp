@@ -16,29 +16,26 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all,follow">
+
         <!-- Bootstrap CSS-->
-        <link rel="stylesheet" href="/admin/vendor/bootstrap/css/bootstrap.min.css">
+        <link href="<c:url value = "/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet"/>
         <!-- Font Awesome CSS-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-              integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-              crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Fontastic Custom icon font-->
-        <link rel="stylesheet" href="/admin/css/fontastic.css">
+        <link href="<c:url value="/resource/admincontent/css/fontastic.css"/>" rel="stylesheet"/>
         <!-- Google fonts - Roboto -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
         <!-- jQuery Circle-->
-        <link rel="stylesheet" href="/admin/css/grasp_mobile_progress_circle-1.0.0.min.css">
+        <link href="<c:url value="/resource/admincontent/css/grasp_mobile_progress_circle-1.0.0.min.css" />" rel="stylesheet"/>
         <!-- Custom Scrollbar-->
-        <link rel="stylesheet" href="/admin/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+        <link href="<c:url value="/resource/admincontent/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />" rel="stylesheet"/>
         <!-- theme stylesheet-->
-        <link rel="stylesheet" href="/admin/css/style.default.css" id="theme-stylesheet">
-        <script src="/admin/vendor/jquery/jquery.min.js"></script>
-        <!-- Custom stylesheet - for your changes-->
+        <link rel="stylesheet" href="<c:url value="/resource/admincontent/css/style.default.css"/>" id="theme-stylesheet"/>
+        <script src="<c:url value="/resource/admincontent/vendor/jquery/jquery.min.js"/>" type="text/javascript"></script>
 
-
-        <link href="/admin/css/custom.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+        <link href="<c:url value="/resource/admincontent/css/custom.css"/>" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
         <title>
             <decorator:title default="Trang admin" />
@@ -61,27 +58,24 @@
                 </div>
                 <!-- Sidebar Navigation Menus-->
                 <div class="main-menu">
+                    <h5 class="sidenav-heading">DANH MỤC</h5>
                     <ul id="side-main-menu" class="side-menu list-unstyled">
 
-                        <li><a href="@Url.Action("Index","PRODUCTs")"> <i class="icon-picture"></i>Sản phẩm</a></li>
-                        <li><a href="@Url.Action("Index","ORDERs")"> <i class="icon-check"></i>Đơn hàng</a></li>
-                        <li><a href="@Url.Action("Index","EMPLOYEEs")"> <i class="icon-user"></i>Người dùng</a></li>
-                        <li><a href="@Url.Action("Index","CONTACTs")"> <i class="icon-grid"></i>Liên hệ</a></li>
-                        <li><a href="@Url.Action("Index","BLOGs")"> <i class="icon-interface-windows"></i>Bài viết</a></li>
-                        <li><a href="@Url.Action("Index","TYPECARs")"> <i class="icon-list-1"></i>Loại xe</a></li>
-                        <li><a href="@Url.Action("Index","BRANDs")"> <i class="icon-list"></i>Hãng xe</a></li>
-                        <li><a href="@Url.Action("Index","RENTs")"> <i class="icon-presentation"></i>Thuê xe</a></li>
-                        <li><a href="@Url.Action("Index","DISCOUNTs")"> <i class="icon-line-chart"></i>Khuyến mãi</a></li>
-                        <li><a href="@Url.Action("Index","CATEGORY_BLOG")"> <i class="icon-pencil-case"></i>Thể loại bài viết</a></li>
-
+                        <li><a href="<c:url value="/admin/product"/>"><i class="fa-solid fa-motorcycle"></i>Sản phẩm</a></li>
+                        <li><a href="<c:url value="/admin/order"/>"><i class="fa-solid fa-clipboard-check"></i>Đơn hàng</a></li> 
+                        <li><a href="<c:url value="/admin/customer"/>")"><i class="fa-solid fa-user-check"></i>Người dùng</a></li>
+                        <li><a href="<c:url value="/admin/contact"/>"><i class="fa-solid fa-envelopes-bulk"></i>Liên hệ</a></li>
+                        <li><a href="<c:url value="/admin/blog"/>"><i class="fa-solid fa-signs-post"></i>Bài viết</a></li>
+                        <li><a href="<c:url value="/admin/typecar"/>")"><i class="fa-solid fa-motorcycle"></i>Loại xe</a></li>
+                        <li><a href="<c:url value="/admin/brand"/>"><i class="fa-solid fa-copyright"></i>Hãng xe</a></li>
+                        <li><a href="<c:url value="/admin/discount"/>"><i class="fa-solid fa-percent"></i>Khuyến mãi</a></li>
+                        <li><a href="<c:url value="/admin/categoryblog"/>"><i class="fa-brands fa-blogger"></i>Thể loại bài viết</a></li>                
                     </ul>
                 </div>
                 <div class="admin-menu">
-                    <h5 class="sidenav-heading">Thông tin</h5>
+                    <h5 class="sidenav-heading">THAO TÁC</h5>
                     <ul id="side-admin-menu" class="side-menu list-unstyled">
-                        <li> <a href="@Url.Action("Logout","Auth")"> <i class="icon-screen"> </i>Đăng xuất</a></li>
-                        <li> <a href="@Url.Action("Index","Info")"> <i class="icon-flask"> </i>Thông tin cá nhân</a></li>
-
+                        <li> <a href="@Url.Action("Logout","Auth")"> <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
                     </ul>
                 </div>
             </div>
@@ -98,14 +92,14 @@
 
         </div>
         <!-- JavaScript files-->
-        <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="/admin/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
-        <script src="/admin/vendor/jquery.cookie/jquery.cookie.js"></script>
-        <script src="/admin/vendor/jquery-validation/jquery.validate.min.js"></script>
+        <script src="<c:url value ="/resource/admincontent/vendor/bootstrap/js/bootstrap.bundle.min.js"/>" type="text/javascript" ></script>
+        <script src="<c:url value="/resource/admincontent/js/grasp_mobile_progress_circle-1.0.0.min.js"/>" type="text/javascript"></script>
+        <script src="<c:url value="/resource/admincontent/vendor/jquery.cookie/jquery.cookie.js"/>" type="text/javascript"></script>
+        <script src="<c:url value="/resource/admincontent/vendor/jquery-validation/jquery.validate.min.js"/>" type="text/javascript"></script>
         <!--<script src="/Areas/Admin/Helpers/ckeditor/ckeditor.js"></script>-->
-        <script src="/admin/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="<c:url value="/resource/admincontent/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"/>" type="text/javascript"></script>
         <!-- Main File-->
-        <script src="/admin/js/front.js"></script>
+        <script src="<c:url value="/resource/admincontent/js/front.js"/>" type="text/javascript"></script>
     </body>
 </html>
 
