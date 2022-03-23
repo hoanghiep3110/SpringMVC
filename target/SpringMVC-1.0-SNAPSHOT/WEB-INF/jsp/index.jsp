@@ -124,13 +124,13 @@
         <div class="row showcase text-center">
             <div class="col-md-3 col-sm-6">
                 <div class="item">
-                    <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-align-justify"></i></div>
+                    <div class="icon-outlined icon-sm icon-thin"><i class="fa-solid fa-star"></i></div>
                     <h4><span class="h1 counter">3</span><br> Kinh nghiệm</h4>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="item">
-                    <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-align-justify"></i></div>
+                    <div class="icon-outlined icon-sm icon-thin"><i class="fa-solid fa-heart"></i></div>
                     <h4><span class="h1 counter">90</span><Span class="h1">%</Span><br>Khách hàng hài lòng</h4>
                 </div>
             </div>

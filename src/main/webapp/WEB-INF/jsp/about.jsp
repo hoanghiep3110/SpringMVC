@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-5">
                 <ul class="breadcrumb d-flex justify-content-end">
-                    <li class="breadcrumb-item"><a href="<c:url value="/"/>">TRANG CHU</a></li>
+                    <li class="breadcrumb-item"><a href="<c:url value="/"/>">TRANG CHỦ</a></li>
                     <li class="breadcrumb-item active">GIỚI THIỆU</li>
                 </ul>
             </div>
@@ -235,17 +235,17 @@
 <section class="bar background-pentagon no-mb">
     <div class="container">
         <h2 style="text-align:center"><i>Những con số chúng tôi tự hào</i></h2>
-        <br />
-        <div class="row showcase text-center my-3">
+        <br>
+        <div class="row showcase text-center">
             <div class="col-md-3 col-sm-6">
                 <div class="item">
-                    <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-align-justify"></i></div>
+                    <div class="icon-outlined icon-sm icon-thin"><i class="fa-solid fa-star"></i></div>
                     <h4><span class="h1 counter">3</span><br> Kinh nghiệm</h4>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="item">
-                    <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-align-justify"></i></div>
+                    <div class="icon-outlined icon-sm icon-thin"><i class="fa-solid fa-heart"></i></div>
                     <h4><span class="h1 counter">90</span><Span class="h1">%</Span><br>Khách hàng hài lòng</h4>
                 </div>
             </div>
@@ -261,6 +261,7 @@
                     <h4><span class="h1 counter">10232</span><br>Đơn hàng</h4>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

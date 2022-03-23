@@ -258,6 +258,15 @@ public class User implements Serializable {
     public User(Integer idUser) {
         this.idUser = idUser;
     }
+    
+    public User(String fullName, String email, String username, String password, String address, String phone){
+        this.fullName = fullName;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.address = address;
+        this.phone = phone;
+    }
 
     public User(Integer idUser, String fullName, String email, String username, String password, String address, String phone, String host, String user, String sslCipher, String x509Issuer, String x509Subject, long maxQuestions, long maxUpdates, long maxConnections, long maxUserConnections, String plugin, String authenticationString, String passwordExpired, String defaultRole, BigDecimal maxStatementTime) {
         this.idUser = idUser;

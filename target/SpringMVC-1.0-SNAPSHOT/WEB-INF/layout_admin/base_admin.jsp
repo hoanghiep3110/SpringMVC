@@ -51,7 +51,7 @@
                     <!-- User Info-->
                     <div class="sidenav-header-inner text-center">
 
-                        <h2 class="h5"><%= session.getAttribute("username")%></h2>
+                        <h2 class="h5"><%= session.getAttribute("adminName")%></h2>
                     </div>
                     <!-- Small Brand information, appears on minimized sidebar-->
                     <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
@@ -75,7 +75,7 @@
                 <div class="admin-menu">
                     <h5 class="sidenav-heading">THAO TÁC</h5>
                     <ul id="side-admin-menu" class="side-menu list-unstyled">
-                        <li> <a href="@Url.Action("Logout","Auth")"> <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+                        <li> <a href="<c:url value ="/admin/logout"/>" ><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
                     </ul>
                 </div>
             </div>

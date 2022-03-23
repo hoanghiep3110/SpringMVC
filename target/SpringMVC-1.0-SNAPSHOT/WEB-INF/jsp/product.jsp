@@ -10,12 +10,12 @@
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
-                <h1 class="h2">Portfolio - 3 columns</h1>
+                <h1 class="h2">SẢN PHẨM</h1>
             </div>
             <div class="col-md-5">
                 <ul class="breadcrumb d-flex justify-content-end">
-                    <li class="breadcrumb-item"><a href="<c:url value="/"/>">Home</a></li>
-                    <li class="breadcrumb-item active">Portfolio - 3 columns</li>
+                    <li class="breadcrumb-item"><a href="<c:url value="/"/>">TRANG CHỦ</a></li>
+                    <li class="breadcrumb-item active">SẢN PHẨM</li>
                 </ul>
             </div>
         </div>
@@ -179,37 +179,6 @@
             </div>
         </section>
     </div>
-    <section class="bar background-pentagon no-mb">
-        <div class="container">
-            <div class="row showcase text-center">
-                <div class="col-md-3 col-sm-6">
-                    <div class="item">
-                        <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-align-justify"></i></div>
-                        <h4><span class="h1 counter">3</span><br> Kinh nghiệm</h4>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="item">
-                        <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-align-justify"></i></div>
-                        <h4><span class="h1 counter">90</span><Span class="h1">%</Span><br>Khách hàng hài lòng</h4>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="item">
-                        <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-users"></i></div>
-                        <h4><span class="h1 counter">7567</span><br>Khách hàng</h4>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="item">
-                        <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-copy"></i></div>
-                        <h4><span class="h1 counter">10232</span><br>Đơn hàng</h4>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
     <section class="bar bg-gray no-mb">
         <div class="container">
             <div class="row">
@@ -230,6 +199,37 @@
                         <li class="item"><img src="img/honda.svg" alt="" class="img-fluid"></li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="bar background-pentagon no-mb">
+        <div class="container">
+            <div class="row showcase text-center">
+                <div class="col-md-3 col-sm-6">
+                    <div class="item">
+                        <div class="icon-outlined icon-sm icon-thin"><i class="fa-solid fa-star"></i></div>
+                        <h4><span class="h1 counter">3</span><br> Kinh nghiệm</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="item">
+                        <div class="icon-outlined icon-sm icon-thin"><i class="fa-solid fa-heart"></i></div>
+                        <h4><span class="h1 counter">90</span><Span class="h1">%</Span><br>Khách hàng hài lòng</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="item">
+                        <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-users"></i></div>
+                        <h4><span class="h1 counter">7567</span><br>Khách hàng</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="item">
+                        <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-copy"></i></div>
+                        <h4><span class="h1 counter">10232</span><br>Đơn hàng</h4>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

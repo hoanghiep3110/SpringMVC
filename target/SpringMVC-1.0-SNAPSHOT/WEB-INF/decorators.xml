@@ -13,6 +13,7 @@
     <decorator name="adminLogin" page="jsp/admin/login.jsp">
         <pattern>/admin</pattern>
         <pattern>/admin/</pattern>
+        <pattern>/admin/login</pattern>
     </decorator>
      
 </decorators>
