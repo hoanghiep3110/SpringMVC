@@ -24,20 +24,15 @@ public class HomeController {
     public String about() {
         return "about";
     }
-    
-    @RequestMapping("/product")
-    public String product() { 
-        return "product";
-    }
-    
-    @RequestMapping("/product-detail")
-    public String productdetail() { 
-        return "detail";
-    }
-    
+  
     @RequestMapping("/login")
     public String login() {
         return "login";
+    }
+    
+    @RequestMapping("/register")
+    public String register() {
+        return "register";
     }
     
     @RequestMapping("/contact")

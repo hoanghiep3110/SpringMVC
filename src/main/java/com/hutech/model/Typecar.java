@@ -54,9 +54,11 @@ public class Typecar implements Serializable {
         this.idType = idType;
     }
 
-    public Typecar(Integer idType, String nameType) {
+    public Typecar(Integer idType, String nameType,String imgType,Collection<Product> productCollection) {
         this.idType = idType;
         this.nameType = nameType;
+         this.imgType = imgType;
+        this.productCollection= productCollection;
     }
 
     public Integer getIdType() {

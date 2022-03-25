@@ -20,19 +20,19 @@ public class JDBCConnection {
     private static String USER_NAME = "root";
     private static String PASSWORD = "";
 
-    Connection conn;
 
     public Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
+            return DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return conn;
+        return null;
     }
 
     public ResultSet LoadData(String sql) {
+        Connection conn = getConnection();
         try {
             Statement statement = conn.createStatement();
             return statement.executeQuery(sql);
@@ -43,6 +43,7 @@ public class JDBCConnection {
     }
 
     public void UpdateData(String sql) {
+        Connection conn = getConnection();
         try {
             Statement statement = conn.createStatement();
             statement.executeUpdate(sql);

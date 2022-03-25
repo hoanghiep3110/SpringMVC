@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="heading-breadcrumbs">
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
@@ -27,18 +28,17 @@
                 <div class="col-sm-5 card">
                     <div class=" owl-carouse mb-4">
                         <div class="item ">
-                            @foreach (var item in Model.IMG_PRODUCT)
-                            {
-                                <img src="@item.LinkImg" alt="@item.AltImg" class="img-fluid">
-                            }
+                            <c:forEach  var = "item" items="${listBrand}">
+                                <img src="<c:url value="/img/Ducati.jpg"/>" alt="" class="img-fluid">
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 card">
                     <div class="product-more">
 
-                        <h1 class="my-4 text-center card-footer"> @Model.NameProduct</h1>
-                        <h2 class="my-4">Giá tiền: @string.Format("{0:#,##0}", @Model.Price) đ</h2>
+                        <h1 class="my-4 text-center card-footer"> ${productDetail.nameProduct}</h1>
+                        <h2 class="my-4">Giá tiền: ${productDetail.price} đ</h2>
                         <h7 class="my-4">Tình trạng: <b>Còn hàng</b></h7>
                         <h4 class="my-4">
                             Số lượng: <input name="sl" value="1" min="0" step="1" type="number"
@@ -51,7 +51,7 @@
                         <button class="btn-danger mx-3" style="height: 50px;">MUA NGAY</button>
                         <h5 class="my-4">Gọi đặt hàng: <a href="tel:+707450094" style="color: #000;">0707450094</a></h5>
                         <h4 style="color: brown;">CHIA SẺ NGAY</h4>
-                        <div class="fb-share-button" data-href="@ViewBag.Url" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=@ViewBag.Url" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+                        <div class="fb-share-button" data-href="@Facebook.com data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=@Facebook.com" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
 
 
                     </div>
@@ -79,7 +79,7 @@
             <div class="heading">
                 <h3>Mô tả sản phẩm</h3>
             </div>
-            @Html.Raw(Model.Description)
+            ${productDetail.description}
             <section>
                 <div class="row portfolio">
                     <div class="col-md-12">
