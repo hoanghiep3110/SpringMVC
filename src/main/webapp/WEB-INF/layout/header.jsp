@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class=" text-light col-md-6 d-md-block d-none">
-                <p class="h4">Mua bán xe cũ Gọi ngay: <a href="#"> </a>0123456789</p>
+                <p class="h4">Mua bán xe máy cũ <br /> Gọi ngay: <a href="tel:+0386632736" style="color: #fff;">0386632736</a></p>
             </div>
             <div class="col-md-6">
                 <div class="d-flex justify-content-md-end justify-content-between">
@@ -31,6 +31,7 @@
                         </c:when>
                         <c:when test="${sessionScope.userName != null}">
                             <div class="login">
+                                <a class="signup-btn">
                                 <span class="d-none d-md-inline-block">${sessionScope.userName}</span></a>
                                 <a href="<c:url value="/logout"/>" class="signup-btn">
                                     <i class="fa-solid fa-right-from-bracket"></i>
@@ -38,12 +39,6 @@
                             </div>  
                         </c:when>
                     </c:choose>
-                    <ul class="social-custom list-inline">
-                        <li class="list-inline-item"><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.google.com.vn/"><i class="fab fa-google"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
                 </div>
             </div>
         </div>
