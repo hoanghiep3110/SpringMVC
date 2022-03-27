@@ -57,7 +57,7 @@ public class Product implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "Status")
-    private int status;
+    private String status;
     @JoinColumn(name = "IdBrand", referencedColumnName = "IdBrand")
     @ManyToOne(optional = false)
     private Brand idBrand;
@@ -76,12 +76,18 @@ public class Product implements Serializable {
         this.idProduct = idProduct;
     }
 
-    public Product(Integer idProduct, String nameProduct, int price, String description, int status) {
+    public Product(Integer idProduct, String nameProduct, int price, String description, 
+            String status,Brand idBrand,Typecar idType,
+            Collection<ImgProduct> imgProductCollection, Collection<OrderDetail> orderDetailCollection) {
         this.idProduct = idProduct;
         this.nameProduct = nameProduct;
         this.price = price;
         this.description = description;
         this.status = status;
+        this.idBrand = idBrand;
+        this.idType = idType;
+        this.imgProductCollection = imgProductCollection;
+        this.orderDetailCollection = orderDetailCollection;
     }
 
     public Integer getIdProduct() {
@@ -116,11 +122,11 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

@@ -6,6 +6,7 @@ package com.hutech.model;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -54,11 +55,14 @@ public class Brand implements Serializable {
         this.idBrand = idBrand;
     }
 
-    public Brand(Integer idBrand, String nameBrand) {
+    public Brand(Integer idBrand, String nameBrand,String imgBrand,Collection<Product> productCollection) {
         this.idBrand = idBrand;
         this.nameBrand = nameBrand;
+        this.imgBrand = imgBrand;
+        this.productCollection= productCollection;
     }
 
+     
     public Integer getIdBrand() {
         return idBrand;
     }
