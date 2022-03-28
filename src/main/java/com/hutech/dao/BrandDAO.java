@@ -29,7 +29,7 @@ public class BrandDAO {
         }
         return list;
     }
-    public Brand getByID(String id) throws SQLException {
+    public Brand getByID(int id) throws SQLException {
         String sql = "SELECT * FROM `brand` WHERE IdBrand = " + id + "";
         ResultSet rs = con.LoadData(sql);
         Brand l = null;

@@ -7,6 +7,7 @@ package com.hutech.controllers;
 import com.hutech.dao.BrandDAO;
 import com.hutech.dao.ProductDAO;
 import com.hutech.dao.TypeCarDAO;
+import com.hutech.model.Brand;
 import com.hutech.model.Product;
 import java.sql.SQLException;
 import org.springframework.stereotype.Controller;
@@ -39,5 +40,13 @@ public class ProductController {
         System.out.println(product.getNameProduct());
         model.addAttribute("productDetail", product);
         return "detail";
+    }
+    
+     @RequestMapping(value = {"/product/{idbrand}"})
+    public String brand(Model model, @PathVariable("idbrand") int idbrand) throws SQLException {
+        Brand brand = new BrandDAO().getByID(idbrand);
+        System.out.println(brand.getNameBrand());
+        model.addAttribute("brand", brand);
+        return "brand";
     }
 }

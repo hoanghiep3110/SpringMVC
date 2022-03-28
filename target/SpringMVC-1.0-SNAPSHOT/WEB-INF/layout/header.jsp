@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class=" text-light col-md-6 d-md-block d-none">
-                <p class="h4">Mua bán xe cũ Gọi ngay: <a href="#"> </a>0123456789</p>
+                <a>Giờ làm việc: <i class="far fa-clock"></i> 08:00 - 21:00</a>
             </div>
             <div class="col-md-6">
                 <div class="d-flex justify-content-md-end justify-content-between">

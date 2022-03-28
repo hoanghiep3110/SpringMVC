@@ -58,14 +58,16 @@ public class Product implements Serializable {
     @NotNull
     @Column(name = "Status")
     private String status;
+    @Size(max = 400)
+    @Column(name = "LinkImg")
+    private String linkImg;
     @JoinColumn(name = "IdBrand", referencedColumnName = "IdBrand")
     @ManyToOne(optional = false)
     private Brand idBrand;
     @JoinColumn(name = "IdType", referencedColumnName = "IdType")
     @ManyToOne(optional = false)
     private Typecar idType;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idProduct")
-    private Collection<ImgProduct> imgProductCollection;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
     private Collection<OrderDetail> orderDetailCollection;
 
@@ -76,17 +78,17 @@ public class Product implements Serializable {
         this.idProduct = idProduct;
     }
 
-    public Product(Integer idProduct, String nameProduct, int price, String description, 
-            String status,Brand idBrand,Typecar idType,
-            Collection<ImgProduct> imgProductCollection, Collection<OrderDetail> orderDetailCollection) {
+    public Product(Integer idProduct, String nameProduct, int price, String description,
+            String status, String linkImg, Brand idBrand, Typecar idType,
+            Collection<OrderDetail> orderDetailCollection) {
         this.idProduct = idProduct;
         this.nameProduct = nameProduct;
         this.price = price;
         this.description = description;
         this.status = status;
+        this.linkImg = linkImg;
         this.idBrand = idBrand;
         this.idType = idType;
-        this.imgProductCollection = imgProductCollection;
         this.orderDetailCollection = orderDetailCollection;
     }
 
@@ -130,6 +132,14 @@ public class Product implements Serializable {
         this.status = status;
     }
 
+    public String getLinkImg() {
+        return linkImg;
+    }
+
+    public void setLinkImg(String linkImg) {
+        this.linkImg = linkImg;
+    }
+
     public Brand getIdBrand() {
         return idBrand;
     }
@@ -144,14 +154,6 @@ public class Product implements Serializable {
 
     public void setIdType(Typecar idType) {
         this.idType = idType;
-    }
-
-    public Collection<ImgProduct> getImgProductCollection() {
-        return imgProductCollection;
-    }
-
-    public void setImgProductCollection(Collection<ImgProduct> imgProductCollection) {
-        this.imgProductCollection = imgProductCollection;
     }
 
     public Collection<OrderDetail> getOrderDetailCollection() {
@@ -186,5 +188,5 @@ public class Product implements Serializable {
     public String toString() {
         return "com.hutech.model.Product[ idProduct=" + idProduct + " ]";
     }
-    
+
 }

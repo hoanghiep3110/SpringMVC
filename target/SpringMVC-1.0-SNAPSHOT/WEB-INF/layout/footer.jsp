@@ -18,7 +18,7 @@
     </div>
 </div>
 <!-- Navbar End-->
-<footer class="main-footer"style="background: url('img/footer-bg.jpg') center center repeat; background-size: cover;"
+<footer class="main-footer"style=" background-size: cover;"
         class="relative-positioned">
     <div class="container">
         <div class="row">

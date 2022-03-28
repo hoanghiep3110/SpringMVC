@@ -157,33 +157,35 @@
                 <div class="heading text-center">
                     <h2>Sản phẩm nổi bật</h2>
                 </div>
+
                 <div class="project-carousel">
                     <div class="container">
-                        <div class="project owl-carousel">
-                            <div class="item">
+                        <div class="project owl-carousel">                    
+                            <div class="item">                                     
                                 <div class="row portfolio text-center color-white">
-                                    <div class="col-md-4">
-                                        <div class="box-image">
-                                            <div class="image"><img src="img/rebel-300_1.png" alt="" class="img-fluid">
-                                                <div class="overlay d-flex align-items-center justify-content-center">
-                                                    <div class="content">
-                                                        <div class="name">
-                                                            <h3><a href="#" class="color-white">Thông tin chi tiết</a></h3>
+                                    <c:forEach  var = "item" items="${listProduct}">       
+                                        <div class="col-md-4">
+                                            <div class="box-image">
+                                                <div class="image">                                               
+                                                    <img src=<c:url value="${listProduct.linkImg}"/> alt="" class="img-fluid">
+                                                    <div class="overlay d-flex align-items-center justify-content-center">
+                                                        <div class="content">
+                                                            <div class="name">
+                                                                <h3><a href="<c:url value="/detail/${item.idProduct}"/>" class="color-white">Thông tin chi tiết</a></h3>
+                                                            </div>
+                                                            <div class="text">
+                                                                <p class="d-sm-none"></p>
+                                                                <p class="buttons"><a href="<c:url value="/detail/${item.idProduct}"/>" class="btn btn-template-outlined-white">Mua ngay</a></p>
+                                                            </div>
                                                         </div>
-                                                        <div class="text">
-                                                            <p class="d-sm-none">Pellentesque habitant morbi tristique senectus et netus et
-                                                                malesuada</p>
-                                                            <p class="buttons"><a href="portfolio-detail.html"
-                                                                                  class="btn btn-template-outlined-white">View</a><a href="#"
-                                                                                  class="btn btn-template-outlined-white">Mua ngay</a></p>
-                                                        </div>
-                                                    </div>
+                                                    </div>                                              
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>                                
-                                </div>
+                                        </div>   
+                                    </c:forEach>
+                                </div>                                                       
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -230,49 +232,7 @@
         </div>
     </div>
 </section>
-<section class="bar background-white no-mb">
-    <div data-animate="fadeInUpBig" class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="heading text-center">
-                    <h2>Sản phẩm ưu đãi</h2>
-                </div>
-                <div class="project-carousel">
-                    <div class="container">
-                        <div class="project owl-carousel">
-                            <div class="item">
-                                <div class="row portfolio text-center color-white">
-                                    <div class="col-md-4">
-                                        <div class="box-image">
-                                            <div class="image"><img src="img/rebel-300_1.png" alt="" class="img-fluid">
-                                                <div class="overlay d-flex align-items-center justify-content-center">
-                                                    <div class="content">
-                                                        <div class="name">
-                                                            <h3><a href="#" class="color-white">Thông tin chi tiết</a></h3>
-                                                        </div>
-                                                        <div class="text">
-                                                            <p class="buttons"><a href="portfolio-detail.html"
-                                                                                  class="btn btn-template-outlined-white">View</a><a href="#"
-                                                                                  class="btn btn-template-outlined-white">Mua ngay</a></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                                                  
-                        </div>
-                    </div>
-                </div>
-            </div>
-</div>
-            <div class="see-more text-center">
-                <p></p><a href="#" class="btn btn-template-outlined">Xem thêm</a>
-            </div>
-        
-    </div>
-</section>
+
 <div class="container">
 
 
