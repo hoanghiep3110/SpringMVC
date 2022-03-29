@@ -64,7 +64,6 @@
                         <li><a href="<c:url value="/admin/product"/>"><i class="fa-solid fa-motorcycle"></i>Sản phẩm</a></li>
                         <li><a href="<c:url value="/admin/order"/>"><i class="fa-solid fa-clipboard-check"></i>Đơn hàng</a></li> 
                         <li><a href="<c:url value="/admin/customer"/>")"><i class="fa-solid fa-user-check"></i>Người dùng</a></li>
-                        <li><a href="<c:url value="/admin/userrole"/>")"><i class="fa-solid fa-user-check"></i>Vai trò</a></li>
                         <li><a href="<c:url value="/admin/contact"/>"><i class="fa-solid fa-envelopes-bulk"></i>Liên hệ</a></li>
                         <li><a href="<c:url value="/admin/blog"/>"><i class="fa-solid fa-signs-post"></i>Bài viết</a></li>
                         <li><a href="<c:url value="/admin/typecar"/>")"><i class="fa-solid fa-motorcycle"></i>Loại xe</a></li>

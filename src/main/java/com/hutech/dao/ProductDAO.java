@@ -32,8 +32,9 @@ public class ProductDAO {
             p.setPrice(rs.getInt(3));
             p.setDescription(rs.getString(4));
             p.setStatus(rs.getString(5));
-            p.setIdBrand(new BrandDAO().getByID(rs.getString(6)));
-            p.setIdType(new TypeCarDAO().getByID(rs.getString(7)));
+            p.setLinkImg(rs.getString(6));
+            p.setIdBrand(new BrandDAO().getByID(rs.getString(7)));
+            p.setIdType(new TypeCarDAO().getByID(rs.getString(8)));
             p.setOrderDetailCollection(new ArrayList<OrderDetail>());
             p.setImgProductCollection(new ArrayList<ImgProduct>());
             
