@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <p style="text-align:right;margin:20px;">
-    <a href="<c:url value="/admin/userrole/create"/>" class="btn btn-primary">Tạo mới</a>
+    <a href="<c:url value="/admin/product/create"/>" class="btn btn-primary">Tạo mới</a>
 </p>
 <table class="table" id="myTable">
     <thead>
@@ -41,22 +41,19 @@
     <tbody>
         <c:forEach items="${listProduct}" var="item" >
             <tr>
-                <td>${item.LinkImg}</td>
-                <td>${item.NameProduct}</td>
-                <td>${item.Price}</td>  
-                <td>${item.Discription}</td>  
-                <td>${item.Status}</td>  
-                <td>${item.IdBrand.NameBrand}</td> 
-                <td>${item.IdType.NameType}</td>  
+                <td><img class="img-fluid admin_img" style="height: 100px; width: 100px " src="<c:url value ="${item.linkImg}"/>"</td>
+                <td>${item.nameProduct}</td>
+                <td>${item.price}</td>  
+                <td>${item.description}</td>  
+                <td>${item.status}</td>  
+                <td>${item.idBrand.nameBrand}</td> 
+                <td>${item.idType.nameType}</td>  
                 <td>
-                    <a data-toggle="tooltip" data-placement="bottom" title="Sửa" class="btn btn-sm btn-success" href="@Url.Action("Edit","KhachHangs",new { @id = item.IdKhachHang })">
+                    <a data-toggle="tooltip" data-placement="bottom" title="Sửa" class="btn btn-sm btn-info" href="<c:url value="/admin/product/edit"/>">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a data-toggle="tooltip" data-placement="bottom" title="Xoá" class="btn btn-sm btn-danger" href="@Url.Action("Delete","KhachHangs",new { @id = item.IdKhachHang })">
+                    <a data-toggle="tooltip" data-placement="bottom" title="Xoá" class="btn btn-sm btn-danger" href="<c:url value="/admin/product/delete"/>">
                         <i class="fas fa-trash-alt"></i>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="bottom" title="Xem chi tiết" class="btn btn-sm btn-info" href="@Url.Action("Details","KhachHangs",new { @id = item.IdKhachHang })">
-                        <i class="fas fa-info-circle"></i>
                     </a>
                 </td>
             </tr>

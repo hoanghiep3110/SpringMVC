@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PRODUCTController {
 
     ProductDAO productDAO = new ProductDAO();
-    TypeCarDAO typeCarDAO = new TypeCarDAO();
-    BrandDAO brandDAO = new BrandDAO();
 
     @RequestMapping(value = {"/product"})
     public String product(Model model) throws SQLException {

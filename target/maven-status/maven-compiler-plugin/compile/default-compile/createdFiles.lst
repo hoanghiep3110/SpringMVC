@@ -1,5 +1,4 @@
 com\hutech\model\Order.class
-com\hutech\model\ImgProduct.class
 com\hutech\model\Product.class
 com\hutech\model\Typecar.class
 com\hutech\dao\UserRoleDAO.class
@@ -14,7 +13,6 @@ com\hutech\dao\BrandDAO.class
 com\hutech\model\Blog.class
 com\hutech\model\Contact.class
 com\hutech\model\CategoryBlog.class
-com\hutech\controllers\admin\UserRoleController.class
 com\hutech\model\User.class
 com\hutech\dao\TypeCarDAO.class
 com\hutech\model\Brand.class

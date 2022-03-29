@@ -5,6 +5,7 @@
 package com.hutech.dao;
 
 import com.hutech.helper.JDBCConnection;
+import com.hutech.model.User;
 import com.hutech.model.UserRole;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,6 +32,17 @@ public class UserRoleDAO {
         }
         return listUserRole;
     }
+    
+    public UserRole getByID(int id) throws SQLException {
+        String sql = "SELECT * FROM `user_role` WHERE IdRole  = " + id + "";
+        ResultSet rs = con.LoadData(sql);
+        UserRole l = null;
+        if (rs.next()) {
+            l = new UserRole(rs.getInt(1), rs.getString(2),new ArrayList<User>());
+        }
+        return l;
+    }
+    
 
     public void insert(UserRole u) throws SQLException {
         String sql = "INSERT INTO `user_role`(`RoleName`) VALUES (,'" + u.getRoleName() + "')";

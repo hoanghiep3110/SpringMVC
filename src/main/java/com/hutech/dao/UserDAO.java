@@ -6,8 +6,11 @@ package com.hutech.dao;
 
 import com.hutech.helper.JDBCConnection;
 import com.hutech.model.User;
+import com.hutech.model.UserRole;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -16,7 +19,26 @@ import java.sql.SQLException;
 public class UserDAO {
 
     JDBCConnection con = new JDBCConnection();
-
+    
+    public List<User> getList() throws SQLException {
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT * FROM `user`";
+        ResultSet rs = con.LoadData(sql);
+        while (rs.next()) {
+            User p = new User();
+            p.setIdUser(rs.getInt(1));
+            p.setIdRole(new UserRoleDAO().getByID(rs.getInt(2)));
+            p.setFullName(rs.getString(3));
+            p.setEmail(rs.getString(4));
+            p.setUsername(rs.getString(5));
+            p.setPassword(rs.getString(6));
+            p.setAddress(rs.getString(7));
+            p.setPhone(rs.getString(8));
+            list.add(p);
+        }
+        return list;
+    }
+    
     public boolean isAdmin(String username, String pass) throws SQLException {
         String sql = "SELECT * FROM `user` WHERE Username = '" + username + "' && Password = '" + pass + "' && IdRole = 1;";
         ResultSet rs = con.LoadData(sql);
