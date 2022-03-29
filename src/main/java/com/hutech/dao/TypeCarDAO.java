@@ -29,7 +29,7 @@ public class TypeCarDAO {
         }
         return list;
     }
-    public Typecar getByID(String id) throws SQLException {
+    public Typecar getByID(int id) throws SQLException {
         String sql = "SELECT * FROM `typecar` WHERE IdType = " + id + "";
         ResultSet rs = con.LoadData(sql);
         Typecar l = null;

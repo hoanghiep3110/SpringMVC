@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <!-- FOOTER START-->
 
 <div class="get-it">
@@ -13,12 +14,12 @@
             <div class="col-lg-8 text-center p-3">
                 <h3>Bạn cần tìm một chiếc xe cho mình?</h3>
             </div>
-            <div class="col-lg-4 text-center p-3"> <a href="product.html" class="btn btn-template-outlined-white">Mua ngay</a></div>
+            <div class="col-lg-4 text-center p-3"> <a href="<c:url value="/product"/>" class="btn btn-template-outlined-white">Mua ngay</a></div>
         </div>
     </div>
 </div>
 <!-- Navbar End-->
-<footer class="main-footer"style="background: url('img/footer-bg.jpg') center center repeat; background-size: cover;"
+<footer class="main-footer"style=" background-size: cover;"
         class="relative-positioned">
     <div class="container">
         <div class="row">

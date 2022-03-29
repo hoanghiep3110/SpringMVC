@@ -2414,7 +2414,7 @@ ul ul a.nav-link {
 footer.main-footer {
   padding: 60px 0;
   padding-bottom: 0;
-  background-image: url(../img/footer-bg.jpg);
+  background-color: black;
   background-repeat: no-repeat;
   background-clip: inherit;
   background-size: auto;

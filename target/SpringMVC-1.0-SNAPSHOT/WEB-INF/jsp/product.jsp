@@ -33,36 +33,29 @@
                     </div>
                 </div>
                 <div class="col-md-3 py-3">                             
-                        <div class="card" style="width: 100%;">
-                            <div class="card-header">
-                                Hãng xe
-                            </div>                   
-                            <ul class="list-group list-group-flush">
-                                 <c:forEach  var = "item" items="${listBrand}">
-                                <li class="list-group-item">${item.nameBrand}</li> 
-                                 </c:forEach>
-                            </ul>
-                        </div>                
-                   <div class="card" style="width: 100%;">
-                            <div class="card-header">
-                                 Loại xe
-                            </div>                   
-                            <ul class="list-group list-group-flush">
-                                 <c:forEach  var = "item" items="${listType}">
-                                <li class="list-group-item">${item.nameType}</li> 
-                                 </c:forEach>
-                            </ul>
-                        </div>     
                     <div class="card" style="width: 100%;">
-                            <div class="card-header">
-                                 Tình trạng
-                            </div>                   
-                            <ul class="list-group list-group-flush">
-                                 <c:forEach  var = "item" items="${listProduct}">
-                                <li class="list-group-item">${item.status}</li> 
-                                 </c:forEach>
-                            </ul>
-                        </div>     
+                        <div class="card-header">
+                            Hãng xe
+                        </div>                   
+                        <ul class="list-group list-group-flush">                        
+                            <c:forEach  var = "item" items="${listBrand}">
+                            
+                                <li class="list-group-item">${item.nameBrand}</li> 
+                                
+                                </c:forEach>
+                        </ul>
+                    </div>                
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header">
+                            Loại xe
+                        </div>                   
+                        <ul class="list-group list-group-flush">
+                            <c:forEach  var = "item" items="${listType}">
+                                 
+                                <li class="list-group-item">${item.nameType}</li> 
+                                </c:forEach>
+                        </ul>
+                    </div>                     
                 </div>
                 <div class="col-md-9">
                     <div class="row portfolio text-center">
@@ -72,7 +65,7 @@
                                     <div class="image">
                                         <a href="<c:url value="/detail/${item.idProduct}"/>">
 
-                                            <img src="<c:url value="/img/Ducati.jpg"/>" alt="" class="img-fluid">
+                                            <img src="<c:url value="${item.linkImg}"/>" alt="" class="img-fluid">
 
                                             <div style="text-align:center;">${item.nameProduct}</div>
                                             <div style="text-align:center;">Giá : ${item.price}đ</div>
@@ -100,10 +93,6 @@
 
                         <li>
 
-                            <div class="MenuPage">
-
-                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
-                            </div>
 
                         </li>
 
@@ -160,10 +149,9 @@
                     <h3>Các hãng xe</h3>
                 </div>
                 <ul class="list-unstyled owl-carousel brand no-mb">
-                    @foreach (var item in (List<BRAND>)ViewBag.BRAND)
-                        {
-                        <li class="item"><img src="@item.ImgBrand" alt="" class="img-fluid"></li>
-                        }
+                    <c:forEach  var = "item" items="${listBrand}">
+                        <li class="item"><img src=<c:url value="${item.imgBrand}"/> alt="" class="img-fluid"></li>
+                    </c:forEach>                  
                 </ul>
             </div>
         </div>

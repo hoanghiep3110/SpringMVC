@@ -5,7 +5,6 @@
 package com.hutech.dao;
 
 import com.hutech.helper.JDBCConnection;
-import com.hutech.model.ImgProduct;
 import com.hutech.model.OrderDetail;
 import com.hutech.model.Product;
 import java.sql.ResultSet;
@@ -36,7 +35,7 @@ public class ProductDAO {
             p.setIdBrand(new BrandDAO().getByID(rs.getString(7)));
             p.setIdType(new TypeCarDAO().getByID(rs.getString(8)));
             p.setOrderDetailCollection(new ArrayList<OrderDetail>());
-            p.setImgProductCollection(new ArrayList<ImgProduct>());
+
             
             list.add(p);
         }
@@ -53,17 +52,17 @@ public class ProductDAO {
             p.setPrice(rs.getInt(3));
             p.setDescription(rs.getString(4));
             p.setStatus(rs.getString(5));
-            p.setIdBrand(new BrandDAO().getByID(rs.getString(6)));
-            p.setIdType(new TypeCarDAO().getByID(rs.getString(7)));
+            p.setLinkImg(rs.getString(6));
+            p.setIdBrand(new BrandDAO().getByID(rs.getInt(7)));
+            p.setIdType(new TypeCarDAO().getByID(rs.getInt(8)));
             p.setOrderDetailCollection(new ArrayList<OrderDetail>());
-            p.setImgProductCollection(new ArrayList<ImgProduct>());
         }
         return p;
     }
 
     public void insert(Product p) {
-        String sql = "INSERT INTO `product`(`IdBrand`,`IdType`, `NameProduct`, `Price`,`Description`,`Status`) "
-                + "VALUES ('" + p.getIdBrand().getIdBrand() + "','" + p.getIdType().getIdType() + "','" + p.getNameProduct() + "','" + p.getPrice() + "','" + p.getDescription() + "','" + p.getStatus() + "')";
+        String sql = "INSERT INTO `product`(`IdBrand`,`IdType`, `NameProduct`, `Price`,`Description`,`Status`,`LinkImg`) "
+                + "VALUES ('" + p.getIdBrand().getIdBrand() + "','" + p.getIdType().getIdType() + "','" + p.getNameProduct() + "','" + p.getPrice() + "','" + p.getDescription() + "','" + p.getStatus() + "','" + p.getLinkImg()+ "')";
         con.UpdateData(sql);
         System.out.println(sql);
     }
@@ -76,7 +75,7 @@ public class ProductDAO {
 
     public void update(Product p) {
         String sql = "UPDATE `product` SET `IdBrand`='" + p.getIdBrand().getIdBrand() + "',"
-                + "`IdType`='" + p.getIdType().getIdType() + "',`NameProduct`='" + p.getNameProduct() + "',`Price`='" + p.getPrice() + "',`Description`='" + p.getDescription() + "',`Status`='" + p.getStatus() + "'"
+                + "`IdType`='" + p.getIdType().getIdType() + "',`NameProduct`='" + p.getNameProduct() + "',`Price`='" + p.getPrice() + "',`Description`='" + p.getDescription() + "',`Status`='" + p.getStatus() + "',`LinkImg`='" + p.getLinkImg() + "'"
                 + " WHERE IdProduct = " + p.getIdProduct() + "";
         System.out.println(sql);
         con.UpdateData(sql);
