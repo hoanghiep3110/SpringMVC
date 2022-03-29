@@ -104,9 +104,64 @@
                             </div>
                         </div>
                     </form>
+                    <div class="col-md-12">
+    <div id="map"></div>
+</div>
                 </div>
             </div>
+            
         </section>
+        
     </div>
-    <!-- <div id="map"></div> -->
+    
 </div>
+
+</div>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+    // This example displays a marker at the center of Australia.
+    // When the user clicks the marker, an info window opens.10.85524289259457, 106.78536226833974
+    function initMap() {
+        const uluru = {lat: 10.85524289259457, lng: 106.78536226833974};
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 12,
+            center: uluru,
+        });
+        const contentString = 'Đại Học Hutech Khu E, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh, Vietnam&amp;daddr=Đại Học Hutech Khu E, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh, Vietnam&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed';
+
+        const infowindow = new google.maps.InfoWindow({
+            content: contentString,
+        });
+        const marker = new google.maps.Marker({
+            position: uluru,
+            map,
+            title: "Địa chỉ",
+        });
+        marker.addListener("click", () => {
+            infowindow.open({
+                anchor: marker,
+                map,
+                shouldFocus: false,
+            });
+        }
+        );
+    }
+    google.maps.event.addDomListener(window, 'load', initMap);
+</script>
+<style>
+    /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+    #map {
+        text-align: right;
+        width: 100%;
+        height: 430px;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>

@@ -39,7 +39,7 @@
                         </div>                   
                         <ul class="list-group list-group-flush">                        
                             <c:forEach  var = "item" items="${listBrand}">
-                              <a href="<c:url value="/product/${item.idBrand}"/>">
+                            
                                 <li class="list-group-item">${item.nameBrand}</li> 
                                 
                                 </c:forEach>
@@ -51,21 +51,11 @@
                         </div>                   
                         <ul class="list-group list-group-flush">
                             <c:forEach  var = "item" items="${listType}">
-                                  <a href="<c:url value="/product/${item.idType}"/>">
+                                 
                                 <li class="list-group-item">${item.nameType}</li> 
                                 </c:forEach>
                         </ul>
-                    </div>     
-                    <div class="card" style="width: 100%;">
-                        <div class="card-header">
-                            Tình trạng
-                        </div>                   
-                        <ul class="list-group list-group-flush">
-                            <c:forEach  var = "item" items="${listProduct}">
-                                <li class="list-group-item">${item.status}</li> 
-                                </c:forEach>
-                        </ul>
-                    </div>     
+                    </div>                     
                 </div>
                 <div class="col-md-9">
                     <div class="row portfolio text-center">
@@ -161,7 +151,7 @@
                 <ul class="list-unstyled owl-carousel brand no-mb">
                     <c:forEach  var = "item" items="${listBrand}">
                         <li class="item"><img src=<c:url value="${item.imgBrand}"/> alt="" class="img-fluid"></li>
-                        </c:forEach>                  
+                    </c:forEach>                  
                 </ul>
             </div>
         </div>

@@ -159,40 +159,37 @@
                 </div>
 
                 <div class="project-carousel">
-                    <div class="container">
-                        <div class="project owl-carousel">                    
-                            <div class="item">                                     
-                                <div class="row portfolio text-center color-white">
-                                    <c:forEach  var = "item" items="${listProduct}">       
-                                        <div class="col-md-4">
-                                            <div class="box-image">
-                                                <div class="image">                                               
-                                                    <img src=<c:url value="${listProduct.linkImg}"/> alt="" class="img-fluid">
-                                                    <div class="overlay d-flex align-items-center justify-content-center">
-                                                        <div class="content">
-                                                            <div class="name">
-                                                                <h3><a href="<c:url value="/detail/${item.idProduct}"/>" class="color-white">Thông tin chi tiết</a></h3>
-                                                            </div>
-                                                            <div class="text">
-                                                                <p class="d-sm-none"></p>
-                                                                <p class="buttons"><a href="<c:url value="/detail/${item.idProduct}"/>" class="btn btn-template-outlined-white">Mua ngay</a></p>
-                                                            </div>
+                    <div class="container">                       
+                        <div class="project owl-carousel">                                                                 
+                            <div class="row portfolio text-center color-white">
+                                <c:forEach  var = "item" items="${listProduct}">       
+                                    <div class="col-md-4">
+                                        <div class="box-image">
+                                            <div class="image">                                               
+                                                <img src=<c:url value="${item.linkImg}"/> alt="" class="img-fluid">
+                                                <div class="overlay d-flex align-items-center justify-content-center">
+                                                    <div class="content">
+                                                        <div class="name">
+                                                            <h3><a href="<c:url value="/detail/${item.idProduct}"/>" class="color-white">Thông tin chi tiết</a></h3>
                                                         </div>
-                                                    </div>                                              
-                                                </div>
+                                                        <div class="text">
+                                                            <p class="d-sm-none"></p>
+                                                            <p class="buttons"><a href="<c:url value="/detail/${item.idProduct}"/>" class="btn btn-template-outlined-white">Xem ngay</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>                                              
                                             </div>
-                                        </div>   
-                                    </c:forEach>
-                                </div>                                                       
-                            </div>
-
+                                        </div>
+                                    </div>   
+                                </c:forEach>
+                            </div>                                                       
                         </div>
                     </div>
                 </div>
 
 
                 <div class="see-more text-center">
-                    <p></p><a href="#" class="btn btn-template-outlined">Xem thêm</a>
+                    <p></p><a href="<c:url value="/product"/>" class="btn btn-template-outlined">Xem thêm</a>
                 </div>
             </div>
         </div>
@@ -217,16 +214,9 @@
                     <h3>Các hãng xe</h3>
                 </div>
                 <ul class="list-unstyled owl-carousel brand no-mb">
-                    <li class="item"><img src="img/yamaha.svg" alt="" class="img-fluid"></li>
-                    <li class="item"><img src="img/piaggio-vespa.svg" alt="" class="img-fluid"></li>
-                    <li class="item"><img src="img/honda.svg" alt="" class="img-fluid"></li>
-                    <li class="item"><img src="img/kymco.svg" alt="" class="img-fluid"></li>
-                    <li class="item"><img src="img/yamaha.svg" alt="" class="img-fluid"></li>
-                    <li class="item"><img src="img/honda.svg" alt="" class="img-fluid"></li>
-                    <li class="item"><img src="img/honda.svg" alt="" class="img-fluid"></li>
-                    <li class="item"><img src="img/kymco.svg" alt="" class="img-fluid"></li>
-                    <li class="item"><img src="img/yamaha.svg" alt="" class="img-fluid"></li>
-                    <li class="item"><img src="img/honda.svg" alt="" class="img-fluid"></li>
+                    <c:forEach  var = "item" items="${listBrand}">
+                        <li class="item"><img src=<c:url value="${item.imgBrand}"/> alt="" class="img-fluid"></li>
+                    </c:forEach>                  
                 </ul>
             </div>
         </div>

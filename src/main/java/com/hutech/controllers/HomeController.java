@@ -4,7 +4,7 @@
  */
 package com.hutech.controllers;
 
-
+import com.hutech.dao.BrandDAO;
 import com.hutech.dao.ProductDAO;
 import java.sql.SQLException;
 import org.springframework.stereotype.Controller;
@@ -17,36 +17,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HomeController {
-     ProductDAO productDAO = new ProductDAO();
+
+    ProductDAO productDAO = new ProductDAO();
+    BrandDAO brandDAO = new BrandDAO();
 
     @RequestMapping("/")
-    public String index(Model model) throws SQLException { 
-      model.addAttribute("listProduct", productDAO.getList());
+    public String index(Model model) throws SQLException {
+        model.addAttribute("listProduct", productDAO.getList());
+        model.addAttribute("listBrand", brandDAO.getList());
         return "index";
     }
-    
+
     @RequestMapping("/about")
     public String about() {
         return "about";
     }
-  
+
     @RequestMapping("/login")
     public String login() {
         return "login";
     }
-    
+
     @RequestMapping("/register")
     public String register() {
         return "register";
     }
-    
+
     @RequestMapping("/contact")
-    public String contact() { 
+    public String contact() {
         return "contact";
     }
-    
+
     @RequestMapping("/blog")
-    public String blog() { 
+    public String blog() {
         return "blog";
     }
 }
