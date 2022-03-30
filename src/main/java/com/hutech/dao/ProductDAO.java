@@ -17,8 +17,8 @@ import java.util.List;
  * @author Hiệp Phan
  */
 public class ProductDAO {
-    JDBCConnection con = new JDBCConnection();
 
+    JDBCConnection con = new JDBCConnection();
 
     public List<Product> getList() throws SQLException {
         List<Product> list = new ArrayList<>();
@@ -34,9 +34,6 @@ public class ProductDAO {
             p.setLinkImg(rs.getString(6));
             p.setIdBrand(new BrandDAO().getByID(rs.getInt(7)));
             p.setIdType(new TypeCarDAO().getByID(rs.getInt(8)));
-            p.setOrderDetailCollection(new ArrayList<OrderDetail>());
-
-            
             list.add(p);
         }
         return list;
@@ -55,14 +52,13 @@ public class ProductDAO {
             p.setLinkImg(rs.getString(6));
             p.setIdBrand(new BrandDAO().getByID(rs.getInt(7)));
             p.setIdType(new TypeCarDAO().getByID(rs.getInt(8)));
-            p.setOrderDetailCollection(new ArrayList<OrderDetail>());
         }
         return p;
     }
 
     public void insert(Product p) {
         String sql = "INSERT INTO `product`(`IdBrand`,`IdType`, `NameProduct`, `Price`,`Description`,`Status`,`LinkImg`) "
-                + "VALUES ('" + p.getIdBrand().getIdBrand() + "','" + p.getIdType().getIdType() + "','" + p.getNameProduct() + "','" + p.getPrice() + "','" + p.getDescription() + "','" + p.getStatus() + "','" + p.getLinkImg()+ "')";
+                + "VALUES ('" + p.getIdBrand().getIdBrand() + "','" + p.getIdType().getIdType() + "','" + p.getNameProduct() + "','" + p.getPrice() + "','" + p.getDescription() + "','" + p.getStatus() + "','" + p.getLinkImg() + "')";
         con.UpdateData(sql);
         System.out.println(sql);
     }
@@ -80,6 +76,5 @@ public class ProductDAO {
         System.out.println(sql);
         con.UpdateData(sql);
     }
-    
-}
 
+}

@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="top-bar">
     <div class="container">
         <div class="row d-flex align-items-center">
@@ -18,36 +18,38 @@
                         <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
                     </ul>
-                    <div class="login">
-                        <a href="<c:url value="/login"/>" class="login-btn">
-                            <i class="fa fa-align-justify"></i>
-                            <span class="d-none d-md-inline-block">Đăng nhập</span></a>
-                        <a href="<c:url value="/register"/>" class="signup-btn">
-                            <i class="fa fa-user"></i>
-                            <span class="d-none d-md-inline-block">Đăng ký</span></a>
-                    </div>
-                    <ul class="social-custom list-inline">
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-google"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
+                    <c:choose>
+                        <c:when test="${sessionScope.userName == null}">
+                            <div class="login">
+                                <a href="<c:url value="/login"/>" class="login-btn">
+                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                    <span class="d-none d-md-inline-block">Đăng nhập</span></a>
+                                <a href="<c:url value="/register"/>" class="signup-btn">
+                                    <i class="fa-solid fa-user"></i>
+                                    <span class="d-none d-md-inline-block">Đăng ký</span></a>
+                            </div>  
+                        </c:when>
+                        <c:when test="${sessionScope.userName != null}">
+                            <div class="login">
+                                <a class="signup-btn">
+                                <span class="d-none d-md-inline-block">${sessionScope.userName}</span></a>
+                                <a href="<c:url value="/logout"/>" class="signup-btn">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <span class="d-none d-md-inline-block">Đăng xuất</span></a>
+                            </div>  
+                        </c:when>
+                    </c:choose>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Top bar end-->
-
-<!-- Login modal end-->
 <!-- Navbar Start-->
 <header class="nav-holder make-sticky">
     <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
-        <div class="container"><a href="<c:url value="/"/>" class="navbar-brand home">
-                <img src="<c:url value="/img/XEMAYH2C.png"/>" class="d-none d-md-inline-block"/><span class="sr-only">Xemay DHCV</span></a>
-            <button type="button" data-toggle="collapse" data-target="#navigation"
-                    class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i
-                    class="fa fa-align-justify"></i></button>
+        <div class="container"><a href=<c:url value="/"/> class="navbar-brand home">
+                <img src="<c:url value="/img/XEMAYH2C.png"/>" class="d-none d-md-inline-block"/><span class="sr-only">Xemay H2C</span></a>
             <div id="navigation" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item dropdown"><a href="<c:url value="/"/>">Trang chủ<b class="caret"></b></a>

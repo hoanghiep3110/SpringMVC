@@ -50,11 +50,8 @@
                 <div class="sidenav-header d-flex align-items-center justify-content-center">
                     <!-- User Info-->
                     <div class="sidenav-header-inner text-center">
-
-                        <h2 class="h5"><%= session.getAttribute("username")%></h2>
+                        <h2 class="h5"><%= session.getAttribute("adminName")%></h2>
                     </div>
-                    <!-- Small Brand information, appears on minimized sidebar-->
-                    <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
                 </div>
                 <!-- Sidebar Navigation Menus-->
                 <div class="main-menu">
@@ -62,20 +59,18 @@
                     <ul id="side-main-menu" class="side-menu list-unstyled">
 
                         <li><a href="<c:url value="/admin/product"/>"><i class="fa-solid fa-motorcycle"></i>Sản phẩm</a></li>
-                        <li><a href="<c:url value="/admin/order"/>"><i class="fa-solid fa-clipboard-check"></i>Đơn hàng</a></li> 
-                        <li><a href="<c:url value="/admin/customer"/>")"><i class="fa-solid fa-user-check"></i>Người dùng</a></li>
+                        <li><a href="<c:url value="/admin/user"/>")"><i class="fa-solid fa-user-check"></i>Người dùng</a></li>
                         <li><a href="<c:url value="/admin/contact"/>"><i class="fa-solid fa-envelopes-bulk"></i>Liên hệ</a></li>
                         <li><a href="<c:url value="/admin/blog"/>"><i class="fa-solid fa-signs-post"></i>Bài viết</a></li>
                         <li><a href="<c:url value="/admin/typecar"/>")"><i class="fa-solid fa-motorcycle"></i>Loại xe</a></li>
                         <li><a href="<c:url value="/admin/brand"/>"><i class="fa-solid fa-copyright"></i>Hãng xe</a></li>
-                        <li><a href="<c:url value="/admin/discount"/>"><i class="fa-solid fa-percent"></i>Khuyến mãi</a></li>
                         <li><a href="<c:url value="/admin/categoryblog"/>"><i class="fa-brands fa-blogger"></i>Thể loại bài viết</a></li>                
                     </ul>
                 </div>
                 <div class="admin-menu">
                     <h5 class="sidenav-heading">THAO TÁC</h5>
                     <ul id="side-admin-menu" class="side-menu list-unstyled">
-                        <li> <a href="@Url.Action("Logout","Auth")"> <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+                        <li> <a href="<c:url value ="/admin/logout"/>" ><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
                     </ul>
                 </div>
             </div>

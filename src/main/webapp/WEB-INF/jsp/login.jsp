@@ -25,38 +25,34 @@
     <div class="row py-5 mt-4 align-items-center">
         <!-- For Demo Purpose -->
         <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-            <h1>Đăng nhập</h1>
-            <p class="font-italic text-muted mb-0">Nhanh chóng và dễ dàng</p>
+            <img src="<c:url value="/img/loginpic.svg"/>" alt="" class="img-fluid mb-3 d-none d-md-block">
         </div>
         <div class="col-md-7 col-lg-6 ml-auto">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-center mt-2"><b>Đăng nhập</b></h3>
-                     
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-user text-muted"></i>
-                            </span>
+                    <form class="login100-form validate-form" action="<c:url value="/login" />" method="POST">
+                        <h3 class="text-center mt-2"><b>Đăng nhập</b></h3>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="fullname" placeholder="Tên đăng nhập" style="width: 100%" name="userName" required>
                         </div>
-                        <input type="text" class="form-control" id="fullname" placeholder="Tên đăng nhập" style="width: 100%" name="userName" required>
-
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-lock text-muted"></i>
-                            </span>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-lock text-muted"></i>
+                                </span>
+                            </div>
+                            <input type="password" class="form-control" id="fullname" placeholder="Mật khẩu" style="width: 100%" name="passWord" required>
                         </div>
-                        <input type="password" class="form-control" id="fullname" placeholder="Mật khẩu" style="width: 100%" name="password" required>
-
-                    </div>
-                    <div class="mb-2 text-center">
-                        <button type="submit" class="btn btn-template-outlined w-100"><b>Đăng nhập</b></button>
-                        <a role="button" class="btn mt-2 w-100" style="background-color: #4267B2;color: white" href="@Url.Action("LoginFacebook", new { returnURL = Request.QueryString["returnURL"] })"><i class="fab fa-facebook-square"></i> Đăng nhập bằng facebook</a>
-                    </div>
-                    
+                        ${message}
+                        <div class="mb-2 text-center">
+                            <button type="submit" class="btn btn-template-outlined w-100"><b>Đăng nhập</b></button>
+                        </div>
+                    </form>
                     <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-3">
                         <div class="border-bottom w-100 ml-5"></div>
                         <span class="px-2 small text-muted font-weight-bold text-muted">hoặc</span>

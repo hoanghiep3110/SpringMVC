@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- FOOTER START-->
 
 <div class="get-it">
@@ -61,11 +61,11 @@
             <div class="col-lg-3">
                 <h4 class="h4">Thông tin liên hệ</h4>
                 <br>
-                <p class="text-lowercase">Địa chỉ: 32 Hai bà Trưng, phường 12,<br>Quận 10,
+                <p class="text-lowercase"><strong>Địa chỉ :</strong> 32 Hai bà Trưng, phường 12,<br>Quận 10,
                     TP. Hồ Chí Minh<br></p>
                 <hr>
-                <p class="text-lowercase"><strong>Email: </strong>contact@xemayh2c.com<br><strong>Website: </strong> http://xemayh2c.com/
-                    <br><strong>Thoi gian: </strong> 8:00-21:00<br>
+                <p class="text-lowercase"><strong>Email : </strong>contact@xemayh2c.com<br><strong>Website : </strong> http://xemayh2c.com/
+                    <br><strong>Working Time : </strong> 8:00 AM - 21:00 PM<br>
                 </p>
                 <hr class="d-block d-lg-none">
             </div>
@@ -73,7 +73,7 @@
                 <h4 class="h4">Facebook fanpage</h4>
                 <br>
                 <p class="text-uppercase">Fanpage XemayH2C</p>
-                <a href="contact.html" class="btn btn-template-main">Go to contact page</a>
+                <a href="contact.html" class="btn btn-template-main">ĐẾN TRANG LIÊN HỆ</a>
                 <hr class="d-block d-lg-none">
             </div>
         </div>

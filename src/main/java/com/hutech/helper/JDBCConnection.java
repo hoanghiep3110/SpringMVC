@@ -16,13 +16,11 @@ import java.sql.Statement;
  */
 public class JDBCConnection {
 
-    private static String DB_URL = "jdbc:mysql://localhost:3306/dbbanxe";
-    private static String USER_NAME = "root";
-    private static String PASSWORD = "";
-
-
     public Connection getConnection() {
         try {
+            String DB_URL = "jdbc:mysql://localhost:3306/dbbanxe";
+            String USER_NAME = "root";
+            String PASSWORD = "";
             Class.forName("com.mysql.jdbc.Driver");
             return DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
         } catch (Exception ex) {

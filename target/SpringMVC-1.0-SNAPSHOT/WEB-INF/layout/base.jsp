@@ -4,7 +4,7 @@
     Author     : ACER
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 <!DOCTYPE html>
 <html>
@@ -14,31 +14,25 @@
             <decorator:title default="Trang chu" />
         </title>
         <link rel="stylesheet" href="<c:url value="/vendor/bootstrap/css/bootstrap.min.css"/>">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-   
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
- 
-    <link rel="stylesheet" href="<c:url value="/vendor/bootstrap-select/css/bootstrap-select.min.css"/>">
-   
-    <link rel="stylesheet" href="<c:url value="/vendor/owl.carousel/assets/owl.carousel.css"/>">
-    <link rel="stylesheet" href="<c:url value="/vendor/owl.carousel/assets/owl.theme.default.css"/>">
-  
-    <link rel="stylesheet" href="<c:url value="/css/style.css"/>">
-    <script src="<c:url value="/vendor/jquery/jquery.min.js"/>"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-    <script type="text/html" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
-    <link rel="shortcut icon" href="<c:url value="/img/tomos.png"/>">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+        <link rel="stylesheet" href="<c:url value="/vendor/bootstrap-select/css/bootstrap-select.min.css"/>">
+        <link rel="stylesheet" href="<c:url value="/vendor/owl.carousel/assets/owl.carousel.css"/>">
+        <link rel="stylesheet" href="<c:url value="/vendor/owl.carousel/assets/owl.theme.default.css"/>">
+        <link rel="stylesheet" href="<c:url value="/css/style.css"/>">
+        <script src="<c:url value="/vendor/jquery/jquery.min.js"/>"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+        <script type="text/html" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+        <link rel="shortcut icon" href="<c:url value="/img/tomos.png"/>">
     </head>
     <body>
         <!-- header -->
         <%@ include file="/WEB-INF/layout/header.jsp"%>
-        
+
         <!-- content -->
         <decorator:body />
-        
+
         <!-- footer -->
         <%@ include file="/WEB-INF/layout/footer.jsp"%>
         <a href="#" id="backtotop"><i class="fa fa-chevron-up"></i></a>
