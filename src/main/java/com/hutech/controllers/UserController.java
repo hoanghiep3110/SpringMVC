@@ -24,7 +24,7 @@ public class UserController {
 
     UserDAO userDao = new UserDAO();
 
-    @RequestMapping(value = {""})
+    @RequestMapping(value = {"/login"})
     public String login() {
         return "login";
     }

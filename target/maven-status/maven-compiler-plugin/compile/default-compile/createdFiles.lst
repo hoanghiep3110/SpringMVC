@@ -5,7 +5,6 @@ com\hutech\dao\UserRoleDAO.class
 com\hutech\model\Discount.class
 com\hutech\controllers\ProductController.class
 com\hutech\model\UserRole.class
-com\hutech\controllers\admin\HomeController.class
 com\hutech\model\ImgBlog.class
 com\hutech\configs\DispatcherServletInitializer.class
 com\hutech\controllers\HomeController.class

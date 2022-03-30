@@ -50,11 +50,8 @@
                 <div class="sidenav-header d-flex align-items-center justify-content-center">
                     <!-- User Info-->
                     <div class="sidenav-header-inner text-center">
-
                         <h2 class="h5"><%= session.getAttribute("adminName")%></h2>
                     </div>
-                    <!-- Small Brand information, appears on minimized sidebar-->
-                    <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
                 </div>
                 <!-- Sidebar Navigation Menus-->
                 <div class="main-menu">
@@ -67,7 +64,6 @@
                         <li><a href="<c:url value="/admin/blog"/>"><i class="fa-solid fa-signs-post"></i>Bài viết</a></li>
                         <li><a href="<c:url value="/admin/typecar"/>")"><i class="fa-solid fa-motorcycle"></i>Loại xe</a></li>
                         <li><a href="<c:url value="/admin/brand"/>"><i class="fa-solid fa-copyright"></i>Hãng xe</a></li>
-                        <li><a href="<c:url value="/admin/discount"/>"><i class="fa-solid fa-percent"></i>Khuyến mãi</a></li>
                         <li><a href="<c:url value="/admin/categoryblog"/>"><i class="fa-brands fa-blogger"></i>Thể loại bài viết</a></li>                
                     </ul>
                 </div>

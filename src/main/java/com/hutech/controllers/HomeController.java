@@ -25,31 +25,21 @@ public class HomeController {
     public String index(Model model) throws SQLException {
         model.addAttribute("listProduct", productDAO.getList());
         model.addAttribute("listBrand", brandDAO.getList());
-        return "index";
+        return "user/index";
     }
 
     @RequestMapping("/about")
     public String about() {
-        return "about";
+        return "user/about";
     }
-  
-//    @RequestMapping("/login")
-//    public String login() {
-//        return "login";
-//    }
-//    
-//    @RequestMapping("/register")
-//    public String register() {
-//        return "register";
-//    }
     
     @RequestMapping("/contact")
     public String contact() {
-        return "contact";
+        return "user/contact";
     }
 
     @RequestMapping("/blog")
     public String blog() {
-        return "blog";
+        return "user/blog";
     }
 }

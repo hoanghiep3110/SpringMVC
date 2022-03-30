@@ -19,7 +19,7 @@ import java.util.List;
 public class UserDAO {
 
     JDBCConnection con = new JDBCConnection();
-    
+
     public List<User> getList() throws SQLException {
         List<User> list = new ArrayList<>();
         String sql = "SELECT * FROM `user`";
@@ -38,7 +38,20 @@ public class UserDAO {
         }
         return list;
     }
-    
+
+    public User getByID(int id) throws SQLException {
+        String sql = "SELECT * FROM `user` WHERE IdUser  = " + id + "";
+        ResultSet rs = con.LoadData(sql);
+        User l = new User();
+        if (rs.next()) {
+            l.setFullName(rs.getString(3));
+            l.setEmail(rs.getString(4));
+            l.setAddress(rs.getString(7));
+            l.setPhone(rs.getString(8));
+        }
+        return l;
+    }
+
     public boolean isAdmin(String username, String pass) throws SQLException {
         String sql = "SELECT * FROM `user` WHERE Username = '" + username + "' && Password = '" + pass + "' && IdRole = 1;";
         ResultSet rs = con.LoadData(sql);
@@ -62,7 +75,7 @@ public class UserDAO {
     public String getFullname(String username, String pass) throws SQLException {
         String sql = "SELECT * FROM `user` WHERE Username = '" + username + "' && Password = '" + pass + "'";
         System.out.println(sql);
-        String u = null ;
+        String u = null;
         ResultSet rs = con.LoadData(sql);
         if (rs.next()) {
             u = rs.getString(3);
