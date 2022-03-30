@@ -41,6 +41,7 @@
         
         <!-- footer -->
         <%@ include file="/WEB-INF/layout/footer.jsp"%>
+        <a href="#" id="backtotop"><i class="fa fa-chevron-up"></i></a>
         
     <script src="<c:url value="/vendor/popper.js/umd/popper.min.js"/>"></script>
     <script src="<c:url value="/vendor/bootstrap/js/bootstrap.min.js"/>"></script>

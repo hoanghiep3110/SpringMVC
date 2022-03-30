@@ -4,7 +4,7 @@
  */
 package com.hutech.dao;
 
-import com.hutech.databases.JDBCConnection;
+import com.hutech.helper.JDBCConnection;
 import com.hutech.model.Brand;
 import com.hutech.model.Product;
 import java.sql.ResultSet;

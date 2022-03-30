@@ -3968,3 +3968,51 @@ a>code {
 .text-primary:hover{
   color: #8b0a01 !important;
 }
+#backtotop {
+    position: fixed;
+    background-color: #DA251C;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    right: 15px;
+    bottom: 40px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+
+
+    line-height: 1;
+    font-size: 16px;
+  /*  border-radius: 50%;*/
+
+
+}
+
+    #backtotop::after {
+
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2em;
+        line-height: 50px;
+        color: #fff;
+    }
+
+    #backtotop:hover {
+        cursor: pointer;
+        background-color: #333;
+    }
+
+    #backtotop:active {
+        background-color: #555;
+    }
+
+    #backtotop.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    #backtotop i {
+        padding-top: 11px;
+        color: #fff;
+    }
