@@ -50,13 +50,14 @@ public class UserController {
 
     @RequestMapping(value = {"/register"}, method = RequestMethod.POST)
     public String register(Model model, HttpServletRequest request) throws SQLException {
+        UserRole ur = new UserRole(2);
         String fullname = request.getParameter("fullName");
         String email = request.getParameter("email");
         String username = request.getParameter("userName").trim();
         String pass = MD5Hash.getMd5(request.getParameter("passWord").trim());
         String address = request.getParameter("address");
         String phone = request.getParameter("phone");
-        User u = new User(fullname, email, username, pass, address, phone);
+        User u = new User(ur,fullname, email, username, pass, address, phone);
         userDao.insertUser(u);
         boolean check = new UserDAO().isUser(username, pass);
         if (check == true) {

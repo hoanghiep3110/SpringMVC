@@ -15,7 +15,6 @@ com\hutech\model\CategoryBlog.class
 com\hutech\model\User.class
 com\hutech\dao\TypeCarDAO.class
 com\hutech\model\Brand.class
-com\hutech\controllers\admin\LoginAdminController.class
 com\hutech\helper\MD5Hash.class
 com\hutech\dao\UserDAO.class
 com\hutech\controllers\UserController.class

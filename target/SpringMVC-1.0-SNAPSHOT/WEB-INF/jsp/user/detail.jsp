@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-sm-4 card">
                     <div class="product-more">
-
+                        
                         <h1 class="my-4 text-center card-footer"> ${productDetail.nameProduct}</h1>
                         <h2 class="my-4">Giá tiền: ${productDetail.price} đ</h2>
                         <h7 class="my-4">Tình trạng: <b>${productDetail.status}</b></h7>

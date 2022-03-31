@@ -258,8 +258,9 @@ public class User implements Serializable {
     public User(Integer idUser) {
         this.idUser = idUser;
     }
-    
-    public User(String fullName, String email, String username, String password, String address, String phone){
+
+    public User(UserRole idRole, String fullName, String email, String username, String password, String address, String phone) {
+        this.idRole = idRole;
         this.fullName = fullName;
         this.email = email;
         this.username = username;
@@ -268,28 +269,15 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
-    public User(Integer idUser, String fullName, String email, String username, String password, String address, String phone, String host, String user, String sslCipher, String x509Issuer, String x509Subject, long maxQuestions, long maxUpdates, long maxConnections, long maxUserConnections, String plugin, String authenticationString, String passwordExpired, String defaultRole, BigDecimal maxStatementTime) {
+    public User(Integer idUser,UserRole idRole, String fullName, String email, String username, String password, String address, String phone) {
         this.idUser = idUser;
+        this.idRole = idRole;
         this.fullName = fullName;
         this.email = email;
         this.username = username;
         this.password = password;
         this.address = address;
         this.phone = phone;
-        this.host = host;
-        this.user = user;
-        this.sslCipher = sslCipher;
-        this.x509Issuer = x509Issuer;
-        this.x509Subject = x509Subject;
-        this.maxQuestions = maxQuestions;
-        this.maxUpdates = maxUpdates;
-        this.maxConnections = maxConnections;
-        this.maxUserConnections = maxUserConnections;
-        this.plugin = plugin;
-        this.authenticationString = authenticationString;
-        this.passwordExpired = passwordExpired;
-        this.defaultRole = defaultRole;
-        this.maxStatementTime = maxStatementTime;
     }
 
     public Integer getIdUser() {
@@ -772,5 +760,5 @@ public class User implements Serializable {
     public String toString() {
         return "com.hutech.model.User[ idUser=" + idUser + " ]";
     }
-    
+
 }

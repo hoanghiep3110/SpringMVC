@@ -67,7 +67,14 @@ public class UserDAO {
     }
 
     public void insertUser(User u) throws SQLException {
-        String sql = "INSERT INTO `user`(`IdRole`,`Fullname`, `Email`, `Username`, `Password`, `Address`, `Phone`) VALUES (2,'" + u.getFullName() + "','" + u.getEmail() + "','" + u.getUsername() + "','" + u.getPassword() + "','" + u.getAddress() + "','" + u.getPhone() + "')";
+        String sql = "INSERT INTO `user`(`IdRole`,`FullName`, `Email`, `Username`, `Password`, `Address`, `Phone`) VALUES ('" + u.getIdRole().getIdRole() +"','" + u.getFullName() + "','" + u.getEmail() + "','" + u.getUsername() + "','" + u.getPassword() + "','" + u.getAddress() + "','" + u.getPhone() + "')";
+        System.out.println(sql);
+        con.UpdateData(sql);
+    }
+     public void updateUser(User u) throws SQLException {
+        String sql = "UPDATE `user` SET `IdRole`='" + u.getIdRole().getIdRole() + "',"
+                + "`FullName`='" + u.getFullName() + "',`Email`='" + u.getEmail() + "'" + "',`Username`='" + u.getUsername() + "'" + "',`Password`='" + u.getAddress() + "'" + "',`Phone`='" + u.getPhone() + "'" 
+                +  " WHERE IdUser = " + u.getIdUser() + "";
         System.out.println(sql);
         con.UpdateData(sql);
     }
