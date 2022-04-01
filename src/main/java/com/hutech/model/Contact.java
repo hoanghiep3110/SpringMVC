@@ -52,7 +52,7 @@ public class Contact implements Serializable {
     @Column(name = "Content")
     private String content;
     @Column(name = "Status")
-    private Boolean status;
+    private Integer status;
     @JoinColumn(name = "IdUser", referencedColumnName = "IdUser")
     @ManyToOne
     private User idUser;
@@ -64,10 +64,13 @@ public class Contact implements Serializable {
         this.idContact = idContact;
     }
 
-    public Contact(Integer idContact, String title, String email) {
+    public Contact(Integer idContact,User idUser,String title, String email,String content,Integer status) {
         this.idContact = idContact;
+        this.idUser = idUser;
         this.title = title;
         this.email = email;
+        this.content = content;
+        this.status = status;
     }
 
     public Integer getIdContact() {
@@ -102,11 +105,11 @@ public class Contact implements Serializable {
         this.content = content;
     }
 
-    public Boolean getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

@@ -31,9 +31,37 @@ public class ContactDAO {
             ct.setTitle(rs.getString(3));
             ct.setEmail(rs.getString(4));
             ct.setContent(rs.getString(5));
-            ct.setStatus(rs.getBoolean(6));
+            ct.setStatus(rs.getInt(6));
             listContact.add(ct);
         }
         return listContact;
+    }
+
+    public Contact getByID(int id) throws SQLException {
+        String sql = "SELECT * FROM `contact` WHERE IdContact  = " + id + "";
+        ResultSet rs = con.LoadData(sql);
+        Contact l = new Contact();
+        if (rs.next()) {
+            l.setTitle(rs.getString(3));
+            l.setEmail(rs.getString(4));
+            l.setContent(rs.getString(5));
+            l.setStatus(rs.getInt(6));
+        }
+        return l;
+    }
+
+
+    public void EditContact(Contact u) throws SQLException {
+        String sql = "UPDATE `contact` SET `IdUser`='" + u.getIdUser().getIdUser() + "',`Title`='" + u.getTitle() + "',"
+                + "`Email`='" + u.getEmail() + "',`Content`='" + u.getContent() + "',`Status`='" + u.getStatus() + "' "
+                + "WHERE IdContact = '" + u.getIdContact() + "'";
+        System.out.println(sql);
+        con.UpdateData(sql);
+    }
+
+    public void deleteContact(int IdContact) {
+        String sql = "DELETE FROM `contact` WHERE IdContact =" + IdContact + "";
+        System.out.println(sql);
+        con.UpdateData(sql);
     }
 }

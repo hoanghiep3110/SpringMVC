@@ -7,50 +7,130 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <p style="text-align:right;margin:20px;">
-    <a href="<c:url value="/admin/product/create"/>" class="btn btn-primary">Tạo mới</a>
 </p>
+
+
 <table class="table" id="myTable">
     <thead>
         <tr>
             <th>
-                TIEU DE
+                TIÊU ĐỀ
+            </th>    
+            <th>
+                EMAIL
             </th>
             <th>
-                NGUOI GUI
+                NỘI DUNG
+            </th>
+
+            <th>
+                NGƯỜI GỬI
             </th>
             <th>
-                Email
+                TRẠNG THÁI
             </th>
             <th>
-                NOI DUNG
-            </th>
-            <th>
-                TRANG THAI
-            </th>
-            <th>
-                THAO TAC
+                THAO TÁC
             </th>
         </tr>
     </thead>
     <tbody>
         <c:forEach items="${listContact}" var="item" >
-            <tr>             
-                <td>${item.title}</td> 
-                <td>${item.idUser.fullName}</td>
+            <tr>
+                <td>${item.title}</td>
                 <td>${item.email}</td>  
-                <td>${item.content}</td>  
-                <td>${item.status}</td> 
+                <td>${item.content}</td>
+                <td>${item.idUser.fullName}</td>  
                 <td>
-                    <a data-toggle="tooltip" data-placement="bottom" title="Sửa" class="btn btn-sm btn-info" href="<c:url value="/admin/product/edit"/>">
+                    <c:choose>
+                        <c:when test="${item.status == 0}">
+                            <span style="color:darkorange;">Chưa xem</span>
+                        </c:when>
+                        <c:when test="${item.status == 1}">
+                            <span style="color:cornflowerblue;">Đã xem</span>
+                        </c:when>
+                    </c:choose>
+                </td>  
+                <td>
+                    <a data-target="#editModal${item.idContact}" data-toggle="modal" title="Sửa" class="btn btn-sm btn-info" >
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a data-toggle="tooltip" data-placement="bottom" title="Xoá" class="btn btn-sm btn-danger" href="<c:url value="/admin/product/delete"/>">
-                        <i class="fas fa-trash-alt"></i>
+                    <a data-target="#deleteModal${item.idContact}" data-toggle="modal" title="Xoa" class="btn btn-sm btn-danger" >
+                        <i class="fas fa-edit"></i>
                     </a>
                 </td>
             </tr>
-        </c:forEach>
-    </tbody>
+
+            <!<!-- Edit Modal -->
+        <div class="modal fade bd-example-modal-xl" id="editModal${item.idContact}" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">GỬI PHẢN HỒI LIÊN HỆ</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <a href="<c:url value="/admin/contact"/>" style="text-decoration: none; color: black" >x</a>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="<c:url value="/admin/contact/edit"/>" method="POST">  
+                            <input type="hidden" name="IdUser" value="${item.idContact}">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="col-form-label">GỬI ĐẾN:</label>
+                                    <input type="text" class="form-control" name="FullName" required value="${item.email}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="col-form-label">TIÊU ĐỀ</label>
+                                    <input type="text" class="form-control" name="FullName" >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="col-form-label">NỘI DUNG</label>
+                                    <input type="text" class="form-control" name="FullName" >
+                                </div>
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Ðóng</button>
+                                <button type="submit" class="btn btn-primary">Gửi phản hồi</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--End Edit Modal-->
+
+          <!<!-- Delete Modal -->
+        <div class="modal fade" id="deleteModal${item.idContact}" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">XÓA LIÊN HỆ</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">x</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Bạn có chắc chắn muốn xoá ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ðóng</button>
+                        <a href="<c:url value="/admin/contact/delete/${item.idContact}"/>" class="btn btn-danger">Xoá</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!<!--End Delete Modal -->
+    </c:forEach>
+</tbody>
 </table>
 <script>
     jQuery(document).ready(function () {
