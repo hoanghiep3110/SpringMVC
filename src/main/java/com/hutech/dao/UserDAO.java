@@ -72,9 +72,14 @@ public class UserDAO {
         con.UpdateData(sql);
     }
      public void updateUser(User u) throws SQLException {
-        String sql = "UPDATE `user` SET `IdRole`='" + u.getIdRole().getIdRole() + "',"
-                + "`FullName`='" + u.getFullName() + "',`Email`='" + u.getEmail() + "'" + "',`Username`='" + u.getUsername() + "'" + "',`Password`='" + u.getAddress() + "'" + "',`Phone`='" + u.getPhone() + "'" 
-                +  " WHERE IdUser = " + u.getIdUser() + "";
+        String sql = "UPDATE `user` SET `IdRole`='" + u.getIdRole().getIdRole() + "',`FullName`='" + u.getFullName() + "',"
+                + "`Email`='"+u.getEmail()+"',`Username`='"+u.getUsername()+"',`Password`='"+u.getPassword()+"',`Address`='"+u.getAddress()+"',`Phone`='"+u.getPhone()+"' "
+                + "WHERE IdUser = '"+u.getIdUser()+"'";
+        System.out.println(sql);
+        con.UpdateData(sql);
+    }
+     public void deleteUser(int idUser) {
+        String sql = "DELETE FROM `user` WHERE IdUser =" + idUser + "";
         System.out.println(sql);
         con.UpdateData(sql);
     }
