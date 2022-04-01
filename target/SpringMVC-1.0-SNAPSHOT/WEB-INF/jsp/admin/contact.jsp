@@ -53,10 +53,10 @@
                 </td>  
                 <td>
                     <a data-target="#editModal${item.idContact}" data-toggle="modal" title="Sửa" class="btn btn-sm btn-info" >
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-comment"></i>
                     </a>
                     <a data-target="#deleteModal${item.idContact}" data-toggle="modal" title="Xoa" class="btn btn-sm btn-danger" >
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash"></i>
                     </a>
                 </td>
             </tr>
