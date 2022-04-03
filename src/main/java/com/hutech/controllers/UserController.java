@@ -33,9 +33,9 @@ public class UserController {
     public String login(Model model, HttpServletRequest request, HttpSession session) throws SQLException {
         String username = request.getParameter("userName").trim();
         String pass = MD5Hash.getMd5(request.getParameter("passWord").trim());
-        User u = userDao.getFullname(username, pass);
+        User u = userDao.getOneUser(username, pass);
         String fullname = u.getFullName();
-        int id = u.getIdUser();
+        String id = String.valueOf(u.getIdUser());
         boolean check = new UserDAO().isUser(username, pass);
         if (check == true) {
             session.setAttribute("userName", fullname);
@@ -74,6 +74,7 @@ public class UserController {
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpSession session, HttpServletRequest request) {
         session.removeAttribute("userName");
+        session.removeAttribute("idUser");
         return "redirect:/";
     }
 }

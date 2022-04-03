@@ -32,7 +32,8 @@
                         <c:when test="${sessionScope.userName != null}">
                             <div class="login">
                                 <a class="signup-btn">
-                                <span class="d-none d-md-inline-block">${sessionScope.userName}</span></a>
+                                <span class="d-none d-md-inline-block">${sessionScope.userName}</span>
+                                <input type="hidden" name="IdUser" value="${sessionScope.idUser}"></span></a>
                                 <a href="<c:url value="/logout"/>" class="signup-btn">
                                     <i class="fa-solid fa-right-from-bracket"></i>
                                     <span class="d-none d-md-inline-block">Đăng xuất</span></a>
