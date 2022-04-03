@@ -67,8 +67,10 @@
             <div class="container mb-3 border border-1 shadow rounded rounded-3" style="width:auto">
                 <div class="row">
                     <div class="col-md-6 col-12">
+                        ${message}
                         <form action="<c:url value="/user/contact"/>" method="POST">  
                             <div class="container mb-3 border border-1 shadow rounded rounded-3" style="padding: 30px">
+                                <input type="hidden" name="IdUser" value="${sessionScope.idUser}">
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <label class="col-form-label"><b>Tiêu đề</b></label>

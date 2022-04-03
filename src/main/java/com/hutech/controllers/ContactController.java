@@ -34,7 +34,7 @@ public class ContactController {
 
     @RequestMapping(value = {"/user/contact"}, method = RequestMethod.POST)
     public String contact(Model model, HttpServletRequest request) throws SQLException {
-        Integer idUser = request.getParameter("IdUser");
+        Integer idUser = Integer.parseInt(request.getParameter("IdUser"));
         String title = request.getParameter("Title");
         String email = request.getParameter("Email");
         String content = request.getParameter("Content");
@@ -43,6 +43,7 @@ public class ContactController {
         contactDAO.insertContact(n);
         model.addAttribute("listContact", contactDAO.getListContact());
         model.addAttribute("listUser", userDAO.getList());
+        model.addAttribute("message", "<div class='alert alert-success text-center text-dark' role='alert'>Gửi liên hệ thành công</div>");
         return "user/contact";
     }
 }
