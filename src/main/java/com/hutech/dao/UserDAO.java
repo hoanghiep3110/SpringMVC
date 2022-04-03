@@ -84,15 +84,21 @@ public class UserDAO {
         con.UpdateData(sql);
     }
 
-    public User getFullname(String username, String pass) throws SQLException {
+    public User getOneUser(String username, String pass) throws SQLException {
         String sql = "SELECT * FROM `user` WHERE Username = '" + username + "' && Password = '" + pass + "'";
         System.out.println(sql);
-        User u = new User();
         ResultSet rs = con.LoadData(sql);
+        User p = new User();
         if (rs.next()) {
-            u.setIdUser(rs.getInt(1));
-            u.setFullName(rs.getString(3));
+            p.setIdUser(rs.getInt(1));
+            p.setIdRole(new UserRoleDAO().getByID(rs.getInt(2)));
+            p.setFullName(rs.getString(3));
+            p.setEmail(rs.getString(4));
+            p.setUsername(rs.getString(5));
+            p.setPassword(rs.getString(6));
+            p.setAddress(rs.getString(7));
+            p.setPhone(rs.getString(8));
         }
-        return u;
+        return p;
     }
 }

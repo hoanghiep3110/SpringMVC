@@ -34,7 +34,7 @@ public class ADMINController {
     public String login(Model model, HttpServletRequest request, HttpSession session) throws SQLException {
         String username = request.getParameter("userName").trim();
         String pass = MD5Hash.getMd5(request.getParameter("passWord").trim());
-        User u = userDao.getFullname(username, pass);
+        User u = userDao.getOneUser(username, pass);
         String fullname = u.getFullName();
         boolean check = new UserDAO().isAdmin(username, pass);
         if (check == true) {
