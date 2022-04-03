@@ -6,7 +6,6 @@ package com.hutech.controllers.admin;
 
 import com.hutech.dao.ContactDAO;
 import com.hutech.dao.UserDAO;
-import com.hutech.helper.MD5Hash;
 import com.hutech.model.Contact;
 import com.hutech.model.User;
 import java.sql.SQLException;

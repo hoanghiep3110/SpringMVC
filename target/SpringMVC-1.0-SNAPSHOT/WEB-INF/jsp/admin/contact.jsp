@@ -83,14 +83,14 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <label class="col-form-label">TIÊU ĐỀ</label>
-                                    <input type="text" class="form-control" name="FullName" >
+                                    <input type="text" class="form-control" name="Title" >
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <label class="col-form-label">NỘI DUNG</label>
-                                    <input type="text" class="form-control" name="FullName" >
+                                    <input type="text" class="form-control" name="Content" >
                                 </div>
                             </div>
 

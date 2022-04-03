@@ -64,6 +64,7 @@ public class Contact implements Serializable {
         this.idContact = idContact;
     }
 
+    
     public Contact(Integer idContact,User idUser,String title, String email,String content,Integer status) {
         this.idContact = idContact;
         this.idUser = idUser;

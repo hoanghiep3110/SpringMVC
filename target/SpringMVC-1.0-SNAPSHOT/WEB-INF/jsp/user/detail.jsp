@@ -37,11 +37,9 @@
                         
                         <h1 class="my-4 text-center card-footer"> ${productDetail.nameProduct}</h1>
                         <h2 class="my-4">Giá tiền: ${productDetail.price} đ</h2>
-                        <h7 class="my-4">Tình trạng: <b>${productDetail.status}</b></h7>
-                        <h4 class="my-4">
-                            Số lượng: <input name="sl" value="1" min="0" step="1" type="number"
-                                             class="form-control" style="width: 250px; ">
-                        </h4>
+                        <h7 class="my-4">Tình trạng: <b>${productDetail.status}</b></h7> <br> <br>
+                        <h7 class="my-4">Brand: <b>${productDetail.idBrand.nameBrand}</b></h7> <br> <br>
+                        <h7 class="my-4">Loại xe: <b>${productDetail.idType.nameType}</b></h7> <br> <br> <br>
                         <a href="tel:+0386632736"
                            class="btn-primary mx-3" style="padding: 15px 2px;box-shadow: 1px #c22026;">
                             GỌI NGAY

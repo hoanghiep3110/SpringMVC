@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="heading-breadcrumbs" class="brder-top-0 border-bottom-0">
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
@@ -13,7 +14,7 @@
             </div>
             <div class="col-md-5">
                 <ul class="breadcrumb d-flex justify-content-end">
-                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="<c:url value="/"/>">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Liên hệ</li>
                 </ul>
             </div>
@@ -39,81 +40,69 @@
                     <div class="box-simple">
                         <div class="icon-outlined"><i class="fa fa-map-marker"></i></div>
                         <h3 class="h4">Địa chỉ</h3>
-                        <p> 32 Hai bà Trưng, phường 12,<br>Quận 10,
-                            TP. Hồ Chí Minh<br></p>
+                        <p> 21B/D1,Đồng An 2,<br>Thuận An,
+                            Bình Dương<br></p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="box-simple">
                         <div class="icon-outlined"><i class="fa fa-phone"></i></div>
                         <h3 class="h4">Gọi ngay</h3>
-                        <!-- <p>This number is toll free if calling from Great Britain otherwise we advise you to use the electronic form of communication.</p> -->
-                        <p><strong>+33 555 444 333</strong></p>
+                        <p><strong>+84 386 632 736</strong></p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="box-simple">
                         <div class="icon-outlined"><i class="fa fa-envelope"></i></div>
                         <h3 class="h4">Email</h3>
-                        <!-- <p>Please feel free to write an email to us or to use our electronic ticketing system.</p> -->
                         <ul class="list-unstyled text-sm">
-                            <li><strong><a href="mailto:">contact@xemaydhcv.com</a></strong></li>
+                            <li><strong><a href="mailto:">contact@xemayh2c.com</a></strong></li>
 
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <section class=" bar pt-0">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="heading text-center">
-                        <h2>liên hệ</h2>
+        <section class="content">
+            <div class="container mb-3 border border-1 shadow rounded rounded-3" style="width:auto">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <form action="<c:url value="/user/contact"/>" method="POST">  
+                            <div class="container mb-3 border border-1 shadow rounded rounded-3" style="padding: 30px">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label class="col-form-label"><b>Tiêu đề</b></label>
+                                        <input type="text" class="form-control" name="Title" placeholder="Xin chào!" required>
+                                    </div>
+                                </div>
+                               <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label class="col-form-label"><b>Email</b></label>
+                                        <input type="text" class="form-control" name="Email" placeholder="xemayh2c@gmail.com" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label class="col-form-label"><b>Nội dung</b></label>
+                                        <textarea type="text" class="form-control" name="Content" rows="6" placeholder="Viết nội dung" required></textarea>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-template-outlined" style="width:100%"><b>Gửi</b></button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="col-md-6 col-12">
+                        <div id="map"></div>
                     </div>
                 </div>
-                <div class="col-md-8 mx-auto">
-                    <form>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="lastname">Họ</label>
-                                    <input id="lastname" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="firstname">Tên</label>
-                                    <input id="firstname" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input id="email" type="text" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label for="message">Lời nhắn</label>
-                                    <textarea id="message" class="form-control"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 text-center">
-                                <button type="submit" class="btn btn-template-outlined"><i class="fa fa-envelope-o"></i> Gửi</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="col-md-12">
-    <div id="map"></div>
-</div>
-                </div>
             </div>
-            
         </section>
-        
+
     </div>
-    
+
 </div>
 
 </div>

@@ -6,7 +6,6 @@ package com.hutech.dao;
 
 import com.hutech.helper.JDBCConnection;
 import com.hutech.model.Contact;
-import com.hutech.model.UserRole;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -50,6 +49,11 @@ public class ContactDAO {
         return l;
     }
 
+    public void insertContact(Contact u) throws SQLException {
+        String sql = "INSERT INTO `contact`(`IdUser`,`Title`, `Email`, `Content`, `Status`) VALUES ('" + u.getIdUser().getIdUser() + "','" + u.getTitle() + "','" + u.getEmail() + "','" + u.getContent() + "','" + u.getStatus() +  "')";
+        System.out.println(sql);
+        con.UpdateData(sql);
+    }
 
     public void EditContact(Contact u) throws SQLException {
         String sql = "UPDATE `contact` SET `IdUser`='" + u.getIdUser().getIdUser() + "',`Title`='" + u.getTitle() + "',"

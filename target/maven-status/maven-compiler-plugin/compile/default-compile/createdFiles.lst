@@ -12,6 +12,7 @@ com\hutech\dao\BrandDAO.class
 com\hutech\model\Blog.class
 com\hutech\model\Contact.class
 com\hutech\model\CategoryBlog.class
+com\hutech\controllers\ContactController.class
 com\hutech\model\User.class
 com\hutech\dao\TypeCarDAO.class
 com\hutech\model\Brand.class

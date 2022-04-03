@@ -33,10 +33,6 @@ public class HomeController {
         return "user/about";
     }
     
-    @RequestMapping("/contact")
-    public String contact() {
-        return "user/contact";
-    }
 
     @RequestMapping("/blog")
     public String blog() {
