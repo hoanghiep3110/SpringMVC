@@ -6,6 +6,7 @@ package com.hutech.controllers.admin;
 
 import com.hutech.dao.UserDAO;
 import com.hutech.helper.MD5Hash;
+import com.hutech.model.User;
 import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -33,7 +34,8 @@ public class ADMINController {
     public String login(Model model, HttpServletRequest request, HttpSession session) throws SQLException {
         String username = request.getParameter("userName").trim();
         String pass = MD5Hash.getMd5(request.getParameter("passWord").trim());
-        String fullname = userDao.getFullname(username, pass);
+        User u = userDao.getFullname(username, pass);
+        String fullname = u.getFullName();
         boolean check = new UserDAO().isAdmin(username, pass);
         if (check == true) {
             session.setAttribute("adminName", fullname);

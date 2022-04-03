@@ -49,7 +49,7 @@
                 <td>${item.phone}</td>  
                 <td>
                     <a data-target="#editModal${item.idUser}" data-toggle="modal" title="Sửa" class="btn btn-sm btn-info" >
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-edit" style="color : none"></i>
                     </a>
                     <a data-target="#deleteModal${item.idUser}" data-toggle="modal" title="Xoa" class="btn btn-sm btn-danger" >
                         <i class="fas fa-edit"></i>

@@ -84,13 +84,14 @@ public class UserDAO {
         con.UpdateData(sql);
     }
 
-    public String getFullname(String username, String pass) throws SQLException {
+    public User getFullname(String username, String pass) throws SQLException {
         String sql = "SELECT * FROM `user` WHERE Username = '" + username + "' && Password = '" + pass + "'";
         System.out.println(sql);
-        String u = null;
+        User u = new User();
         ResultSet rs = con.LoadData(sql);
         if (rs.next()) {
-            u = rs.getString(3);
+            u.setIdUser(rs.getInt(1));
+            u.setFullName(rs.getString(3));
         }
         return u;
     }

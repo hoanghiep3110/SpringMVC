@@ -91,7 +91,7 @@
         <script src="<c:url value="/resource/admincontent/js/grasp_mobile_progress_circle-1.0.0.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/resource/admincontent/vendor/jquery.cookie/jquery.cookie.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/resource/admincontent/vendor/jquery-validation/jquery.validate.min.js"/>" type="text/javascript"></script>
-        <!--<script src="/Areas/Admin/Helpers/ckeditor/ckeditor.js"></script>-->
+        <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
         <script src="<c:url value="/resource/admincontent/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"/>" type="text/javascript"></script>
         <!-- Main File-->
         <script src="<c:url value="/resource/admincontent/js/front.js"/>" type="text/javascript"></script>

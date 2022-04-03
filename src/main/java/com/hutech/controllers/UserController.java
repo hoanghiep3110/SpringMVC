@@ -33,10 +33,13 @@ public class UserController {
     public String login(Model model, HttpServletRequest request, HttpSession session) throws SQLException {
         String username = request.getParameter("userName").trim();
         String pass = MD5Hash.getMd5(request.getParameter("passWord").trim());
-        String fullname = userDao.getFullname(username, pass);
+        User u = userDao.getFullname(username, pass);
+        String fullname = u.getFullName();
+        int id = u.getIdUser();
         boolean check = new UserDAO().isUser(username, pass);
         if (check == true) {
             session.setAttribute("userName", fullname);
+            session.setAttribute("idUser",id);      
             return "redirect:/";
         }
         model.addAttribute("message", "<p style ='color:red'>Tên đăng nhập hoặc mật khẩu không đúng</p>");
