@@ -5,6 +5,7 @@
 package com.hutech.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -49,6 +50,10 @@ public class CategoryBlog implements Serializable {
     public CategoryBlog(Integer idCate, String nameCate) {
         this.idCate = idCate;
         this.nameCate = nameCate;
+    }
+
+    public CategoryBlog(int aInt, String string, List<Blog> list) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public Integer getIdCate() {

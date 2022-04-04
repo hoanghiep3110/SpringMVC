@@ -33,19 +33,19 @@ public class PRODUCTController {
         return "admin/product";
     }
 
-    @RequestMapping(value = {"/product/create"}, method = RequestMethod.POST)
-    public String create(Model model, HttpServletRequest request) throws SQLException {
-        String nameProduct = request.getParameter("NameProduct");
-        Integer price = Integer.parseInt(request.getParameter("Price"));
-        String description = request.getParameter("Description");
-        String status = request.getParameter("Status");
-        String linkimg = request.getParameter("LinkImg");
-        Product s = new Product(null, ten, "Đang hoạt động", new Loaisan(idLoai), null);
-        productDAO.insert(s);
-        model.addAttribute("listProduct", productDAO.getList());
-        model.addAttribute("listType", typeCarDAO.getList());
-        model.addAttribute("listBrand", brandDAO.getList());
-        return "admin/product";
-    }
+//    @RequestMapping(value = {"/product/create"}, method = RequestMethod.POST)
+//    public String create(Model model, HttpServletRequest request) throws SQLException {
+//        String nameProduct = request.getParameter("NameProduct");
+//        Integer price = Integer.parseInt(request.getParameter("Price"));
+//        String description = request.getParameter("Description");
+//        String status = request.getParameter("Status");
+//        String linkimg = request.getParameter("LinkImg");
+//        Product s = new Product(null, ten, "Đang hoạt động", new Loaisan(idLoai), null);
+//        productDAO.insert(s);
+//        model.addAttribute("listProduct", productDAO.getList());
+//        model.addAttribute("listType", typeCarDAO.getList());
+//        model.addAttribute("listBrand", brandDAO.getList());
+//        return "admin/product";
+//    }
 
 }

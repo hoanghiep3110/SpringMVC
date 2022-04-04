@@ -4,6 +4,7 @@
  */
 package com.hutech.controllers;
 
+import com.hutech.dao.BlogDAO;
 import com.hutech.dao.BrandDAO;
 import com.hutech.dao.ProductDAO;
 import java.sql.SQLException;
@@ -20,11 +21,13 @@ public class HomeController {
 
     ProductDAO productDAO = new ProductDAO();
     BrandDAO brandDAO = new BrandDAO();
+    BlogDAO blogDAO = new BlogDAO();
 
     @RequestMapping("/")
     public String index(Model model) throws SQLException {
         model.addAttribute("listProduct", productDAO.getList());
         model.addAttribute("listBrand", brandDAO.getList());
+        model.addAttribute("listBlog", blogDAO.getList());
         return "user/index";
     }
 
