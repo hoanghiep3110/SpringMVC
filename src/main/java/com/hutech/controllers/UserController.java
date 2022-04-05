@@ -25,7 +25,9 @@ public class UserController {
     UserDAO userDao = new UserDAO();
 
     @RequestMapping(value = {"/login"})
-    public String login() {
+    public String login(Model model) {
+        String title = "Đăng Nhập";
+        model.addAttribute("title", title);
         return "login";
     }
 
@@ -47,7 +49,9 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/register"})
-    public String register() {
+    public String register(Model model) {
+        String title = "Đăng Ký";
+        model.addAttribute("title", title);
         return "register";
     }
 

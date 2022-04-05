@@ -6,6 +6,7 @@ package com.hutech.controllers.admin;
 
 import com.hutech.dao.TypeCarDAO;
 import java.sql.SQLException;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,10 @@ public class TYPECARController {
     TypeCarDAO typeCarDAO = new TypeCarDAO();
 
     @RequestMapping(value = {"/typecar"})
-    public String typecar(Model model) throws SQLException {
+    public String typecar(Model model, HttpSession session) throws SQLException {
+        if (session.getAttribute("adminName") == null) {
+            return "redirect:/admin";
+        }
         model.addAttribute("listTypeCar", typeCarDAO.getList());
         return "admin/typecar";
     }

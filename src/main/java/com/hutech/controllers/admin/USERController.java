@@ -11,6 +11,7 @@ import com.hutech.model.User;
 import com.hutech.model.UserRole;
 import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,7 +30,10 @@ public class USERController {
     UserRoleDAO userroleDAO = new UserRoleDAO();
 
     @RequestMapping(value = {"/user"})
-    public String user(Model model) throws SQLException {
+    public String user(Model model, HttpSession session) throws SQLException {
+        if (session.getAttribute("adminName") == null) {
+            return "redirect:/admin";
+        }
         model.addAttribute("listUser", userDAO.getList());
         model.addAttribute("listUserRole", userroleDAO.getListUserRole());
         return "admin/user";

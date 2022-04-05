@@ -8,6 +8,7 @@ import com.hutech.dao.BrandDAO;
 import com.hutech.dao.ProductDAO;
 import com.hutech.dao.TypeCarDAO;
 import java.sql.SQLException;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,13 +20,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/admin")
 public class PRODUCTController {
-
+    
     ProductDAO productDAO = new ProductDAO();
     TypeCarDAO typeCarDAO = new TypeCarDAO();
     BrandDAO brandDAO = new BrandDAO();
 
     @RequestMapping(value = {"/product"})
-    public String product(Model model) throws SQLException {
+    public String product(Model model, HttpSession session) throws SQLException {
+        if (session.getAttribute("adminName") == null) {
+            return "redirect:/admin";
+        }
         model.addAttribute("listProduct", productDAO.getList());
         return "admin/product";
     }

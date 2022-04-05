@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>
-            <decorator:title default="Trang chu" />
+            <decorator:title default="${title}" />
         </title>
         <link rel="stylesheet" href="<c:url value="/vendor/bootstrap/css/bootstrap.min.css"/>">
 

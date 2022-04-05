@@ -22,7 +22,6 @@ com\hutech\controllers\admin\TYPECARController.class
 com\hutech\dao\TypeCarDAO.class
 com\hutech\model\Brand.class
 com\hutech\helper\MD5Hash.class
-com\hutech\controllers\admin\BASEController.class
 com\hutech\dao\UserDAO.class
 com\hutech\controllers\UserController.class
 com\hutech\helper\JDBCConnection.class

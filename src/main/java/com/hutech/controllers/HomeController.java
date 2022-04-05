@@ -25,17 +25,23 @@ public class HomeController {
     public String index(Model model) throws SQLException {
         model.addAttribute("listProduct", productDAO.getList());
         model.addAttribute("listBrand", brandDAO.getList());
+        String title = "Trang Chủ";
+        model.addAttribute("title", title);
         return "user/index";
     }
 
     @RequestMapping("/about")
-    public String about() {
+    public String about(Model model) {
+        String title = "Giới Thiệu";
+        model.addAttribute("title", title);
         return "user/about";
     }
     
 
     @RequestMapping("/blog")
-    public String blog() {
+    public String blog(Model model) {
+        String title = "Tạp Chí Xe";
+        model.addAttribute("title", title);
         return "user/blog";
     }
 }

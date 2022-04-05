@@ -32,6 +32,8 @@ public class ProductController {
         model.addAttribute("listProduct", productDAO.getList());
         model.addAttribute("listType", typeCarDAO.getList());
         model.addAttribute("listBrand", brandDAO.getList());
+        String title = "Sản Phẩm";
+        model.addAttribute("title", title);
         return "user/product";
     }
 
@@ -42,6 +44,8 @@ public class ProductController {
         String newUri = request.getRequestURL().toString();
         model.addAttribute("urlShare", newUri);
         System.out.println(newUri);
+        String title = "Chi Tiết Sản Phẩm";
+        model.addAttribute("title", title);
         model.addAttribute("productDetail", product);
         return "user/detail";
     }
