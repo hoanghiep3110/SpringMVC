@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -24,14 +25,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProductController {
 
     ProductDAO productDAO = new ProductDAO();
-    TypeCarDAO typeCarDAO = new TypeCarDAO();
-    BrandDAO brandDAO = new BrandDAO();
 
     @RequestMapping(value = {"/product"})
-    public String product(Model model) throws SQLException {
-        model.addAttribute("listProduct", productDAO.getList());
-        model.addAttribute("listType", typeCarDAO.getList());
-        model.addAttribute("listBrand", brandDAO.getList());
+    public String product(Model model ,@RequestParam(required = false) Integer idBrand ,@RequestParam(required = false) Integer idType) throws SQLException {
+        if (idBrand != null) {
+            model.addAttribute("listProduct", productDAO.getByIdBrand(idBrand));
+        } else {
+            model.addAttribute("listProduct", productDAO.getList());
+        }
+        model.addAttribute("listBrand", new BrandDAO().getList());
+        if (idType != null) {
+            model.addAttribute("listProduct", productDAO.getByIdType(idType));
+        } else {
+            model.addAttribute("listProduct", productDAO.getList());
+        }
+        model.addAttribute("listType", new TypeCarDAO().getList());
+        
         return "user/product";
     }
 
@@ -46,11 +55,4 @@ public class ProductController {
         return "user/detail";
     }
 
-    @RequestMapping(value = {"/product/{idbrand}"})
-    public String brand(Model model, @PathVariable("idbrand") int idbrand) throws SQLException {
-        Brand brand = new BrandDAO().getByID(idbrand);
-        System.out.println(brand.getNameBrand());
-        model.addAttribute("brand", brand);
-        return "user/brand";
-    }
 }

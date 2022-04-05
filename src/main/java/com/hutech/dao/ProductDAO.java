@@ -56,6 +56,44 @@ public class ProductDAO {
         return p;
     }
 
+    public List<Product> getByIdBrand(int idBrand) throws SQLException {
+       List<Product> list = new ArrayList<>();
+        String sql = "SELECT * FROM `product` WHERE IdBrand = " + idBrand + "";
+        ResultSet rs = con.LoadData(sql);
+        while (rs.next()) {
+            Product p = new Product();
+            p.setIdProduct(rs.getInt(1));
+            p.setNameProduct(rs.getString(2));
+            p.setPrice(rs.getInt(3));
+            p.setDescription(rs.getString(4));
+            p.setStatus(rs.getString(5));
+            p.setLinkImg(rs.getString(6));
+            p.setIdBrand(new BrandDAO().getByID(rs.getInt(7)));
+            p.setIdType(new TypeCarDAO().getByID(rs.getInt(8)));
+            list.add(p);
+        }
+        return list;
+    }
+    
+    public List<Product> getByIdType(int idType) throws SQLException {
+       List<Product> list = new ArrayList<>();
+        String sql = "SELECT * FROM `product` WHERE IdType = " + idType + "";
+        ResultSet rs = con.LoadData(sql);
+        while (rs.next()) {
+            Product p = new Product();
+            p.setIdProduct(rs.getInt(1));
+            p.setNameProduct(rs.getString(2));
+            p.setPrice(rs.getInt(3));
+            p.setDescription(rs.getString(4));
+            p.setStatus(rs.getString(5));
+            p.setLinkImg(rs.getString(6));
+            p.setIdBrand(new BrandDAO().getByID(rs.getInt(7)));
+            p.setIdType(new TypeCarDAO().getByID(rs.getInt(8)));
+            list.add(p);
+        }
+        return list;
+    }
+    
     public void insert(Product p) {
         String sql = "INSERT INTO `product`(`IdBrand`,`IdType`, `NameProduct`, `Price`,`Description`,`Status`,`LinkImg`) "
                 + "VALUES ('" + p.getIdBrand().getIdBrand() + "','" + p.getIdType().getIdType() + "','" + p.getNameProduct() + "','" + p.getPrice() + "','" + p.getDescription() + "','" + p.getStatus() + "','" + p.getLinkImg() + "')";
