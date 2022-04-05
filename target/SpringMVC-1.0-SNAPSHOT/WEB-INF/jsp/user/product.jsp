@@ -37,24 +37,21 @@
                         <div class="card-header">
                             Hãng xe
                         </div>                   
-                        <ul class="list-group list-group-flush">                        
-                            <c:forEach  var = "item" items="${listBrand}">
-
-                                <li class="list-group-item">${item.nameBrand}</li> 
-
+                        <a href="<c:url value="/product"/>" class="list-group list-group-flush">                        
+                            <c:forEach items="${listBrand}" var="item">
+                                <a href="<c:url value="/product?idBrand=${item.idBrand}"/>" class="list-group-item list-group-item-action">${item.nameBrand}</a>
                             </c:forEach>
-                        </ul>
+                        </a>
                     </div>                
                     <div class="card" style="width: 100%;">
                         <div class="card-header">
                             Loại xe
                         </div>                   
-                        <ul class="list-group list-group-flush">
-                            <c:forEach  var = "item" items="${listType}">
-
-                                <li class="list-group-item">${item.nameType}</li> 
-                                </c:forEach>
-                        </ul>
+                         <a href="<c:url value="/product"/>" class="list-group list-group-flush">                        
+                            <c:forEach items="${listType}" var="item">
+                                <a href="<c:url value="/product?idType=${item.idType}"/>" class="list-group-item list-group-item-action">${item.nameType}</a>
+                            </c:forEach>
+                        </a>
                     </div>                     
                 </div>
                 <div class="col-md-9">
