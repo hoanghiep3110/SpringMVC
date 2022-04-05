@@ -7,7 +7,6 @@ package com.hutech.controllers;
 import com.hutech.dao.BrandDAO;
 import com.hutech.dao.ProductDAO;
 import com.hutech.dao.TypeCarDAO;
-import com.hutech.model.Brand;
 import com.hutech.model.Product;
 import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
@@ -33,14 +32,15 @@ public class ProductController {
         } else {
             model.addAttribute("listProduct", productDAO.getList());
         }
-        model.addAttribute("listBrand", new BrandDAO().getList());
         if (idType != null) {
             model.addAttribute("listProduct", productDAO.getByIdType(idType));
         } else {
             model.addAttribute("listProduct", productDAO.getList());
         }
+        String title = "Sản Phẩm";
+        model.addAttribute("title", title);
+        model.addAttribute("listBrand", new BrandDAO().getList());
         model.addAttribute("listType", new TypeCarDAO().getList());
-        
         return "user/product";
     }
 
