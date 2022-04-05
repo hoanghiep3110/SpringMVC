@@ -56,6 +56,9 @@ public class Blog implements Serializable {
     @Size(min = 1, max = 2147483647)
     @Column(name = "Content")
     private String content;
+    @Size(max = 400)
+    @Column(name = "LinkImg")
+    private String linkImg;
     @Basic(optional = false)
     @NotNull
     @Column(name = "DateCreate")
@@ -71,11 +74,13 @@ public class Blog implements Serializable {
         this.idBlog = idBlog;
     }
 
-    public Blog(Integer idBlog, int idCate, int idUser, String content, Date dateCreate) {
+    public Blog(Integer idBlog, int idCate, String title, int idUser, String content, String linkImg, Date dateCreate) {
         this.idBlog = idBlog;
         this.idCate = idCate;
+        this.title = title;
         this.idUser = idUser;
         this.content = content;
+        this.linkImg = linkImg;
         this.dateCreate = dateCreate;
     }
 
@@ -117,6 +122,14 @@ public class Blog implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+    
+    public String getLinkImg() {
+        return linkImg;
+    }
+
+    public void setLinkImg(String linkImg) {
+        this.linkImg = linkImg;
     }
 
     public Date getDateCreate() {

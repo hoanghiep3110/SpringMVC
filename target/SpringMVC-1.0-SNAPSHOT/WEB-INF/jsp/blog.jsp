@@ -69,30 +69,17 @@
         <div class="row bar">
             <div id="blog-listing-medium" class="col-md-9">
                 <section class="post">
-                    <div class="row">
-                        @foreach (var blog in Model)
-                        {
-
-
+                    <div class="row">       
                         <div class="col-md-4 my-2">
                             <a href="@Url.Action("Detail", "Blog", new { id = blog.IdBlog }, null)">
-                                @foreach (var item in blog.IMG_BLOG)
-                                {
-
-                                if (blog.IdBlog == item.IdBlog)
-                                {
-                                <img src="@item.LinkImg" alt="Example blog post alt" class="img-fluid shadow">
-                                }
-
-
-                                }
+                                <img src="<c:url> value="${item.linkImg}"</c:url>"class="img-fluid shadow">
                             </a>
                         </div>
                         <div class="col-md-8 my-2">
-                            <a href="@Url.Action("Detail", "Blog", new { id = blog.IdBlog }, null)"><h2 class="h3 mt-0"> @blog.Title</h2></a>
+                            <a href="@Url.Action("Detail", "Blog", new { id = blog.IdBlog }, null)"><h2 class="h3 mt-0">${item.Title}</h2></a>
                             <div class="d-flex flex-wrap justify-content-between text-xs">
                                 <p class="author-category">
-                                    @*@blog.USER.FullName*@<span>in</span> XEMAYDHCV
+                                    ${item.Title}<span>in</span> XEMAYDHCV
                                 </p>
                                 <p class="date-comments"><a href="#"><i class="fa fa-calendar-o"></i>@blog.DateCreate</a></p>
                             </div>
