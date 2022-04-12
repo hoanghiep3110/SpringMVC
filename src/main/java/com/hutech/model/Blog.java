@@ -42,27 +42,31 @@ public class Blog implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "IdCate")
-    private int idCate;
+    private CategoryBlog idCate;
+    @Column(name = "IdUser")
+    private User idUser;
+    @Basic(optional = false)
+    @NotNull
+    @Lob
     @Size(max = 255)
     @Column(name = "Title")
     private String title;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "IdUser")
-    private int idUser;
-    @Basic(optional = false)
-    @NotNull
-    @Lob
     @Size(min = 1, max = 2147483647)
     @Column(name = "Content")
     private String content;
     @Basic(optional = false)
     @NotNull
+    @Size(max = 400)
+    @Column(name = "LinkImg")
+    private String linkImg;
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "DateCreate")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateCreate;
-    @OneToMany(mappedBy = "idBlog")
-    private Collection<ImgBlog> imgBlogCollection;
+   
 
     public Blog() {
     }
@@ -71,11 +75,13 @@ public class Blog implements Serializable {
         this.idBlog = idBlog;
     }
 
-    public Blog(Integer idBlog, int idCate, int idUser, String content, Date dateCreate) {
+    public Blog(Integer idBlog, CategoryBlog idCate, User idUser,String title, String content,String linkImg, Date dateCreate) {
         this.idBlog = idBlog;
         this.idCate = idCate;
         this.idUser = idUser;
+        this.title = title;
         this.content = content;
+        this.linkImg = linkImg;
         this.dateCreate = dateCreate;
     }
 
@@ -87,11 +93,11 @@ public class Blog implements Serializable {
         this.idBlog = idBlog;
     }
 
-    public int getIdCate() {
+    public CategoryBlog getIdCate() {
         return idCate;
     }
 
-    public void setIdCate(int idCate) {
+    public void setIdCate(CategoryBlog idCate) {
         this.idCate = idCate;
     }
 
@@ -103,11 +109,11 @@ public class Blog implements Serializable {
         this.title = title;
     }
 
-    public int getIdUser() {
+    public User getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(int idUser) {
+    public void setIdUser(User idUser) {
         this.idUser = idUser;
     }
 
@@ -118,6 +124,15 @@ public class Blog implements Serializable {
     public void setContent(String content) {
         this.content = content;
     }
+    
+     public String getLinkImg() {
+        return linkImg;
+    }
+
+    public void setLinkImg(String linkImg) {
+        this.linkImg = linkImg;
+    }
+
 
     public Date getDateCreate() {
         return dateCreate;
@@ -127,13 +142,7 @@ public class Blog implements Serializable {
         this.dateCreate = dateCreate;
     }
 
-    public Collection<ImgBlog> getImgBlogCollection() {
-        return imgBlogCollection;
-    }
-
-    public void setImgBlogCollection(Collection<ImgBlog> imgBlogCollection) {
-        this.imgBlogCollection = imgBlogCollection;
-    }
+    
 
     @Override
     public int hashCode() {

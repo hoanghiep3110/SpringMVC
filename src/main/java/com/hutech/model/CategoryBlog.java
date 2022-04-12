@@ -5,6 +5,7 @@
 package com.hutech.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,6 +39,7 @@ public class CategoryBlog implements Serializable {
     @Size(min = 1, max = 50)
     @Column(name = "NameCate")
     private String nameCate;
+    private List<Blog> listBlog;
 
     public CategoryBlog() {
     }
@@ -46,10 +48,12 @@ public class CategoryBlog implements Serializable {
         this.idCate = idCate;
     }
 
-    public CategoryBlog(Integer idCate, String nameCate) {
+    public CategoryBlog(Integer idCate, String nameCate,List<Blog> listBlog) {
         this.idCate = idCate;
         this.nameCate = nameCate;
+        this.listBlog = listBlog;
     }
+
 
     public Integer getIdCate() {
         return idCate;

@@ -38,19 +38,16 @@
                 <br>
                 <ul class="list-unstyled footer-blog-list">
                     <li class="d-flex align-items-center">
-                        <!-- <div class="image"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></div> -->
                         <div class="text">
                             <h5 class="mb-0"> <a href="post.html">Về chúng tôi</a></h5>
                         </div>
                     </li>
                     <li class="d-flex align-items-center">
-                        <!-- <div class="image"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></div> -->
                         <div class="text">
                             <h5 class="mb-0"> <a href="post.html">Chính sách bán hàng</a></h5>
                         </div>
                     </li>
                     <li class="d-flex align-items-center">
-                        <!-- <div class="image"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></div> -->
                         <div class="text">
                             <h5 class="mb-0"> <a href="post.html">Bảo hành và sửa chữa</a></h5>
                         </div>
@@ -73,7 +70,7 @@
                 <h4 class="h4">Facebook fanpage</h4>
                 <br>
                 <p class="text-uppercase">Fanpage XemayH2C</p>
-                <a href="contact.html" class="btn btn-template-main">ĐẾN TRANG LIÊN HỆ</a>
+                <a href="<c:url value="/contact"/>" class="btn btn-template-main">ĐẾN TRANG LIÊN HỆ</a>
                 <hr class="d-block d-lg-none">
             </div>
         </div>

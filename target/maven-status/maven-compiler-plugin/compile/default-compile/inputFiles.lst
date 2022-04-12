@@ -1,7 +1,9 @@
 D:\Document\SpringMVC\src\main\java\com\hutech\dao\UserDAO.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\OrderDetailPK.java
 D:\Document\SpringMVC\src\main\java\com\hutech\controllers\admin\USERController.java
+D:\Document\SpringMVC\src\main\java\com\hutech\dao\CateDAO.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\Order.java
+D:\Document\SpringMVC\src\main\java\com\hutech\controllers\BlogController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\controllers\admin\BASEController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\controllers\ContactController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\Typecar.java
@@ -12,7 +14,6 @@ D:\Document\SpringMVC\src\main\java\com\hutech\model\CategoryBlog.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\UserRole.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\Product.java
 D:\Document\SpringMVC\src\main\java\com\hutech\dao\TypeCarDAO.java
-D:\Document\SpringMVC\src\main\java\com\hutech\model\ImgBlog.java
 D:\Document\SpringMVC\src\main\java\com\hutech\configs\WebApplicationContextConfig.java
 D:\Document\SpringMVC\src\main\java\com\hutech\controllers\HomeController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\dao\ContactDAO.java
@@ -21,6 +22,7 @@ D:\Document\SpringMVC\src\main\java\com\hutech\controllers\UserController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\controllers\admin\ADMINController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\controllers\admin\PRODUCTController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\Brand.java
+D:\Document\SpringMVC\src\main\java\com\hutech\dao\BlogDAO.java
 D:\Document\SpringMVC\src\main\java\com\hutech\helper\MD5Hash.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\Blog.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\Contact.java
