@@ -8,11 +8,13 @@ D:\Document\SpringMVC\src\main\java\com\hutech\controllers\admin\BASEController.
 D:\Document\SpringMVC\src\main\java\com\hutech\controllers\ContactController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\Typecar.java
 D:\Document\SpringMVC\src\main\java\com\hutech\controllers\admin\BRANDController.java
+D:\Document\SpringMVC\src\main\java\com\hutech\controllers\admin\BLOGController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\OrderDetail.java
 D:\Document\SpringMVC\src\main\java\com\hutech\controllers\admin\TYPECARController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\CategoryBlog.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\UserRole.java
 D:\Document\SpringMVC\src\main\java\com\hutech\model\Product.java
+D:\Document\SpringMVC\src\main\java\com\hutech\controllers\admin\CATEGORYBLOGController.java
 D:\Document\SpringMVC\src\main\java\com\hutech\dao\TypeCarDAO.java
 D:\Document\SpringMVC\src\main\java\com\hutech\configs\WebApplicationContextConfig.java
 D:\Document\SpringMVC\src\main\java\com\hutech\controllers\HomeController.java

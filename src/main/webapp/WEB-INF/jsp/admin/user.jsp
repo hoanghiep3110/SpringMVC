@@ -56,7 +56,7 @@
                     </a>
                 </td>
             </tr>
-            <!<!-- Create Modal -->
+            <!-- Create Modal -->
         <div class="modal fade bd-example-modal-xl" id="createModal" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -132,7 +132,7 @@
             </div>
         </div>
         <!--End Create Modal-->
-        <!<!-- Edit Modal -->
+        <!-- Edit Modal -->
         <div class="modal fade bd-example-modal-xl" id="editModal${item.idUser}" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -211,7 +211,7 @@
             </div>
         </div>
         <!--End Edit Modal-->
-        <!<!-- Delete Modal -->
+        <!-- Delete Modal -->
         <div class="modal fade" id="deleteModal${item.idUser}" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -231,7 +231,7 @@
                 </div>
             </div>
         </div>
-        <!<!--End Delete Modal -->
+        <!--End Delete Modal -->
     </c:forEach>
 </tbody>
 </table>

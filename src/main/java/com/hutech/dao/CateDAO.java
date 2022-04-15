@@ -46,8 +46,7 @@ public class CateDAO {
     }
 
     public void update(CategoryBlog l) {
-        String sql = "UPDATE `category_blog` SET "
-                +  "',`NameCate`='"+l.getNameCate()+"' WHERE IdCate = " + l.getIdCate() + "";
+        String sql = "UPDATE `category_blog` SET `NameCate`='"+l.getNameCate()+"' WHERE IdCate = " + l.getIdCate() + "";
         System.out.println(sql);
         con.UpdateData(sql);
     }

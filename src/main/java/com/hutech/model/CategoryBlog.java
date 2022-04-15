@@ -53,6 +53,11 @@ public class CategoryBlog implements Serializable {
         this.nameCate = nameCate;
         this.listBlog = listBlog;
     }
+    
+
+    public CategoryBlog(String nameCate) {
+        this.nameCate = nameCate;
+    }
 
 
     public Integer getIdCate() {
