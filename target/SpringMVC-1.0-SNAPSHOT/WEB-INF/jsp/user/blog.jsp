@@ -16,16 +16,16 @@
                 <div class="item">
                     <div class="row">
                         <div class="col-md-5 text-right">
+                            <p><img src="img/logo.png" alt="" class="ml-auto"></p>
                             <h1>XE CŨ ĐI LÀM GIÁ RẺ BẤT NGỜ</h1>
                             <p>Sang tên, đổi chủ nhanh chóng<br>5 phút thủ tục</p>
                         </div>
-                        <div class="col-md-7"><img src="/Public/img/bannerslider1-xemayz.png" alt="" class="img-fluid"></div>
+                        <div class="col-md-7"><img src="img/bannerslider1-xemayz.png" alt="" class="img-fluid"></div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="row">
-                        <div class="col-md-7 text-center">
-                            <img src="/Public/img/bannerslider2-xemayz.png" alt="" class="img-fluid">
+                        <div class="col-md-7 text-center"><img src="img/bannerslider2-xemayz.png" alt="" class="img-fluid">
                         </div>
                         <div class="col-md-5">
                             <h1>XE CŨ ĐI LÀM GIÁ RẺ BẤT NGỜ</h1>
@@ -44,12 +44,12 @@
                                 <li>miễn phí rửa xe</li>
                             </ul>
                         </div>
-                        <div class="col-md-7"><img src="/Public/img/banner-cuoi-xemayz.png" alt="" class="img-fluid"></div>
+                        <div class="col-md-7"><img src="img/banner-cuoi-xemayz.png" alt="" class="img-fluid"></div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="row">
-                        <div class="col-md-7"><img src="/Public/img/xe-con-tay-tu-25-trieu-xemayz.png" alt="" class="img-fluid"></div>
+                        <div class="col-md-7"><img src="img/xe-con-tay-tu-25-trieu-xemayz.png" alt="" class="img-fluid"></div>
                         <div class="col-md-5">
                             <h1>Xe côn tay</h1>
                             <ul class="list-unstyled">
