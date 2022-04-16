@@ -4,6 +4,7 @@
  */
 package com.hutech.controllers;
 
+import com.hutech.dao.BlogDAO;
 import com.hutech.dao.BrandDAO;
 import com.hutech.dao.ProductDAO;
 import com.hutech.dao.TypeCarDAO;
@@ -37,7 +38,7 @@ public class ProductController {
         } else {
             model.addAttribute("listProduct", productDAO.getList());
         }
-        
+      
         model.addAttribute("listBrand", new BrandDAO().getList());
         model.addAttribute("listType", new TypeCarDAO().getList());
        
