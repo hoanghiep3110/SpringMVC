@@ -102,7 +102,7 @@
                     <section>
                         <div class="row portfolio my-5">
                             <div class="col-sm-6">
-                                <img src="<c:url value="/img/xega.png"/>" class="img-fluid"/>
+                                <img src="<c:url value="/img/typecar/xega.jpg"/>" class="img-fluid"/>
                             </div>
                             <div class="col-sm-6 my-5">
                                 <div>

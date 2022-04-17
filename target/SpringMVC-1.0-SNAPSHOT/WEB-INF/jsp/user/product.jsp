@@ -4,9 +4,27 @@
     Author     : huynh
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.hutech.model.Product"%>
+<%@page import="com.hutech.dao.ProductDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%
+    ProductDAO productDAO = new ProductDAO();
+    List<Product> arr = productDAO.getList();
+    int start = 0, end = 6;
+    if (arr.size() < 6) {
+        end = arr.size();
+    }
+    if (request.getParameter("start") != null) {
+        start = Integer.parseInt(request.getParameter("start"));
+    }
+    if (request.getParameter("end") != null) {
+        end = Integer.parseInt(request.getParameter("end"));
+    }
+    List<Product> list = productDAO.getListByPage(arr, start, end);
+%>
 <div id="heading-breadcrumbs">
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
@@ -47,7 +65,7 @@
                         <div class="card-header">
                             Loại xe
                         </div>                   
-                         <a href="<c:url value="/product"/>" class="list-group list-group-flush">                        
+                        <a href="<c:url value="/product"/>" class="list-group list-group-flush">                        
                             <c:forEach items="${listType}" var="item">
                                 <a href="<c:url value="/product?idType=${item.idType}"/>" class="list-group-item list-group-item-action">${item.nameType}</a>
                             </c:forEach>
@@ -56,43 +74,66 @@
                 </div>
                 <div class="col-md-9">
                     <div class="row portfolio text-center">
-                        <c:forEach  var = "item" items="${listProduct}">                       
-                            <div class="col-md-4">
-                                <div class="box-image card">
-                                    <div class="image">
-                                        <a href="<c:url value="/detail/${item.idProduct}"/>">
+                        <%
+                            for (Product p : list) {
+                        %>                   
+                        <div class="col-md-4">
+                            <div class="box-image card">
+                                <div class="image">
+                                    <a href="/SpringMVC/detail/<%=p.getIdProduct()%>">
 
-                                            <img src="<c:url value="${item.linkImg}"/>" alt="" class="img-fluid">
+                                        <img src="/SpringMVC/<%=p.getLinkImg()%>" alt="" class="img-fluid">
 
-                                            <div style="text-align:center;">${item.nameProduct}</div>
-                                            <div style="text-align:center;">Giá : ${item.price}đ</div>
-                                            <div class="overlay d-flex align-items-center justify-content-center">
-                                                <div class="content">
-                                                    <div class="text">
-                                                        <p class="buttons">
-                                                        <h6 class="btn btn-template-outlined-white">
-                                                            Xem chi tiết
-                                                        </h6>
-                                                        </p>
-                                                    </div>
+                                        <div style="text-align:center;"><%=p.getNameProduct()%></div>
+                                        <div style="text-align:center;">Giá : <%=p.getPrice()%>đ</div>
+                                        <div class="overlay d-flex align-items-center justify-content-center">
+                                            <div class="content">
+                                                <div class="text">
+                                                    <p class="buttons">
+                                                    <h6 class="btn btn-template-outlined-white">
+                                                        Xem chi tiết
+                                                    </h6>
+                                                    </p>
                                                 </div>
                                             </div>
-                                        </a>
-                                    </div>
+                                        </div>
+                                    </a>
                                 </div>
-
                             </div>
 
-                        </c:forEach>
-                    </div>
-                    <ul class="pager d-flex align-items-center justify-content-between list-unstyled" style="position: absolute; width: 100%; padding-right: 15px; bottom: -80px; ">
-                        <li>
-                        </li>
-                    </ul>
+                        </div>
+
+                    <%
+                        }
+                    %>
                 </div>
+                <ul class="pagination" id="pagination">
+                    <%
+                        int a, b;
+                        int limit = arr.size() / 6;
+                        if (limit * 6 < arr.size()) {
+                            limit += 1;
+                        }
+                        for (int i = 1; i <= limit; i++) {
+                            a = (i - 1) * 6;
+                            b = i * 6;
+                            if (b > arr.size()) {
+                                b = arr.size();
+                            }
+                    %>
+                    <li><a href="product?start=<%=a%>&end=<%=b%>"><%=i%></a></li>
+                        <%
+                            }
+                        %>
+                </ul>
+                <ul class="pager d-flex align-items-center justify-content-between list-unstyled" style="position: absolute; width: 100%; padding-right: 15px; bottom: -80px; ">
+                    <li>
+                    </li>
+                </ul>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</div>
 </div>
 <section class="bar background-pentagon no-mb">
     <div class="container">

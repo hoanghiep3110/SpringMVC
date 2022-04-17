@@ -5,7 +5,6 @@
 package com.hutech.dao;
 
 import com.hutech.helper.JDBCConnection;
-import com.hutech.model.OrderDetail;
 import com.hutech.model.Product;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -90,6 +89,15 @@ public class ProductDAO {
             p.setIdBrand(new BrandDAO().getByID(rs.getInt(7)));
             p.setIdType(new TypeCarDAO().getByID(rs.getInt(8)));
             list.add(p);
+        }
+        return list;
+    }
+    
+    public List<Product> getListByPage(List<Product> arr, int start, int end){
+        List<Product> list = new ArrayList<>();
+        for (int i = start; i < end; i++)
+        {
+            list.add(arr.get(i));
         }
         return list;
     }

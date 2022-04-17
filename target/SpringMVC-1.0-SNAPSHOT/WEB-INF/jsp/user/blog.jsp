@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <section style="background: url('/Public/img/photogrid.jpg') center center repeat; background-size: cover;"
          class="relative-positioned">
     <!-- Carousel Start-->
@@ -16,16 +16,16 @@
                 <div class="item">
                     <div class="row">
                         <div class="col-md-5 text-right">
+                            <p><img src="img/logo.png" alt="" class="ml-auto"></p>
                             <h1>XE CŨ ĐI LÀM GIÁ RẺ BẤT NGỜ</h1>
                             <p>Sang tên, đổi chủ nhanh chóng<br>5 phút thủ tục</p>
                         </div>
-                        <div class="col-md-7"><img src="/Public/img/bannerslider1-xemayz.png" alt="" class="img-fluid"></div>
+                        <div class="col-md-7"><img src="img/bannerslider1-xemayz.png" alt="" class="img-fluid"></div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="row">
-                        <div class="col-md-7 text-center">
-                            <img src="/Public/img/bannerslider2-xemayz.png" alt="" class="img-fluid">
+                        <div class="col-md-7 text-center"><img src="img/bannerslider2-xemayz.png" alt="" class="img-fluid">
                         </div>
                         <div class="col-md-5">
                             <h1>XE CŨ ĐI LÀM GIÁ RẺ BẤT NGỜ</h1>
@@ -44,12 +44,12 @@
                                 <li>miễn phí rửa xe</li>
                             </ul>
                         </div>
-                        <div class="col-md-7"><img src="/Public/img/banner-cuoi-xemayz.png" alt="" class="img-fluid"></div>
+                        <div class="col-md-7"><img src="img/banner-cuoi-xemayz.png" alt="" class="img-fluid"></div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="row">
-                        <div class="col-md-7"><img src="/Public/img/xe-con-tay-tu-25-trieu-xemayz.png" alt="" class="img-fluid"></div>
+                        <div class="col-md-7"><img src="img/xe-con-tay-tu-25-trieu-xemayz.png" alt="" class="img-fluid"></div>
                         <div class="col-md-5">
                             <h1>Xe côn tay</h1>
                             <ul class="list-unstyled">
@@ -70,46 +70,40 @@
             <div id="blog-listing-medium" class="col-md-9">
                 <section class="post">
                     <div class="row">
-                        @foreach (var blog in Model)
-                        {
-
-
-                        <div class="col-md-4 my-2">
-                            <a href="@Url.Action("Detail", "Blog", new { id = blog.IdBlog }, null)">
-                                @foreach (var item in blog.IMG_BLOG)
-                                {
-
-                                if (blog.IdBlog == item.IdBlog)
-                                {
-                                <img src="@item.LinkImg" alt="Example blog post alt" class="img-fluid shadow">
-                                }
-
-
-                                }
-                            </a>
-                        </div>
-                        <div class="col-md-8 my-2">
-                            <a href="@Url.Action("Detail", "Blog", new { id = blog.IdBlog }, null)"><h2 class="h3 mt-0"> @blog.Title</h2></a>
-                            <div class="d-flex flex-wrap justify-content-between text-xs">
-                                <p class="author-category">
-                                    @*@blog.USER.FullName*@<span>in</span> XEMAYDHCV
-                                </p>
-                                <p class="date-comments"><a href="#"><i class="fa fa-calendar-o"></i>@blog.DateCreate</a></p>
+                        <c:forEach var="item" items="${listBlog}">
+                            <div class="col-md-4 my-2">
+                                <a href="<c:url value="/blogdetail/${item.idBlog}"/>">
+                                    <img src="<c:url value="${item.linkImg}"/>" alt="" class="img-fluid shadow">
+                                </a>
                             </div>
-                            <p class="card-title text-dark" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></p>
-                            <p class="read-more text-right"><a href="@Url.Action("Detail", "Blog", new { id = blog.IdBlog }, null)" class="btn btn-template-outlined">đọc thêm</a></p>
-                        </div>
-                        }
-                        <ul class="pager d-flex align-items-center justify-content-between list-unstyled" style="position: absolute; width: 100%; padding-right: 15px; bottom: -80px; ">
+
+                            <div class="col-md-8 my-2">
+                                <a href="<c:url value="/blogdetail/${item.idBlog}"/>">
+                                        <h2 class="h3 mt-0">${item.title}</h2>
+                                    </a>
+                                <div class="d-flex flex-wrap justify-content-between text-xs">
+                                    <p class="author-category">
+                                       <span>By</span> <c:url value="${item.idUser.fullName}"/>  <span>in</span> XEMAYH2C
+                                    </p>
+                                    <p class="date-comments"><i class="fa fa-calendar-o"></i><c:url value="${item.dateCreate}"/></p>
+                                </div>
+                                <p class="card-title text-dark" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></p>
+                                <p class="read-more text-right">
+                                    <a href="<c:url value="/blogdetail/${item.idBlog}"/>" class="btn btn-template-outlined">
+                                        Đọc thêm
+                                    </a>
+                                </p>
+                            </div>
+                            
+                            <ul class="pager d-flex align-items-center justify-content-between list-unstyled" style="position: absolute; width: 100%; padding-right: 15px; bottom: -80px; ">
 
 
-                            <li class="pagination-container PagedList-skipToPrevious"><a href="#" class=" btn btn-template-outlined">← Older</a></li>
-                            <li >
-                                @Html.PagedListPager(Model, Page => Url.Action("BlogHome", new { Page = Page }))
-                            </li>
+                                <li class="pagination-container PagedList-skipToPrevious"><a href="#" class=" btn btn-template-outlined">← Older</a></li>
+                                
 
-                            <li class="PagedList-skipToNext"><a href="" class="btn btn-template-outlined">Newer →</a></li>
-                        </ul>
+                                <li class="PagedList-skipToNext"><a href="" class="btn btn-template-outlined">Newer →</a></li>
+                            </ul>
+                        </c:forEach>
                     </div>
 
                 </section>
@@ -117,10 +111,14 @@
             <div class="col-md-3">
                 <div class="panel panel-default sidebar-menu">
                     <div class="panel-heading">
-                        <h2><a href="#">THỂ LOẠI</a></h2>
+                        <h2><a href="<c:url value="/blog"/>">THỂ LOẠI</a></h2>
                     </div>
                     <div class="panel-body">
-                        @Html.Action("CategoryBlog", "Blog")
+                        <a href="<c:url value="/blog"/>" class="list-group list-group-flush">                        
+                            <c:forEach items="${listCate}" var="item">
+                                <a href="<c:url value="/blog?idCate=${item.idCate}"/>" class="list-group-item list-group-item-action">${item.nameCate}</a>
+                            </c:forEach>
+                        </a>
                     </div>
                 </div>
 

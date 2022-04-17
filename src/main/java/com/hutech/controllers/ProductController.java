@@ -4,6 +4,7 @@
  */
 package com.hutech.controllers;
 
+import com.hutech.dao.BlogDAO;
 import com.hutech.dao.BrandDAO;
 import com.hutech.dao.ProductDAO;
 import com.hutech.dao.TypeCarDAO;
@@ -26,7 +27,7 @@ public class ProductController {
     ProductDAO productDAO = new ProductDAO();
 
     @RequestMapping(value = {"/product"})
-    public String product(Model model ,@RequestParam(required = false) Integer idBrand ,@RequestParam(required = false) Integer idType) throws SQLException {
+    public String product(Model model ,@RequestParam(required = false) Integer idBrand,@RequestParam(required = false) Integer idType) throws SQLException {
         if (idBrand != null) {
             model.addAttribute("listProduct", productDAO.getByIdBrand(idBrand));
         } else {
@@ -43,6 +44,8 @@ public class ProductController {
         model.addAttribute("listType", new TypeCarDAO().getList());
         return "user/product";
     }
+    
+    
 
     @RequestMapping(value = {"/detail/{idproduct}"})
     public String detail(Model model, @PathVariable("idproduct") int idproduct, HttpServletRequest request) throws SQLException {

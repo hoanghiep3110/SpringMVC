@@ -157,12 +157,11 @@
                 <div class="heading text-center">
                     <h2>Sản phẩm nổi bật</h2>
                 </div>
-
                 <div class="project-carousel">
                     <div class="container">                       
-                        <div class="project owl-carousel">                                                                 
-                            <div class="row portfolio text-center color-white">
-                                <c:forEach  var = "item" items="${listProduct}">       
+                        <div class="project owl-carousel">     
+                            <c:forEach var="item" items="${listProduct}">
+                                <div class="row portfolio text-center color-white">
                                     <div class="col-md-4">
                                         <div class="box-image">
                                             <div class="image">                                               
@@ -180,13 +179,49 @@
                                                 </div>                                              
                                             </div>
                                         </div>
-                                    </div>   
-                                </c:forEach>
-                            </div>                                                       
+                                    </div>        
+                                    <div class="col-md-4">
+                                        <div class="box-image">
+                                            <div class="image">                                               
+                                                <img src=<c:url value="${item.linkImg}"/> alt="" class="img-fluid">
+                                                <div class="overlay d-flex align-items-center justify-content-center">
+                                                    <div class="content">
+                                                        <div class="name">
+                                                            <h3><a href="<c:url value="/detail/${item.idProduct}"/>" class="color-white">Thông tin chi tiết</a></h3>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p class="d-sm-none"></p>
+                                                            <p class="buttons"><a href="<c:url value="/detail/${item.idProduct}"/>" class="btn btn-template-outlined-white">Xem ngay</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>                                              
+                                            </div>
+                                        </div>
+                                    </div>       
+                                    <div class="col-md-4">
+                                        <div class="box-image">
+                                            <div class="image">                                               
+                                                <img src=<c:url value="${item.linkImg}"/> alt="" class="img-fluid">
+                                                <div class="overlay d-flex align-items-center justify-content-center">
+                                                    <div class="content">
+                                                        <div class="name">
+                                                            <h3><a href="<c:url value="/detail/${item.idProduct}"/>" class="color-white">Thông tin chi tiết</a></h3>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p class="d-sm-none"></p>
+                                                            <p class="buttons"><a href="<c:url value="/detail/${item.idProduct}"/>" class="btn btn-template-outlined-white">Xem ngay</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>                                              
+                                            </div>
+                                        </div>
+                                    </div>       
+                                </div>                                                                 
+                            </c:forEach>
+
                         </div>
                     </div>
                 </div>
-
 
                 <div class="see-more text-center">
                     <p></p><a href="<c:url value="/product"/>" class="btn btn-template-outlined">Xem thêm</a>
@@ -216,7 +251,7 @@
                 <ul class="list-unstyled owl-carousel brand no-mb">
                     <c:forEach  var = "item" items="${listBrand}">
                         <li class="item"><img src=<c:url value="${item.imgBrand}"/> alt="" class="img-fluid"></li>
-                    </c:forEach>                  
+                        </c:forEach>                  
                 </ul>
             </div>
         </div>
@@ -233,23 +268,29 @@
             <div class="heading text-center">
                 <h2>Tạp chí xe</h2>
             </div>
-
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="home-blog-post">
-                        <div class="image"><img src="img/tapchixe.jpg" alt="..." class="img-fluid">
-                            <div class="overlay d-flex align-items-center justify-content-center"><a href="#"
-                                                                                                     class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+                <c:forEach var="item" items="${listBlog}">
+                        <div class="col-lg-3">
+                            <div class="home-blog-post">
+                                <div class="image">                                
+                                        <img src="<c:url value="${item.linkImg}"/>" alt="" class="img-fluid shadow">                                   
+                                    <div class="overlay d-flex align-items-center justify-content-center">
+                                        <a href="<c:url value="/blogdetail/${item.idBlog}"/>"
+                                           class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i>Đọc thêm</a>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h4>
+                                        <a href="#">
+                                            
+                                        </a>
+                                    </h4>
+                                     <span>By</span> <c:url value="${item.idUser.fullName}"/>  <span>in</span> XEMAYH2C
+                                   
+                                </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <h4><a href="#">Trên tay Chi tiết Honda H’ness CB350 tại Việt Nam</a></h4>
-                            <p class="author-category">By <a href="#">Vulee </a> in <a href="#">Tạp chí xe</a></p>
-                            <p class="intro">Honda CB350 H'ness ra mắt tại Ấn Độ vào khoảng tháng 9 năm ngoái và giờ thì đã có mặt
-                                tại thị trường Việt Nam </p><a href="#" class="btn btn-template-outlined">Đọc thêm</a>
-                        </div>
-                    </div>
-                </div>
-
+                </c:forEach>
             </div>
         </div>
     </div>
