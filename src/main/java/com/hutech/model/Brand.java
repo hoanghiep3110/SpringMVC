@@ -18,8 +18,10 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -47,7 +49,9 @@ public class Brand implements Serializable {
     private String imgBrand;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idBrand")
     private Collection<Product> productCollection;
-
+    @Transient
+    private MultipartFile file;
+    
     public Brand() {
     }
 
@@ -55,14 +59,18 @@ public class Brand implements Serializable {
         this.idBrand = idBrand;
     }
 
-    public Brand(Integer idBrand, String nameBrand,String imgBrand,Collection<Product> productCollection) {
+    public Brand(String nameBrand, String imgBrand) {
+        this.nameBrand = nameBrand;
+        this.imgBrand = imgBrand;
+    }
+
+    public Brand(Integer idBrand, String nameBrand, String imgBrand, Collection<Product> productCollection) {
         this.idBrand = idBrand;
         this.nameBrand = nameBrand;
         this.imgBrand = imgBrand;
-        this.productCollection= productCollection;
+        this.productCollection = productCollection;
     }
 
-     
     public Integer getIdBrand() {
         return idBrand;
     }
@@ -119,5 +127,5 @@ public class Brand implements Serializable {
     public String toString() {
         return "com.hutech.model.Brand[ idBrand=" + idBrand + " ]";
     }
-    
+
 }

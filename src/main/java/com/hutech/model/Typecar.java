@@ -17,8 +17,10 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -47,6 +49,9 @@ public class Typecar implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idType")
     private Collection<Product> productCollection;
 
+    @Transient
+    private MultipartFile file;
+
     public Typecar() {
     }
 
@@ -54,11 +59,16 @@ public class Typecar implements Serializable {
         this.idType = idType;
     }
 
-    public Typecar(Integer idType, String nameType,String imgType,Collection<Product> productCollection) {
+    public Typecar(String nameType, String imgType) {
+        this.nameType = nameType;
+        this.imgType = imgType;
+    }
+
+    public Typecar(Integer idType, String nameType, String imgType, Collection<Product> productCollection) {
         this.idType = idType;
         this.nameType = nameType;
-         this.imgType = imgType;
-        this.productCollection= productCollection;
+        this.imgType = imgType;
+        this.productCollection = productCollection;
     }
 
     public Integer getIdType() {
@@ -117,5 +127,5 @@ public class Typecar implements Serializable {
     public String toString() {
         return "com.hutech.model.Typecar[ idType=" + idType + " ]";
     }
-    
+
 }

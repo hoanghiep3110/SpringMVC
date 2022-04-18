@@ -5,6 +5,7 @@
 package com.hutech.dao;
 
 import com.hutech.helper.JDBCConnection;
+import com.hutech.model.Brand;
 import com.hutech.model.Product;
 import com.hutech.model.Typecar;
 import java.sql.ResultSet;

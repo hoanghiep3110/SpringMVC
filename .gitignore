@@ -2,3 +2,4 @@
 src/main/webapp/resource/img/.DS_Store
 src/main/webapp/resource/img/.DS_Store
 target/test-classes/.netbeans_automatic_build
+target/SpringMVC-1.0-SNAPSHOT/WEB-INF/lib/commons-io-2.6.jar

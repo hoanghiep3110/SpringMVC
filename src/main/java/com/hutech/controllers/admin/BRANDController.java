@@ -5,11 +5,21 @@
 package com.hutech.controllers.admin;
 
 import com.hutech.dao.BrandDAO;
+import com.hutech.model.Brand;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
 import java.sql.SQLException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -26,6 +36,35 @@ public class BRANDController {
         if (session.getAttribute("adminName") == null) {
             return "redirect:/admin";
         }
+        model.addAttribute("listBrand", brandDAO.getList());
+        return "admin/brand";
+    }
+
+    @RequestMapping(value = {"/brand/create"}, method = RequestMethod.POST)
+    public String create(Model model, HttpServletRequest request, MultipartFile image) throws SQLException, IOException {
+        if (image.isEmpty()) {
+            model.addAttribute("message", "Vui lòng chon file !");
+        } else {
+            try{
+                String ten = request.getParameter("NameBrand");
+                String hinh = "/resource/img/brand/" + image.getOriginalFilename();
+                image.transferTo(new File( "H:\\CDCNPM\\SpringMVC\\src\\main\\webapp",hinh));
+                Brand s = new Brand(ten, hinh);
+                brandDAO.insert(s);
+
+                model.addAttribute("listBrand", brandDAO.getList());
+            } catch (Exception e) {
+                model.addAttribute("message", "Lỗi !");
+            }
+        }
+
+        return "admin/brand";
+    }
+
+    @RequestMapping(value = {"/brand/delete/{idBrand}"})
+    public String delete(Model model, @PathVariable("idBrand") int idBrand) throws SQLException {
+        brandDAO.delete(idBrand);
+
         model.addAttribute("listBrand", brandDAO.getList());
         return "admin/brand";
     }

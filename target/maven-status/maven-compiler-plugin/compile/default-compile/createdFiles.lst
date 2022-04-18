@@ -31,5 +31,4 @@ com\hutech\dao\CateDAO.class
 com\hutech\model\OrderDetail.class
 com\hutech\dao\BlogDAO.class
 com\hutech\model\OrderDetailPK.class
-com\hutech\controllers\admin\BRANDController.class
 com\hutech\dao\ProductDAO.class

@@ -69,7 +69,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="formSubmit" action="<c:url value="/admin/sanbong/create"/>" method="POST">
+                        <form id="formSubmit" action="<c:url value="/admin/product/create"/>" method="POST">
                             <div class="form-group">
                                 <div class="col-md-10">
                                     <div class="row">
@@ -91,11 +91,7 @@
                                             <div class="form-group">
                                                 <lable class="control-label col-md-2">Hình ảnh</lable>
                                                 <div class="col-md-12">
-                                                    <input type="file" name="fileUpload" id="fileUpload">
-                                                    <div class="image-preview" id="imagePreview">
-                                                        <img src="" alt="Image Preview" class="image-preview-img " />
-                                                        <span class="image-preview-text">Image Preview</span>
-                                                    </div>
+                                                    <input type="file" name="fileUpload" id="fileUpload">        
                                                 </div>
                                             </div>
                                         </div>
@@ -181,11 +177,7 @@
                                             <div class="form-group">
                                                 <lable class="control-label col-md-2">Hình ảnh</lable>
                                                 <div class="col-md-12">
-                                                    <input type="file" name="fileUpload" id="fileUpload">
-                                                    <div class="image-preview" id="imagePreview">
-                                                        <img src="${item.linkImg}" alt="Image Preview" class="image-preview-img ">
-                                                        <span class="image-preview-text">Image Preview</span>
-                                                    </div>
+                                                    <input type="file" name="fileUpload" id="fileUpload">                                             
                                                 </div>
                                             </div>
                                         </div>
@@ -284,46 +276,4 @@
         }
     }
 </script>
-<script>
-    var fileUpload = document.getElementById("fileUpload");
-    var previewContainer = document.getElementById("imagePreview");
-    var previewImage = previewContainer.querySelector(".image-preview-img");
-    var previewText = previewContainer.querySelector(".image-preview-text");
 
-    fileUpload.addEventListener("change", function () {
-        var file = this.files[0];
-        if (file) {
-            var reader = new FileReader();
-            previewText.style.display = "none";
-            previewImage.style.display = "block";
-            reader.readAsDataURL(file);
-            reader.addEventListener("load", function () {
-                previewImage.setAttribute("src", this.result);
-            });
-        } else {
-            previewText.style.display = null;
-            previewImage.style.display = null;
-            previewImage.setAttribute("src", this.result);
-        }
-    });
-</script>
-<script>
-    var fileUpload = document.getElementById("fileUpload");
-    var previewContainer = document.getElementById("imagePreview");
-    var previewImage = previewContainer.querySelector(".image-preview-img");
-
-    fileUpload.addEventListener("change", function () {
-        var file = this.files[0];
-        if (file) {
-            var reader = new FileReader();
-            previewImage.style.display = "block";
-            reader.readAsDataURL(file);
-            reader.addEventListener("load", function () {
-                previewImage.setAttribute("src", this.result);
-            });
-        } else {
-            previewImage.style.display = null;
-            previewImage.setAttribute("src", this.result);
-        }
-    });
-</script>
