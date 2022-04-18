@@ -21,17 +21,19 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 public class BlogController {
+
     BlogDAO blogDAO = new BlogDAO();
 
     @RequestMapping(value = {"/blog"})
-    public String blog(Model model ,@RequestParam(required = false) Integer idCate ) throws SQLException {
+    public String blog(Model model, @RequestParam(required = false) Integer idCate) throws SQLException {
         if (idCate != null) {
             model.addAttribute("listBlog", blogDAO.getByIdCate(idCate));
         } else {
             model.addAttribute("listBlog", blogDAO.getList());
         }
         model.addAttribute("listCate", new CateDAO().getList());
-         
+        String title = "Tạp Chí Xe";
+        model.addAttribute("title", title);
         return "user/blog";
     }
 

@@ -10,11 +10,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>
-            <decorator:title default="${title}" />
-        </title>
+        <title>${title}</title>
         <link rel="stylesheet" href="<c:url value="/vendor/bootstrap/css/bootstrap.min.css"/>">
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
         <link rel="stylesheet" href="<c:url value="/vendor/bootstrap-select/css/bootstrap-select.min.css"/>">

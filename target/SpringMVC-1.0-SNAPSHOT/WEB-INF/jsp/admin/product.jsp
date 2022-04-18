@@ -321,8 +321,7 @@
             reader.addEventListener("load", function () {
                 previewImage.setAttribute("src", this.result);
             });
-        }
-        else {
+        } else {
             previewImage.style.display = null;
             previewImage.setAttribute("src", this.result);
         }
