@@ -44,7 +44,7 @@ public class TYPECARController {
             try{
                 String ten = request.getParameter("NameBrand");
                 String hinh = "/resource/img/typecar/" + image.getOriginalFilename();
-                image.transferTo(new File("H:\\CDCNPM\\SpringMVC\\src\\main\\webapp",hinh));
+                image.transferTo(new File( "H:\\CDCNPM\\SpringMVC\\src\\main\\webapp",hinh));
                 Typecar s = new Typecar(ten, hinh);
                 typeCarDAO.insert(s);
 

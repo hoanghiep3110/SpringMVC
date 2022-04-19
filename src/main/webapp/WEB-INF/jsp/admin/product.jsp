@@ -50,10 +50,10 @@
                 <td>${item.idBrand.nameBrand}</td> 
                 <td>${item.idType.nameType}</td>  
                 <td>
-                    <a data-target="#editModal${item.idProduct}" data-toggle="modal" title="Sửa" class="btn btn-sm btn-info" href="<c:url value="/admin/product/edit"/>">
+                    <a data-target="#editModal${item.idProduct}" data-toggle="modal" title="Sửa" class="btn btn-sm btn-info">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a data-target="#deleteModal" data-toggle="modal" title="Xoá" class="btn btn-sm btn-danger" href="<c:url value="/admin/product/delete"/>">
+                    <a data-target="#deleteModal${item.idProduct}" data-toggle="modal" title="Xoá" class="btn btn-sm btn-danger" >
                         <i class="fas fa-trash-alt"></i>
                     </a>
                 </td>
@@ -69,7 +69,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="formSubmit" action="<c:url value="/admin/product/create"/>" method="POST">
+                        <form id="formSubmit" action="<c:url value="/admin/product/create"/>" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <div class="col-md-10">
                                     <div class="row">
@@ -90,11 +90,12 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <lable class="control-label col-md-2">Hình ảnh</lable>
-                                                <div class="col-md-12">
-                                                    <input type="file" name="fileUpload" id="fileUpload">        
+                                                <div class="col-md-12">   
+                                                    <input type="file" id="file" name="image" accept="image/png, image/jpeg, image/jpg">
                                                 </div>
                                             </div>
                                         </div>
+                                        ${message}
                                     </div>
                                 </div>
                             </div>
@@ -132,11 +133,11 @@
                                     <textarea type="text" name="Description" class="form-control"  required></textarea>
                                 </div>
                             </div>
-                        </form>
-                        <div class="modal-footer">
+                            <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Ðóng</button>
                             <button type="submit" class="btn btn-primary">Cập nhật</button>
                         </div>
+                        </form>         
                     </div>
                 </div>
             </div>
@@ -221,7 +222,7 @@
         </div>
         <!--End Edit Modal-->
         <!<!-- Delete Modal -->
-        <div class="modal fade" id="deleteModal" role="dialog" aria-hidden="true">
+        <div class="modal fade" id="deleteModal${item.idProduct}" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -235,7 +236,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Ðóng</button>
-                        <a href="<c:url value="/admin/customer/delete"/>" class="btn btn-danger">Xoá</a>
+                        <a href="<c:url value="/admin/product/delete/${item.idProduct}"/>" class="btn btn-danger">Xoá</a>
                     </div>
                 </div>
             </div>

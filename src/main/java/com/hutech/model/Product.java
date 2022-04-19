@@ -20,8 +20,10 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -68,8 +70,8 @@ public class Product implements Serializable {
     @ManyToOne(optional = false)
     private Typecar idType;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
-    private Collection<OrderDetail> orderDetailCollection;
+    @Transient
+    private MultipartFile file;
 
     public Product() {
     }
@@ -79,8 +81,7 @@ public class Product implements Serializable {
     }
 
     public Product(Integer idProduct, String nameProduct, int price, String description,
-            String status, String linkImg, Brand idBrand, Typecar idType,
-            Collection<OrderDetail> orderDetailCollection) {
+            String status, String linkImg, Brand idBrand, Typecar idType) {
         this.idProduct = idProduct;
         this.nameProduct = nameProduct;
         this.price = price;
@@ -89,7 +90,6 @@ public class Product implements Serializable {
         this.linkImg = linkImg;
         this.idBrand = idBrand;
         this.idType = idType;
-        this.orderDetailCollection = orderDetailCollection;
     }
 
     public Integer getIdProduct() {
@@ -154,14 +154,6 @@ public class Product implements Serializable {
 
     public void setIdType(Typecar idType) {
         this.idType = idType;
-    }
-
-    public Collection<OrderDetail> getOrderDetailCollection() {
-        return orderDetailCollection;
-    }
-
-    public void setOrderDetailCollection(Collection<OrderDetail> orderDetailCollection) {
-        this.orderDetailCollection = orderDetailCollection;
     }
 
     @Override

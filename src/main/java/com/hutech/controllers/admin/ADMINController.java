@@ -36,9 +36,11 @@ public class ADMINController {
         String pass = MD5Hash.getMd5(request.getParameter("passWord").trim());
         User u = userDao.getOneUser(username, pass);
         String fullname = u.getFullName();
+        String id = String.valueOf(u.getIdUser());
         boolean check = new UserDAO().isAdmin(username, pass);
         if (check == true) {
             session.setAttribute("adminName", fullname);
+            session.setAttribute("idAdmin",id);  
             return "redirect:product";
         }
         model.addAttribute("message", "<p style ='color:red'>Tên đăng nhập hoặc mật khẩu không đúng</p>");

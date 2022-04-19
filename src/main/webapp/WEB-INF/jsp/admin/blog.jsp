@@ -46,10 +46,10 @@
                 <td>${item.content}</td>  
                 <td>${item.dateCreate}</td>  
                 <td>
-                    <a data-target="#editModal${item.idBlog}" data-toggle="modal" title="Sửa" class="btn btn-sm btn-info" href="<c:url value="/admin/blog/edit"/>">
+                    <a data-target="#editModal${item.idBlog}" data-toggle="modal" title="Sửa" class="btn btn-sm btn-info" >
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a data-target="#deleteModal" data-toggle="modal" title="Xoá" class="btn btn-sm btn-danger" href="<c:url value="/admin/blog/delete"/>">
+                    <a data-target="#deleteModal${item.idBlog}" data-toggle="modal" title="Xoá" class="btn btn-sm btn-danger" >
                         <i class="fas fa-trash-alt"></i>
                     </a>
                 </td>
@@ -65,11 +65,12 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="formSubmit" action="<c:url value="/admin/blog/create"/>" method="POST">
+                        <form id="formSubmit" action="<c:url value="/admin/blog/create"/>" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <div class="col-md-10">
                                     <div class="row">
-                                        <div class="col-md-8">
+                                        <div class="col-md-12">
+                                            <input type="hidden" name="IdAdmin" value="${sessionScope.idAdmin}">
                                             <div class="form-group">
                                                 <div class="col-md-12">
                                                     <label class="col-form-label">TÊN BÀI VIẾT</label>
@@ -81,15 +82,11 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
+                                                <lable class="control-label col-md-2">HÌNH ẢNH</lable>
                                                 <div class="col-md-12">
-                                                    <label class="col-form-label">NGƯỜI TẠO</label>
-                                                    <select class="custom-select" name="IdUser">
-                                                        <c:forEach var="item" items="${listUser}">
-                                                            <option value="${item.idUser}">${item.fullName}</option>
-                                                        </c:forEach>
-                                                    </select>
+                                                    <input type="file" id="file" name="image" accept="image/png, image/jpeg, image/jpg">
                                                 </div>
-                                            </div>
+                                            </div>  
                                             <div class="form-group">
                                                 <div class="col-md-12">
                                                     <label class="col-form-label">TIÊU ĐỀ</label>
@@ -99,36 +96,18 @@
                                             <div class="form-group">
                                                 <div class="col-md-12">
                                                     <label class="col-form-label">NỘI DUNG</label>
-                                                    <input type="number" class="form-control" name="Content">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <lable class="control-label col-md-2">HÌNH ẢNH</lable>
-                                                <div class="col-md-12">
-                                                    <input type="file" name="fileUpload" id="fileUpload">
-                                                    <div class="image-preview" id="imagePreview">
-                                                        <img src="" alt="Image Preview" class="image-preview-img " />
-                                                        <span class="image-preview-text">Image Preview</span>
-                                                    </div>
+                                                    <textarea type="text" name="Content" class="form-control"  required></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>   
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Ðóng</button>
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
                             </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="col-form-label">NGÀY TẠO</label>
-                                    <input type="text" class="form-control" name="DateCreate">
-                                </div>
-                            </div>                          
                         </form>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Ðóng</button>
-                            <button type="submit" class="btn btn-primary">Cập nhật</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -217,11 +196,11 @@
         </div>
         <!--End Edit Modal-->
         <!<!-- Delete Modal -->
-        <div class="modal fade" id="deleteModal" role="dialog" aria-hidden="true">
+        <div class="modal fade" id="deleteModal${item.idBlog}" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">XOÁ SẢN PHẨM</h5>
+                        <h5 class="modal-title" id="exampleModalCenterTitle">XOÁ BÀI VIET</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">x</span>
                         </button>
@@ -231,7 +210,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Ðóng</button>
-                        <a href="<c:url value="/admin/customer/delete"/>" class="btn btn-danger">Xoá</a>
+                        <a href="<c:url value="/admin/blog/delete/${item.idBlog}"/>" class="btn btn-danger">Xoá</a>
                     </div>
                 </div>
             </div>
@@ -253,7 +232,7 @@
 <script>
     var editor = '';
     $(document).ready(function () {
-        editor = CKEDITOR.replace('Description');
+        editor = CKEDITOR.replace('Content');
     });
     $('#btnsubmit').click(function (e) {
         e.preventDefault();
@@ -262,7 +241,7 @@
         $.each(formData, function (i, v) {
             data["" + v.name + ""] = v.value;
         });
-        data["Description"] = editor.getData();
+        data["Content"] = editor.getData();
     });
     function truncateString(str, num) {
         if (num >= str.length) {

@@ -51,6 +51,7 @@
                     <!-- User Info-->
                     <div class="sidenav-header-inner text-center">
                         <h2 class="h5"><%= session.getAttribute("adminName")%></h2>
+                        
                     </div>
                 </div>
                 <!-- Sidebar Navigation Menus-->

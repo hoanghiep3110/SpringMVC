@@ -28,7 +28,7 @@ public class ProductDAO {
             p.setIdProduct(rs.getInt(1));
             p.setNameProduct(rs.getString(2));
             p.setPrice(rs.getInt(3));
-            p.setDescription(rs.getString(4));
+            p.setDescription(rs.getString(4).substring(0,20));
             p.setStatus(rs.getString(5));
             p.setLinkImg(rs.getString(6));
             p.setIdBrand(new BrandDAO().getByID(rs.getInt(7)));

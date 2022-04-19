@@ -180,7 +180,7 @@
                                             </div>
                                         </div>
                                     </div>        
-                                    <div class="col-md-4">
+                                  <div class="col-md-4">
                                         <div class="box-image">
                                             <div class="image">                                               
                                                 <img src=<c:url value="${item.linkImg}"/> alt="" class="img-fluid">
@@ -215,8 +215,8 @@
                                                 </div>                                              
                                             </div>
                                         </div>
-                                    </div>       
-                                </div>                                                                 
+                                    </div>  
+                                </div>                                                               
                             </c:forEach>
 
                         </div>
@@ -285,8 +285,7 @@
                                             
                                         </a>
                                     </h4>
-                                     <span>By</span> <c:url value="${item.idUser.fullName}"/>  <span>in</span> XEMAYH2C
-                                   
+                                     <span>By</span> <c:url value="${item.idUser.fullName}"/>  <span>in</span> XEMAYH2C                                
                                 </div>
                             </div>
                         </div>

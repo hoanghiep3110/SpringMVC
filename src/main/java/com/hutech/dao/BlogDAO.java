@@ -29,7 +29,7 @@ public class BlogDAO {
             b.setIdCate(new CateDAO().getByID(rs.getInt(2)));
             b.setIdUser(new UserDAO().getByID(rs.getInt(3)));
             b.setTitle(rs.getString(4));
-            b.setContent(rs.getString(5));
+            b.setContent(rs.getString(5).substring(0,20));
             b.setLinkImg(rs.getString(6));
             b.setDateCreate(rs.getDate(7));
             list.add(b);
